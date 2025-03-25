@@ -1,0 +1,65 @@
+---
+const pathname = new URL(Astro.request.url).pathname;
+const currentPath = pathname.split('/')[1];
+import Logo from '@assets/logo.svg';
+---
+
+<style lang="scss">
+  @use 'openaq-design-system/scss/variables' as variables;
+  @use 'openaq-design-system/scss/mixins/index.scss' as mixins;
+  @use 'openaq-design-system/scss/header';
+  @use 'openaq-design-system/scss/buttons';
+
+  .header {
+    padding: 0 40px;
+    z-index: 1000;
+  }
+
+  .header-contents {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .spacer {
+    display: none;
+  }
+
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: space-between;
+
+    &__item {
+      @include mixins.navigation1;
+      padding: 8px 0;
+      margin: 0 12px;
+
+      &--active {
+        color: variables.$sky100;
+        border-bottom: variables.$ocean100 solid 2px;
+      }
+    }
+  }
+
+  .nav-list {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+</style>
+
+<header class="header">
+  <div class="header-contents">
+    <a href="https://openaq.org" class="header-logo" aria-label="openaq logo">
+      <Logo width="72" height="40" aria-label="OpenAQ logo" />
+    </a>
+    <div class="spacer"></div>
+    <nav class="nav"></nav>
+  </div>
+</header>

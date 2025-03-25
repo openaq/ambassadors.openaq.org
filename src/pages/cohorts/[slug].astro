@@ -1,0 +1,34 @@
+---
+import { getCollection, render } from "astro:content";
+
+
+export async function getStaticPaths() {
+  const cohorts = await getCollection("cohorts");
+
+  return [...cohorts].map((cohort) => ({
+    params: { slug: cohort.id },
+    props: { cohort },
+  }));
+}
+
+const { cohort } = Astro.props;
+
+const { Content } = await render(cohort);
+
+const ambassadors = await getCollection("ambassadors");
+
+const people = ambassadors.filter(o => o.data.year === cohort.data.year)
+
+
+---
+
+
+<h1>{cohort.data.year}</h1>
+
+<ul>
+{people.map(o => (
+  <li>{o.data.name}</li>
+)
+)}
+</ul>
+

@@ -1,0 +1,19 @@
+{
+  "name": "ambassadors-openaq-org",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.3.0",
+    "openaq-design-system": "github:openaq/openaq-design-system#v-4.0.0",
+    "vite-plugin-solid-svg": "^0.8.1"
+  },
+  "devDependencies": {
+    "sass": "^1.86.0"
+  }
+}
