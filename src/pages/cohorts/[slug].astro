@@ -1,9 +1,12 @@
 ---
+import AmbassadorsCard from "@components/people/AmbassadorsCard.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import type { CollectionEntry } from "astro:content";
 import { getCollection, render } from "astro:content";
-
 
 export async function getStaticPaths() {
   const cohorts = await getCollection("cohorts");
+  console.log("Fetched cohorts:", cohorts);
 
   return [...cohorts].map((cohort) => ({
     params: { slug: cohort.id },
@@ -16,19 +19,71 @@ const { cohort } = Astro.props;
 const { Content } = await render(cohort);
 
 const ambassadors = await getCollection("ambassadors");
+type CollectionName = "ambassadors";
 
-const people = ambassadors.filter(o => o.data.year === cohort.data.year)
+const people = ambassadors.filter((o) => o.data.year === cohort.data.year);
 
+const socials = (entry: CollectionEntry<CollectionName>) => {
+  return {
+    email: entry.data.email,
+    x: entry.data.x,
+    mastadon: entry.data.mastadon,
+    linkedin: entry.data.linkedin,
+    github: entry.data.github,
+    orcid: entry.data.orcid,
+    researchGate: entry.data.researchGate,
+    googleScholar: entry.data.googleScholar,
+    bluesky: entry.data.bluesky,
+  };
+};
 
+const sortByName = (
+  a: CollectionEntry<CollectionName>,
+  b: CollectionEntry<CollectionName>
+) => a.data.name.localeCompare(b.data.name);
 ---
 
+<style lang="scss">
+  .person-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 22px;
+    row-gap: 22px;
+    margin: 0 auto;
+    overflow: hidden;
 
-<h1>{cohort.data.year}</h1>
+    @media (max-width: 800px) {
+      grid-template-columns: repeat(2, 1fr);
+      width: 530px;
+    }
+
+    @media (max-width: 600px) {
+      grid-template-columns: repeat(1, 1fr);
+      width: 250px;
+    }
+  }
+</style>
 
 <ul>
-{people.map(o => (
-  <li>{o.data.name}</li>
-)
-)}
+  {people.map((o) => <li>{o.data.name}</li>)}
 </ul>
 
+<BaseLayout>
+  <h1 class="gradient-title">{cohort.data.year}</h1>
+  <section class="person-grid">
+    {
+      ambassadors
+        .sort(sortByName)
+        .map((ambassador) => (
+          <AmbassadorsCard
+            name={ambassador.data.name}
+            country={ambassador.data.country_iso}
+            url={`/${ambassador.id}/`}
+            data={ambassador.body}
+            socials={socials(ambassador)}
+            portrait={ambassador.data.image}
+          />
+        ))
+    }
+  </section>
+</BaseLayout>

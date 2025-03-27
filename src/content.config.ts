@@ -31,7 +31,7 @@ const ambassadors = defineCollection({
 
 
 const cohorts = defineCollection({
-    loader: glob({ pattern: ["*.md"], base: "src/content/people/cohorts" }),
+    loader: glob({ pattern: ["*.md"], base: "src/content/cohorts" }),
     schema: () =>
       z.object({
         year: z.number().refine((x) => x > 2020 && x < 2030, {
