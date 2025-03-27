@@ -1,7 +1,108 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-
 ---
 
+<style lang="scss">
+  @use "openaq-design-system/scss/variables" as variables;
+
+  @use "openaq-design-system/scss/mixins/index.scss" as mixins;
+  @use "openaq-design-system/scss/utilities/types.scss";
+  @use "openaq-design-system/scss/utilities/colors.scss";
+  @use "openaq-design-system/scss/inputs";
+
+  @use "openaq-design-system/scss/buttons";
+
+  .hero-section {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+
+    .hero-content {
+      width: 50%;
+      padding: 100px;
+      background-color: #e2ebe1;
+      border-top-right-radius: 250px;
+      border-bottom-right-radius: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      z-index: 2;
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+      .hero-subtitle {
+        max-width: 280px;
+        width: 100%;
+      }
+
+      .learn-more-btn {
+        width: fit-content;
+      }
+    }
+
+    .hero-image {
+      width: 100%;
+      height: auto;
+      position: absolute;
+      top: 80px;
+      background-image: url("/src/assets/images/ambassadors_workshops_monthly_sessions.webp");
+      background-size: cover;
+      background-position: center;
+      z-index: 1;
+    }
+
+    // .custom-shape-divider-top-1743064981 {
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   width: 80%;
+    //   overflow: hidden;
+    //   line-height: 0;
+    //   transform: rotate(270deg);
+    //   z-index: 0;
+    // }
+
+    // .custom-shape-divider-top-1743064981 svg {
+    //   position: relative;
+    //   display: block;
+    //   width: calc(300% + 1.3px);
+    //   height: 500px;
+    // }
+
+    // .custom-shape-divider-top-1743064981 .shape-fill {
+    //   fill: #e2ebe1;
+    // }
+  }
+</style>
+
 <BaseLayout>
+  <section class="hero-section">
+    <div class="hero-image">
+      <!-- <div class="custom-shape-divider-top-1743064981">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"></path>
+        </svg>
+      </div> -->
+      <div class="hero-content">
+        <h1>OpenAQ Ambassadors Program</h1>
+        <p class="hero-subtitle">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
+          sapiente quasi blanditiis earum facilis doloremque. Ipsa quis deserunt
+          fugiat est?
+        </p>
+        <a href="/apply/" class="btn btn-primary learn-more-btn" role="button"
+          >Apply</a
+        >
+      </div>
+    </div>
+  </section>
 </BaseLayout>
