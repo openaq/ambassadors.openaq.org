@@ -1,12 +1,12 @@
 ---
 import MiniCards from "@components/cards/MiniCards.astro";
 import PartnerCards from "@components/cards/PartnerCards.astro";
+import ProjectCard from "@components/cards/ProjectCard.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 
-
-const partners =  await getCollection("partners");
-
+const partners = await getCollection("partners");
+const projects = await getCollection("projects");
 ---
 
 <style lang="scss">
@@ -104,16 +104,27 @@ const partners =  await getCollection("partners");
   .cards-section {
     margin-top: 60px;
     h1 {
-      width: 50%;
+      width: 40%;
       text-align: center;
       margin: 0 auto;
     }
     .mini-cards {
+      margin-top: 20px;
       display: flex;
       flex-direction: row;
-      gap: 100px;
+      gap: 20px;
       align-items: center;
       justify-content: center;
+    }
+  }
+
+  .projects-section {
+    margin-top: 60px;
+    background-color: #e2ebe1;
+    h1 {
+      text-align: center;
+      margin: 0 auto;
+      padding-top: 20px;
     }
   }
 </style>
@@ -173,5 +184,10 @@ const partners =  await getCollection("partners");
     <div class="mini-cards">
       <MiniCards />
     </div>
+  </section>
+
+  <section class="projects-section">
+    <h1>Featured projects</h1>
+    <ProjectCard projects={projects} />
   </section>
 </BaseLayout>

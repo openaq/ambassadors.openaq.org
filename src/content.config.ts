@@ -51,8 +51,18 @@ const cohorts = defineCollection({
       }),
   });
 
+  const projects = defineCollection({
+    loader: glob({ pattern: ["*.md"], base: "src/content/projects" }),
+    schema: ({ image }) =>
+      z.object({
+        name: z.string(),
+        image: image()
+      }),
+  });
+
 export const collections = {
     ambassadors,
     cohorts,
-    partners
+    partners,
+    projects
 };
