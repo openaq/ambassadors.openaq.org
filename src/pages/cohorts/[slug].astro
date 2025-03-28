@@ -1,7 +1,7 @@
 ---
 import AmbassadorsCard from "@components/people/AmbassadorsCard.astro";
-import BaseLayout from "@layouts/BaseLayout.astro";
 import PageLayout from "@layouts/PageLayout.astro";
+import Map from '@components/Map.astro';
 import type { CollectionEntry } from "astro:content";
 import { getCollection, render } from "astro:content";
 
@@ -23,6 +23,10 @@ const ambassadors = await getCollection("ambassadors");
 type CollectionName = "ambassadors";
 
 const people = ambassadors.filter((o) => o.data.year === cohort.data.year);
+
+const isoCodes = people.map(ambassador => {
+    return ambassador.data.country_iso
+})
 
 const socials = (entry: CollectionEntry<CollectionName>) => {
   return {
@@ -82,5 +86,8 @@ const sortByName = (
           />
         ))
     }
+  </section>
+  <section>
+    <Map isoCodes={isoCodes} />
   </section>
 </PageLayout>
