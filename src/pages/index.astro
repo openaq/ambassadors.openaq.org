@@ -1,38 +1,57 @@
 ---
-import MiniCards from "@components/cards/MiniCards.astro";
-import PartnerCards from "@components/cards/PartnerCards.astro";
-import ProjectCard from "@components/cards/ProjectCard.astro";
-import BaseLayout from "@layouts/BaseLayout.astro";
+import MiniCards from '@components/cards/MiniCards.astro';
+import PartnerCards from '@components/cards/PartnerCards.astro';
+import ProjectCard from '@components/cards/ProjectCard.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
 import Map from '@components/Map.astro';
-import { getCollection } from "astro:content";
+import { getCollection } from 'astro:content';
 
-const partners = await getCollection("partners");
-const projects = await getCollection("projects");
+const partners = await getCollection('partners');
+const projects = await getCollection('projects');
 
 const ambassadors = await getCollection('ambassadors');
-const isoCodes = ambassadors.map(ambassador => {
-    return ambassador.data.country_iso
-})
-
+const isoCodes = ambassadors.map((ambassador) => {
+  return ambassador.data.country_iso;
+});
 ---
 
 <style lang="scss">
-  @use "openaq-design-system/scss/variables" as variables;
+  @use 'openaq-design-system/scss/variables' as variables;
 
-  @use "openaq-design-system/scss/mixins/index.scss" as mixins;
-  @use "openaq-design-system/scss/utilities/types.scss";
-  @use "openaq-design-system/scss/utilities/colors.scss";
-  @use "openaq-design-system/scss/inputs";
+  @use 'openaq-design-system/scss/mixins/index.scss' as mixins;
+  @use 'openaq-design-system/scss/utilities/types.scss';
+  @use 'openaq-design-system/scss/utilities/colors.scss';
+  @use 'openaq-design-system/scss/inputs';
 
-  @use "openaq-design-system/scss/buttons";
+  @use 'openaq-design-system/scss/buttons';
 
   .hero-section {
     position: relative;
+    height: 500px;
     width: 100%;
     overflow: hidden;
     display: flex;
 
+    .hero-curve {
+      position: absolute;
+      left: 0;
+      background-color: #e2ebe1;
+      height: 1000px;
+      width: 1000px;
+      z-index: 1;
+      border-radius: 0 100% 100% 0;
+      transform: translateY(-250px) translateX(-350px);
+    }
+
+    .hero-image {
+      position: absolute;
+      right: 0;
+    }
+
     .hero-content {
+      position: absolute;
+      left: 50px;
+      width: 450px;
       padding-top: 80px;
       background-color: #e2ebe1;
       padding-left: 40px;
@@ -54,27 +73,6 @@ const isoCodes = ambassadors.map(ambassador => {
       }
     }
 
-    .custom-shape-divider-top-1743064981 {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 80%;
-      overflow: hidden;
-      line-height: 0;
-      transform: rotate(270deg);
-      z-index: 0;
-    }
-
-    .custom-shape-divider-top-1743064981 svg {
-      position: relative;
-      display: block;
-      width: calc(240% + 1.3px);
-      height: 450px;
-    }
-
-    .custom-shape-divider-top-1743064981 .shape-fill {
-      fill: #e2ebe1;
-    }
   }
   .partner-section {
     margin-top: 60px;
@@ -104,11 +102,10 @@ const isoCodes = ambassadors.map(ambassador => {
       display: flex;
       align-items: center;
       justify-content: center;
-      text-align:center;
+      text-align: center;
 
       div {
         width: 1200px;
-
       }
     }
   }
@@ -142,18 +139,7 @@ const isoCodes = ambassadors.map(ambassador => {
 
 <BaseLayout>
   <section class="hero-section">
-    <div class="custom-shape-divider-top-1743064981">
-      <svg
-        data-name="Layer 1"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 1200 120"
-        preserveAspectRatio="none"
-      >
-        <path
-          d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-          class="shape-fill"></path>
-      </svg>
-    </div>
+    <div class="hero-curve"></div>
     <div class="hero-content">
       <p>Lorem ipsum dolor sit amet, consectetur.</p>
       <h1>OpenAQ Ambassadors Program</h1>
@@ -181,14 +167,13 @@ const isoCodes = ambassadors.map(ambassador => {
     </div>
   </section>
 
-
   <section class="global-section">
     <h1>The global reach of OpenAQ ambassadors</h1>
-    <h2>Representing {(new Set(isoCodes)).size} countries</h2>
+    <h2>Representing {new Set(isoCodes).size} countries</h2>
     <div class="global-image">
-        <div>
-        <Map isoCodes={isoCodes}/>
-    </div>
+      <div>
+        <Map isoCodes={isoCodes} />
+      </div>
     </div>
   </section>
   <section class="cards-section">
