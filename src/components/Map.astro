@@ -1,0 +1,24 @@
+---
+import world from '@assets/data/countries_110m.json'
+import { geoEqualEarth, geoPath } from 'd3';
+
+const projection = geoEqualEarth();
+const path = geoPath(projection);
+
+const outline = ({type: "Sphere"})
+const [[x0, y0], [x1, y1]] = geoPath(projection.fitWidth(200, outline)).bounds(outline);
+const height = Math.ceil(y1 - y0);
+const l = Math.min(Math.ceil(x1 - x0), height);
+projection.scale(projection.scale() * (l - 1) / l).precision(0.2);
+
+const { isoCodes } = Astro.props;
+
+---
+
+  <svg viewBox={`0 0 200 ${height}`}>
+    {world.features.map(o => {
+      return  <path d={path(o.geometry)} fill={isoCodes.includes(o.properties.ISO_A2) ? '#6a5cd8' : '#d4d8dc'} "#00000ff" stroke="#fff" stroke-width="0.1"></path>
+    })
+    }
+   </svg>
+

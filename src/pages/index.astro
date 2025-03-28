@@ -3,10 +3,17 @@ import MiniCards from "@components/cards/MiniCards.astro";
 import PartnerCards from "@components/cards/PartnerCards.astro";
 import ProjectCard from "@components/cards/ProjectCard.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import Map from '@components/Map.astro';
 import { getCollection } from "astro:content";
 
 const partners = await getCollection("partners");
 const projects = await getCollection("projects");
+
+const ambassadors = await getCollection('ambassadors');
+const isoCodes = ambassadors.map(ambassador => {
+    return ambassador.data.country_iso
+})
+
 ---
 
 <style lang="scss">
@@ -90,14 +97,18 @@ const projects = await getCollection("projects");
     h1 {
       text-align: center;
     }
+    h2 {
+      text-align: center;
+    }
     .global-image {
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 100%;
-      img {
-        max-width: 80%;
-        height: auto;
+      text-align:center;
+
+      div {
+        width: 1200px;
+
       }
     }
   }
@@ -170,13 +181,16 @@ const projects = await getCollection("projects");
     </div>
   </section>
 
+
   <section class="global-section">
     <h1>The global reach of OpenAQ ambassadors</h1>
+    <h2>Representing {(new Set(isoCodes)).size} countries</h2>
     <div class="global-image">
-      <img src="/src/assets/images/global.png" alt="" />
+        <div>
+        <Map isoCodes={isoCodes}/>
+    </div>
     </div>
   </section>
-
   <section class="cards-section">
     <h1>
       A 10 month program to accelerate your career and drive clean air action
