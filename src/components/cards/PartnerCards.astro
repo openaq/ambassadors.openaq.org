@@ -1,5 +1,8 @@
 ---
 
+const { partners } = Astro.props;
+
+
 ---
 
 <style lang="scss">
@@ -29,24 +32,14 @@
     }
   }
 </style>
-<article class="partner-card">
+{partners.map(partner => {
+  return <article class="partner-card">
   <div class="partner-card__img">
-    <a href="" target="_blank" rel="noopener noreferrer">
-      <img src="/src/assets/images/atmo.png" alt="" />
+    <a href={partner.data.url} target="_blank" rel="noopener noreferrer">
+      <img src={partner.data.image} alt={partner.data.name} />
     </a>
   </div>
 </article>
-<article class="partner-card">
-  <div class="partner-card__img">
-    <a href="" target="_blank" rel="noopener noreferrer">
-      <img src="/src/assets/images/air-gradient-logo.png" alt="" />
-    </a>
-  </div>
-</article>
-<article class="partner-card">
-  <div class="partner-card__img">
-    <a href="" target="_blank" rel="noopener noreferrer">
-      <img src="/src/assets/images/caf.png" alt="" />
-    </a>
-  </div>
-</article>
+})}
+
+

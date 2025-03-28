@@ -2,6 +2,11 @@
 import MiniCards from "@components/cards/MiniCards.astro";
 import PartnerCards from "@components/cards/PartnerCards.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+
+
+const partners =  await getCollection("partners");
+
 ---
 
 <style lang="scss">
@@ -150,7 +155,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
   <section class="partner-section">
     <h1>Partners</h1>
     <div class="partner-logos">
-      <PartnerCards />
+      <PartnerCards partners={partners} />
     </div>
   </section>
 

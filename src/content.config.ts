@@ -3,7 +3,7 @@ import { defineCollection, z } from "astro:content";
 import { glob } from "astro/loaders";
 import { ISO_A2 } from './utils/constants'
 
-const [isoCode, ...isoCodes] =Object.keys(ISO_A2)
+const [isoCode, ...isoCodes] = Object.keys(ISO_A2)
 
 const ambassadors = defineCollection({
   loader: glob({ pattern: ["*.md"], base: "src/content/people/ambassadors" }),
@@ -41,7 +41,18 @@ const cohorts = defineCollection({
       }),
   });
 
+  const partners = defineCollection({
+    loader: glob({ pattern: ["*.md"], base: "src/content/partners" }),
+    schema: ({ image }) =>
+      z.object({
+        name: z.string(),
+        url: z.string().url(),
+        image: image()
+      }),
+  });
+
 export const collections = {
     ambassadors,
-    cohorts
+    cohorts,
+    partners
 };
