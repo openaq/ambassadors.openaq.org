@@ -1,6 +1,14 @@
 ---
-
----
+import MediumLogo from '@assets/svg/medium.svg';
+import FacebookLogo from '@assets/svg/facebook.svg';
+import GithubLogo from '@assets/svg/github.svg';
+import SlackLogo from '@assets/svg/slack.svg';
+import LogoWhite from '@assets/svg/logo_white.svg';
+import XLogo from '@assets/svg/x_logo.svg';
+import BlueskyLogo from '@assets/svg/bluesky_logo.svg';
+import LinkedinLogo from '@assets/svg/linkedin.svg';
+import YoutubeLogo from '@assets/svg/youtube.svg';
+ ---
 
 <style lang="scss">
   @use "openaq-design-system/scss/variables" as variables;
@@ -181,31 +189,24 @@
       }
     }
   }
-  .custom-shape-divider-top-1743059998 {
+  .custom-shape {
     position: absolute;
-    top: 100%;
+    top: -50px;
     left: 0;
     width: 100vw;
     overflow: hidden;
-    line-height: 0;
-    transform: rotate(360deg);
-  }
 
-  .custom-shape-divider-top-1743059998 svg {
-    position: relative;
-    display: block;
-    width: calc(167% + 1.3px);
-    height: 67px;
-    margin-bottom: -1px;
-  }
-
-  .custom-shape-divider-top-1743059998 .shape-fill {
-    fill: #241050;
+    svg {
+      margin-bottom: -1px;
+      fill: #241050;
+      height:67px;
+      width: 167%;
+    }
   }
 </style>
 
 <footer class="footer">
-  <div class="custom-shape-divider-top-1743059998">
+  <div class="custom-shape">
     <svg
       data-name="Layer 1"
       xmlns="http://www.w3.org/2000/svg"
@@ -216,10 +217,10 @@
         d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
         class="shape-fill"></path>
     </svg>
-
+  </div>
     <div class="footer__content">
       <section class="nav-section">
-        <!-- <LogoWhite width="72" height="40" aria-label="OpenAQ logo" /> -->
+        <LogoWhite width="72" height="40" aria-label="OpenAQ logo" />
         <nav class="footer-nav">
           <a class="footer-about" href="/about">About</a>
           <a class="footer-ambassadors" href="/ambassadors">Ambassadors</a>
@@ -287,7 +288,7 @@
             target="_blank"
             rel="noreferrer noopener"
           >
-            <!-- <XLogo size={18} /> -->
+            <XLogo size={18} />
           </a>
           <a
             href="https://bsky.app/profile/openaq.org"
@@ -295,7 +296,7 @@
             target="_blank"
             rel="noreferrer noopener"
           >
-            <!-- <BlueskyLogo size={18} /> -->
+            <BlueskyLogo size={18} />
           </a>
           <a
             href="https://join.slack.com/t/openaq/shared_invite/zt-yzqlgsva-v6McumTjy2BZnegIK9XCVw"
@@ -303,7 +304,7 @@
             target="_blank"
             rel="noreferrer noopener"
           >
-            <!-- <SlackLogo size={18} /> -->
+            <SlackLogo size={18} />
           </a>
           <a
             href="https://github.com/openaq"
@@ -311,7 +312,7 @@
             target="_blank"
             rel="noreferrer noopener"
           >
-            <!-- <GithubLogo size={18} /> -->
+            <GithubLogo size={18} />
           </a>
           <a
             href="https://www.linkedin.com/company/openaq"
@@ -319,7 +320,7 @@
             target="_blank"
             rel="noreferrer noopener"
           >
-            <!-- <LinkedinLogo size={18} /> -->
+            <LinkedinLogo size={18} />
           </a>
           <a
             href="https://openaq.medium.com/"
@@ -327,7 +328,7 @@
             target="_blank"
             rel="noreferrer noopener"
           >
-            <!-- <MediumLogo size={18} /> -->
+            <MediumLogo size={18} />
           </a>
           <a
             href="https://www.youtube.com/@openaq4768"
@@ -335,7 +336,7 @@
             target="_blank"
             rel="noreferrer noopener"
           >
-            <!-- <YoutubeLogo size={18} /> -->
+            <YoutubeLogo size={18} />
           </a>
           <a
             href="https://www.facebook.com/openaq/"
@@ -343,7 +344,7 @@
             target="_blank"
             rel="noreferrer noopener"
           >
-            <!-- <FacebookLogo size={18} /> -->
+            <FacebookLogo size={18} />
           </a>
         </div>
       </section>
@@ -353,5 +354,4 @@
         >&#169; 2025 OpenAQ. All rights reserved.</span
       >
     </div>
-  </div>
 </footer>
