@@ -2,6 +2,12 @@
 const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.split("/")[1];
 import Logo from "@assets/logo.svg";
+import { getCollection } from "astro:content";
+
+const cohorts = await getCollection("cohorts");
+
+
+
 ---
 
 <style lang="scss">
@@ -80,7 +86,7 @@ import Logo from "@assets/logo.svg";
     list-style: none;
     margin: 0;
     padding-left: 0;
-    width: 320px;
+    width: 220px;
     background-color: white;
     visibility: hidden;
     opacity: 0;
@@ -91,7 +97,7 @@ import Logo from "@assets/logo.svg";
     top: 10px;
     left: 0;
     display: none;
-    height: 100vw;
+    height:auto;
 
     &:hover {
       visibility: visible;
@@ -309,8 +315,15 @@ import Logo from "@assets/logo.svg";
         <li>
           <a class="nav__item explore-data-tab" href="/about">About</a>
         </li>
-        <li>
-          <a href="/cohorts/[slug]">Ambassadors</a>
+        <li class="dropdown">
+          <a href="/cohorts/[slug]" class="nav__item">Ambassadors</a>
+          <ul class="submenu" aria-label="submenu">
+            {cohorts.map(o => {
+                return <li class="submenu__item">
+              <a class="nav__item" href={`/cohorts/${o.data.year}/`}>{o.data.year}</a>
+            </li>
+            })}
+          </ul>
         </li>
         <li>
           <a
