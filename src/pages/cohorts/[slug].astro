@@ -79,7 +79,7 @@ const sortByName = (
           <AmbassadorsCard
             name={ambassador.data.name}
             country={ambassador.data.country_iso}
-            url={`/${ambassador.id}/`}
+            url={`/people/${ambassador.id}/`}
             data={ambassador.body}
             socials={socials(ambassador)}
             portrait={ambassador.data.image}
