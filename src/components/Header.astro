@@ -316,15 +316,17 @@ const cohorts = await getCollection("cohorts");
           <a class="nav__item">Ambassadors</a>
           <ul class="submenu" aria-label="submenu">
             {
-              cohorts.map((o) => {
-                return (
-                  <li class="submenu__item">
-                    <a class="nav__item" href={`/cohorts/${o.data.year}/`}>
-                      {o.data.year}
-                    </a>
-                  </li>
-                );
-              })
+              cohorts
+                .sort((a, b) => b.data.year - a.data.year)
+                .map((o) => {
+                  return (
+                    <li class="submenu__item">
+                      <a class="nav__item" href={`/cohorts/${o.data.year}/`}>
+                        {o.data.year}
+                      </a>
+                    </li>
+                  );
+                })
             }
           </ul>
         </li>
