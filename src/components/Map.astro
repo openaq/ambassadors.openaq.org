@@ -1,11 +1,13 @@
 ---
-import world from '@assets/data/countries_110m.json'
+import { type FeatureCollection } from 'geojson';
+ 
+import world from '@assets/data/countries_110m.json';
 import { geoEqualEarth, geoPath } from 'd3';
 
 const projection = geoEqualEarth();
 const path = geoPath(projection);
 
-const outline = ({type: "Sphere"})
+const outline = {type: "Sphere"}
 const [[x0, y0], [x1, y1]] = geoPath(projection.fitWidth(200, outline)).bounds(outline);
 const height = Math.ceil(y1 - y0);
 const l = Math.min(Math.ceil(x1 - x0), height);

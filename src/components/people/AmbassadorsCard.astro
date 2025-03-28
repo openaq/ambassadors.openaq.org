@@ -1,9 +1,11 @@
 ---
 import SocialIcons from "./SocialIcons.astro";
 
-const { name, position, url, data, socials, portrait, country } = Astro.props;
+const { name, url, data, socials, portrait, country } = Astro.props;
 
 import { Image } from "astro:assets";
+
+import {ISO_A2} from '../../utils/constants';
 
 const summary = (bio: string, length = 300): string => {
   if (bio.length <= length) return bio;
@@ -43,7 +45,7 @@ const summary = (bio: string, length = 300): string => {
 
     <div class="team-card__description">
       <h2 class="person-name">{name}</h2>
-      <p class="person-bio">{country}</p>
+      <p class="person-country">{ISO_A2[country]}</p>
       <p class="person-bio">{summary(data)}</p>
       <SocialIcons {...socials} />
     </div>
