@@ -10,7 +10,7 @@ const ambassadors = defineCollection({
   schema: ({ image }) =>
     z.object({
       name: z.string(),
-      country_iso: z.enum([isoCode, ...isoCodes]),
+      country_iso: z.enum([isoCode, ...isoCodes]).optional(),
       year: z.number().refine((x) => x > 2020 && x < 2030, {
         message: "Must be a valid year",
       }),

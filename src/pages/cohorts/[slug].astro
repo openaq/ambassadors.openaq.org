@@ -1,6 +1,7 @@
 ---
 import AmbassadorsCard from "@components/people/AmbassadorsCard.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import PageLayout from "@layouts/PageLayout.astro";
 import type { CollectionEntry } from "astro:content";
 import { getCollection, render } from "astro:content";
 
@@ -64,11 +65,11 @@ const sortByName = (
   }
 </style>
 
-<BaseLayout>
+<PageLayout>
   <h1 class="gradient-title">{cohort.data.year}</h1>
   <section class="person-grid">
     {
-      ambassadors
+      people
         .sort(sortByName)
         .map((ambassador) => (
           <AmbassadorsCard
@@ -82,4 +83,4 @@ const sortByName = (
         ))
     }
   </section>
-</BaseLayout>
+</PageLayout>

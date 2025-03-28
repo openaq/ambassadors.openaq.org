@@ -5,9 +5,6 @@ import Logo from "@assets/logo.svg";
 import { getCollection } from "astro:content";
 
 const cohorts = await getCollection("cohorts");
-
-
-
 ---
 
 <style lang="scss">
@@ -97,7 +94,7 @@ const cohorts = await getCollection("cohorts");
     top: 10px;
     left: 0;
     display: none;
-    height:auto;
+    height: auto;
 
     &:hover {
       visibility: visible;
@@ -316,13 +313,19 @@ const cohorts = await getCollection("cohorts");
           <a class="nav__item explore-data-tab" href="/about">About</a>
         </li>
         <li class="dropdown">
-          <a href="/cohorts/[slug]" class="nav__item">Ambassadors</a>
+          <a class="nav__item">Ambassadors</a>
           <ul class="submenu" aria-label="submenu">
-            {cohorts.map(o => {
-                return <li class="submenu__item">
-              <a class="nav__item" href={`/cohorts/${o.data.year}/`}>{o.data.year}</a>
-            </li>
-            })}
+            {
+              cohorts.map((o) => {
+                return (
+                  <li class="submenu__item">
+                    <a class="nav__item" href={`/cohorts/${o.data.year}/`}>
+                      {o.data.year}
+                    </a>
+                  </li>
+                );
+              })
+            }
           </ul>
         </li>
         <li>
