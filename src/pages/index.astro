@@ -88,6 +88,12 @@ const isoCodes = ambassadors.map((ambassador) => {
       gap: 100px;
       align-items: center;
       justify-content: center;
+      @media (max-width: 1000px) {
+        gap: 70px;
+      }
+      @media (max-width: 600px) {
+        gap: 20px;
+      }
     }
   }
 
@@ -118,6 +124,12 @@ const isoCodes = ambassadors.map((ambassador) => {
       width: 40%;
       text-align: center;
       margin: 0 auto;
+      @media (max-width: 1000px) {
+        width: 70%;
+      }
+      @media (max-width: 600px) {
+        width: 100%;
+      }
     }
     .mini-cards {
       margin-top: 20px;
@@ -126,6 +138,14 @@ const isoCodes = ambassadors.map((ambassador) => {
       gap: 20px;
       align-items: center;
       justify-content: center;
+      @media (max-width: 750px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: 550px) {
+        display: flex;
+        flex-direction: column;
+      }
     }
   }
 
@@ -145,6 +165,17 @@ const isoCodes = ambassadors.map((ambassador) => {
       gap: 70px;
       align-items: center;
       justify-content: center;
+      @media (max-width: 1000px) {
+        gap: 20px;
+      }
+      @media (max-width: 700px) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: 550px) {
+        display: flex;
+        flex-direction: column;
+      }
     }
   }
 

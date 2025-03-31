@@ -46,6 +46,26 @@ const { testimonials } = Astro.props;
       }
     }
   }
+  @media (max-width: 650px) {
+    .testimonial-card {
+      &__img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    .testimonial-card {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
 </style>
 {
   testimonials.map((testimonal) => {
