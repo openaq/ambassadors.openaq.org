@@ -1,29 +1,29 @@
 ---
-import MiniCards from '@components/cards/MiniCards.astro';
-import PartnerCards from '@components/cards/PartnerCards.astro';
-import ProjectCard from '@components/cards/ProjectCard.astro';
-import BaseLayout from '@layouts/BaseLayout.astro';
-import Map from '@components/Map.astro';
-import { getCollection } from 'astro:content';
+import MiniCards from "@components/cards/MiniCards.astro";
+import PartnerCards from "@components/cards/PartnerCards.astro";
+import ProjectCard from "@components/cards/ProjectCard.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import Map from "@components/Map.astro";
+import { getCollection } from "astro:content";
 
-const partners = await getCollection('partners');
-const projects = await getCollection('projects');
+const partners = await getCollection("partners");
+const projects = await getCollection("projects");
 
-const ambassadors = await getCollection('ambassadors');
+const ambassadors = await getCollection("ambassadors");
 const isoCodes = ambassadors.map((ambassador) => {
   return ambassador.data.country_iso;
 });
 ---
 
 <style lang="scss">
-  @use 'openaq-design-system/scss/variables' as variables;
+  @use "openaq-design-system/scss/variables" as variables;
 
-  @use 'openaq-design-system/scss/mixins/index.scss' as mixins;
-  @use 'openaq-design-system/scss/utilities/types.scss';
-  @use 'openaq-design-system/scss/utilities/colors.scss';
-  @use 'openaq-design-system/scss/inputs';
+  @use "openaq-design-system/scss/mixins/index.scss" as mixins;
+  @use "openaq-design-system/scss/utilities/types.scss";
+  @use "openaq-design-system/scss/utilities/colors.scss";
+  @use "openaq-design-system/scss/inputs";
 
-  @use 'openaq-design-system/scss/buttons';
+  @use "openaq-design-system/scss/buttons";
 
   .hero-section {
     position: relative;
@@ -72,7 +72,6 @@ const isoCodes = ambassadors.map((ambassador) => {
         width: fit-content;
       }
     }
-
   }
   .partner-section {
     margin-top: 60px;
@@ -134,6 +133,14 @@ const isoCodes = ambassadors.map((ambassador) => {
       margin: 0 auto;
       padding-top: 20px;
     }
+    .project-card {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: row;
+      gap: 70px;
+      align-items: center;
+      justify-content: center;
+    }
   }
 </style>
 
@@ -187,6 +194,10 @@ const isoCodes = ambassadors.map((ambassador) => {
 
   <section class="projects-section">
     <h1>Featured projects</h1>
-    <ProjectCard projects={projects} />
+    <div class="project-card">
+      <ProjectCard projects={projects} />
+      <ProjectCard projects={projects} />
+      <ProjectCard projects={projects} />
+    </div>
   </section>
 </BaseLayout>
