@@ -1,14 +1,14 @@
 ---
-import MediumLogo from '@assets/svg/medium.svg';
-import FacebookLogo from '@assets/svg/facebook.svg';
-import GithubLogo from '@assets/svg/github.svg';
-import SlackLogo from '@assets/svg/slack.svg';
-import LogoWhite from '@assets/svg/logo_white.svg';
-import XLogo from '@assets/svg/x_logo.svg';
-import BlueskyLogo from '@assets/svg/bluesky_logo.svg';
-import LinkedinLogo from '@assets/svg/linkedin.svg';
-import YoutubeLogo from '@assets/svg/youtube.svg';
- ---
+import MediumLogo from "@assets/svg/medium.svg";
+import FacebookLogo from "@assets/svg/facebook.svg";
+import GithubLogo from "@assets/svg/github.svg";
+import SlackLogo from "@assets/svg/slack.svg";
+import LogoWhite from "@assets/svg/logo_white.svg";
+import XLogo from "@assets/svg/x_logo.svg";
+import BlueskyLogo from "@assets/svg/bluesky_logo.svg";
+import LinkedinLogo from "@assets/svg/linkedin.svg";
+import YoutubeLogo from "@assets/svg/youtube.svg";
+---
 
 <style lang="scss">
   @use "openaq-design-system/scss/variables" as variables;
@@ -104,7 +104,6 @@ import YoutubeLogo from '@assets/svg/youtube.svg';
     @media (max-width: 800px) {
       & {
         flex-direction: column;
-        padding: 10px 80px;
         justify-content: center;
         align-items: center;
 
@@ -144,7 +143,6 @@ import YoutubeLogo from '@assets/svg/youtube.svg';
 
         &__content {
           padding: 40px 24px 0 24px;
-
           display: flex;
           flex-direction: column;
           justify-content: flex-start;
@@ -199,7 +197,7 @@ import YoutubeLogo from '@assets/svg/youtube.svg';
     svg {
       margin-bottom: -1px;
       fill: #241050;
-      height:67px;
+      height: 67px;
       width: 167%;
     }
   }
@@ -218,140 +216,140 @@ import YoutubeLogo from '@assets/svg/youtube.svg';
         class="shape-fill"></path>
     </svg>
   </div>
-    <div class="footer__content">
-      <section class="nav-section">
-        <LogoWhite width="72" height="40" aria-label="OpenAQ logo" />
-        <nav class="footer-nav">
-          <a class="footer-about" href="/about">About</a>
-          <a class="footer-ambassadors" href="/ambassadors">Ambassadors</a>
-          <a class="footer-aply" href="/apply">Apply</a>
-          <a class="footer-support" href="/support">Support</a>
-        </nav>
-      </section>
-      <section class="contact-section">
-        <span class="type-subtitle-3 text-white"
-          >Stay up to date with our quarterly newsletter</span
-        >
-        <form
-          action="//openaq.us10.list-manage.com/subscribe/post?u=ca93b2911fff40db15f6e7203&id=e65a8618a1"
-          method="post"
-          id="mc-embedded-subscribe-form"
-          class="subscribe-form"
-          name="mc-embedded-subscribe-form"
-          target="_blank"
-          novalidate
-        >
-          <input
-            type="email"
-            name="EMAIL"
-            id="mce-EMAIL"
-            placeholder="Enter your email"
-            class="text-input"
-            required
-          />
-
-          <!-- First Name Field -->
-          <input
-            type="text"
-            name="FNAME"
-            id="mce-FNAME"
-            placeholder="First Name"
-            class="text-input"
-          />
-
-          <!-- Last Name Field -->
-          <input
-            type="text"
-            name="LNAME"
-            id="mce-LNAME"
-            placeholder="Last Name"
-            class="text-input"
-          />
-
-          <button class="btn btn-primary js-footer-subscribe" type="submit">
-            Subscribe
-          </button>
-
-          <div style="position: absolute; left: -5000px" aria-hidden="true">
-            <input
-              type="text"
-              name="b_ca93b2911fff40db15f6e7203_e65a8618a1"
-              tabindex="-1"
-            />
-          </div>
-        </form>
-
-        <div class="social-links">
-          <a
-            href="https://x.com/openaq"
-            class="social-circle x-nav js-footer-x-link"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            <XLogo size={18} />
-          </a>
-          <a
-            href="https://bsky.app/profile/openaq.org"
-            class="social-circle bsky-nav js-footer-bsky-link"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            <BlueskyLogo size={18} />
-          </a>
-          <a
-            href="https://join.slack.com/t/openaq/shared_invite/zt-yzqlgsva-v6McumTjy2BZnegIK9XCVw"
-            class="social-circle slack-nav js-footer-slack-link"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            <SlackLogo size={18} />
-          </a>
-          <a
-            href="https://github.com/openaq"
-            class="social-circle github-nav js-footer-github-link"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            <GithubLogo size={18} />
-          </a>
-          <a
-            href="https://www.linkedin.com/company/openaq"
-            class="social-circle linkedIn-nav js-footer-linkedIn-link"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            <LinkedinLogo size={18} />
-          </a>
-          <a
-            href="https://openaq.medium.com/"
-            class="social-circle medium-nav js-footer-medium-link"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            <MediumLogo size={18} />
-          </a>
-          <a
-            href="https://www.youtube.com/@openaq4768"
-            class="social-circle youtube-nav js-footer-youtube-link"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            <YoutubeLogo size={18} />
-          </a>
-          <a
-            href="https://www.facebook.com/openaq/"
-            class="social-circle fb-nav js-footer-fb-link"
-            target="_blank"
-            rel="noreferrer noopener"
-          >
-            <FacebookLogo size={18} />
-          </a>
-        </div>
-      </section>
-    </div>
-    <div class="sub-footer">
-      <span class="copyright text-white type-body-4"
-        >&#169; 2025 OpenAQ. All rights reserved.</span
+  <div class="footer__content">
+    <section class="nav-section">
+      <LogoWhite width="72" height="40" aria-label="OpenAQ logo" />
+      <nav class="footer-nav">
+        <a class="footer-about" href="/about">About</a>
+        <a class="footer-ambassadors" href="/ambassadors">Ambassadors</a>
+        <a class="footer-aply" href="/apply">Apply</a>
+        <a class="footer-support" href="/support">Support</a>
+      </nav>
+    </section>
+    <section class="contact-section">
+      <span class="type-subtitle-3 text-white"
+        >Stay up to date with our quarterly newsletter</span
       >
-    </div>
+      <form
+        action="//openaq.us10.list-manage.com/subscribe/post?u=ca93b2911fff40db15f6e7203&id=e65a8618a1"
+        method="post"
+        id="mc-embedded-subscribe-form"
+        class="subscribe-form"
+        name="mc-embedded-subscribe-form"
+        target="_blank"
+        novalidate
+      >
+        <input
+          type="email"
+          name="EMAIL"
+          id="mce-EMAIL"
+          placeholder="Enter your email"
+          class="text-input"
+          required
+        />
+
+        <!-- First Name Field -->
+        <input
+          type="text"
+          name="FNAME"
+          id="mce-FNAME"
+          placeholder="First Name"
+          class="text-input"
+        />
+
+        <!-- Last Name Field -->
+        <input
+          type="text"
+          name="LNAME"
+          id="mce-LNAME"
+          placeholder="Last Name"
+          class="text-input"
+        />
+
+        <button class="btn btn-primary js-footer-subscribe" type="submit">
+          Subscribe
+        </button>
+
+        <div style="position: absolute; left: -5000px" aria-hidden="true">
+          <input
+            type="text"
+            name="b_ca93b2911fff40db15f6e7203_e65a8618a1"
+            tabindex="-1"
+          />
+        </div>
+      </form>
+
+      <div class="social-links">
+        <a
+          href="https://x.com/openaq"
+          class="social-circle x-nav js-footer-x-link"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <XLogo size={18} />
+        </a>
+        <a
+          href="https://bsky.app/profile/openaq.org"
+          class="social-circle bsky-nav js-footer-bsky-link"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <BlueskyLogo size={18} />
+        </a>
+        <a
+          href="https://join.slack.com/t/openaq/shared_invite/zt-yzqlgsva-v6McumTjy2BZnegIK9XCVw"
+          class="social-circle slack-nav js-footer-slack-link"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <SlackLogo size={18} />
+        </a>
+        <a
+          href="https://github.com/openaq"
+          class="social-circle github-nav js-footer-github-link"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <GithubLogo size={18} />
+        </a>
+        <a
+          href="https://www.linkedin.com/company/openaq"
+          class="social-circle linkedIn-nav js-footer-linkedIn-link"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <LinkedinLogo size={18} />
+        </a>
+        <a
+          href="https://openaq.medium.com/"
+          class="social-circle medium-nav js-footer-medium-link"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <MediumLogo size={18} />
+        </a>
+        <a
+          href="https://www.youtube.com/@openaq4768"
+          class="social-circle youtube-nav js-footer-youtube-link"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <YoutubeLogo size={18} />
+        </a>
+        <a
+          href="https://www.facebook.com/openaq/"
+          class="social-circle fb-nav js-footer-fb-link"
+          target="_blank"
+          rel="noreferrer noopener"
+        >
+          <FacebookLogo size={18} />
+        </a>
+      </div>
+    </section>
+  </div>
+  <div class="sub-footer">
+    <span class="copyright text-white type-body-4"
+      >&#169; 2025 OpenAQ. All rights reserved.</span
+    >
+  </div>
 </footer>
