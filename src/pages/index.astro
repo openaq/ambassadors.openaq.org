@@ -5,9 +5,11 @@ import ProjectCard from "@components/cards/ProjectCard.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Map from "@components/Map.astro";
 import { getCollection } from "astro:content";
+import TestimonialCard from "@components/cards/TestimonialCard.astro";
 
 const partners = await getCollection("partners");
 const projects = await getCollection("projects");
+const testimonials = await getCollection("testimonials");
 
 const ambassadors = await getCollection("ambassadors");
 const isoCodes = ambassadors.map((ambassador) => {
@@ -110,6 +112,8 @@ const isoCodes = ambassadors.map((ambassador) => {
   }
   .cards-section {
     margin-top: 60px;
+    overflow: hidden;
+    padding: 80px 60px;
     h1 {
       width: 40%;
       text-align: center;
@@ -128,6 +132,7 @@ const isoCodes = ambassadors.map((ambassador) => {
   .projects-section {
     margin-top: 60px;
     background-color: #e2ebe1;
+    padding: 40px 20px;
     h1 {
       text-align: center;
       margin: 0 auto;
@@ -140,6 +145,25 @@ const isoCodes = ambassadors.map((ambassador) => {
       gap: 70px;
       align-items: center;
       justify-content: center;
+    }
+  }
+
+  .testimonials-section {
+    padding: 80px 60px;
+
+    h1 {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .testimonial-card {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-items: center;
+      gap: 70px 20px;
+      margin: 0 auto;
+      flex-wrap: wrap;
     }
   }
 </style>
@@ -198,6 +222,13 @@ const isoCodes = ambassadors.map((ambassador) => {
       <ProjectCard projects={projects} />
       <ProjectCard projects={projects} />
       <ProjectCard projects={projects} />
+    </div>
+  </section>
+
+  <section class="testimonials-section">
+    <h1>Testimonials</h1>
+    <div class="testimonial-card">
+      <TestimonialCard testimonials={testimonials} />
     </div>
   </section>
 </BaseLayout>

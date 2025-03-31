@@ -1,0 +1,69 @@
+---
+const { testimonials } = Astro.props;
+---
+
+<style lang="scss">
+  @use "openaq-design-system/scss/variables";
+  @use "openaq-design-system/scss/mixins/index.scss" as mixins;
+
+  .testimonial-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+
+    &__img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      overflow: hidden;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .testimonial-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 15px;
+      text-align: left;
+      max-width: 350px;
+      flex-grow: 1;
+
+      h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 5px;
+      }
+      p {
+        font-size: 1.3rem;
+        font-weight: bold;
+      }
+    }
+  }
+</style>
+{
+  testimonials.map((testimonal) => {
+    return (
+      <article class="testimonial-card">
+        <div class="testimonial-card__img">
+          <a
+            href={testimonal.data.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src={testimonal.data.image.src} alt={testimonal.data.name} />
+          </a>
+        </div>
+        <div class="testimonial-content">
+          <p>"{testimonal.body}"</p>
+        </div>
+      </article>
+    );
+  })
+}

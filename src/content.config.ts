@@ -60,9 +60,19 @@ const cohorts = defineCollection({
       }),
   });
 
+  const testimonials = defineCollection({
+    loader: glob({ pattern: ["*.md"], base: "src/content/testimonials" }),
+    schema: ({ image }) =>
+      z.object({
+        name: z.string(),
+        image: image()
+      }),
+  });
+
 export const collections = {
     ambassadors,
     cohorts,
     partners,
-    projects
+    projects,
+    testimonials
 };
