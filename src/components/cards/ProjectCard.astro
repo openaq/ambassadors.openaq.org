@@ -1,5 +1,5 @@
 ---
-const { projects } = Astro.props;
+const { project } = Astro.props;
 ---
 
 <style lang="scss">
@@ -8,12 +8,17 @@ const { projects } = Astro.props;
 
   .project-card {
     background-color: white;
-    display: block;
     height: auto;
     width: 240px;
     border-radius: 10px;
     overflow: hidden;
     transition: transform 0.2s ease-in-out;
+    pointer-events: auto;
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
 
     &:hover {
       transform: translateY(-5px);
@@ -46,20 +51,15 @@ const { projects } = Astro.props;
     }
   }
 </style>
-{
-  projects.map((project) => {
-    return (
-      <article class="project-card">
-        <div class="project-card__img">
-          <a href={project.data.url} target="_blank" rel="noopener noreferrer">
-            <img src={project.data.image.src} alt={project.data.name} />
-          </a>
-        </div>
-        <div class="project-content">
-          <h3>{project.data.name}</h3>
-          <p>{project.body}</p>
-        </div>
-      </article>
-    );
-  })
-}
+
+<article class="project-card">
+  <a href={`/projects/${project.id}`} rel="noopener noreferrer">
+    <div class="project-card__img">
+      <img src={project.data.image.src} alt={project.data.name} />
+    </div>
+    <div class="project-content">
+      <h3>{project.data.name}</h3>
+      <p>{project.body}</p>
+    </div>
+  </a>
+</article>

@@ -158,21 +158,22 @@ const isoCodes = ambassadors.map((ambassador) => {
       margin: 0 auto;
       padding-top: 20px;
     }
-    .project-card {
+    .project-container {
       margin-top: 20px;
       display: flex;
       flex-direction: row;
       gap: 70px;
       align-items: center;
       justify-content: center;
-      @media (max-width: 1000px) {
+
+      @media (max-width: 1100px) {
         gap: 20px;
       }
-      @media (max-width: 700px) {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
+      @media (max-width: 850px) {
+        display: flex;
+        flex-wrap: wrap;
       }
-      @media (max-width: 550px) {
+      @media (max-width: 580px) {
         display: flex;
         flex-direction: column;
       }
@@ -249,10 +250,14 @@ const isoCodes = ambassadors.map((ambassador) => {
 
   <section class="projects-section">
     <h1>Featured projects</h1>
-    <div class="project-card">
-      <ProjectCard projects={projects} />
-      <ProjectCard projects={projects} />
-      <ProjectCard projects={projects} />
+    <div class="project-container">
+      {
+        projects.map((project) => (
+          // <a href={`/projects/${project.id}`}>
+          <ProjectCard project={project} />
+          // </a>
+        ))
+      }
     </div>
   </section>
 
