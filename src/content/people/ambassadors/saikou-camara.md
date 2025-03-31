@@ -4,7 +4,7 @@ image: "@assets/images/saikou-no-bkg.png"
 linkedin: "https://www.linkedin.com/in/saikou-camara-583772210/"
 country_iso: "GM"
 year: 2025
-timestamp: "00:02:22"
+timestamp: 60
 presentation: "public/foobar.pdf"
 ---
 

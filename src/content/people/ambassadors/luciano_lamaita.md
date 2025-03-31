@@ -5,7 +5,7 @@ twitter: "https://twitter.com/lemeit"
 linkedin: "https://www.linkedin.com/in/llamaita/"
 researchgate: "https://www.researchgate.net/profile/Luciano-Lamaita"
 year: 2023
-timestamp: "00:02:22"
+timestamp: 60
 country_iso: "AR"
 presentation: "public/foobar.pdf"
 ---

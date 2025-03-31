@@ -2,7 +2,7 @@
 name: "Azjargal (Aza) Tsogtsaikhan"
 image: "@assets/images/Aza.png"
 year: 2021
-timestamp: "00:02:22"
+timestamp: 60
 country_iso: "MN"
 presentation: "public/foobar.pdf"
 ---

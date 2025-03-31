@@ -4,7 +4,7 @@ image: "@assets/images/jihan_fauziah_hamdi.png"
 linkedin: "https://www.linkedin.com/in/jihan-fauziah-hamdi-096008182"
 instagram: "https://www.instagram.com/jihanfh"
 year: 2023
-timestamp: "00:02:22"
+timestamp: 60
 country_iso: "ID"
 presentation: "public/foobar.pdf"
 ---

@@ -4,6 +4,7 @@ import PageLayout from "@layouts/PageLayout.astro";
 import Map from '@components/Map.astro';
 import type { CollectionEntry } from "astro:content";
 import { getCollection, render } from "astro:content";
+import Youtube from "@components/Youtube.astro";
 
 export async function getStaticPaths() {
   const cohorts = await getCollection("cohorts");
@@ -90,4 +91,10 @@ const sortByName = (
   <section>
     <Map isoCodes={isoCodes} />
   </section>
+  { cohort.data.youtube_id ? 
+  <section>
+    <Youtube youtubeId={cohort.data.youtube_id} />
+  </section>
+  : ''
+  }
 </PageLayout>

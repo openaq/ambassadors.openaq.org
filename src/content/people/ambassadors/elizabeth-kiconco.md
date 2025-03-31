@@ -5,7 +5,7 @@ x: "https://x.com/BethKiconco"
 linkedin: "https://www.linkedin.com/in/kiconco-elizabeth/"
 country_iso: "UG"
 year: 2025
-timestamp: "00:02:22"
+timestamp: 60
 presentation: "public/foobar.pdf"
 ---
 

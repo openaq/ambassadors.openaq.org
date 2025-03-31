@@ -3,7 +3,7 @@ name: "Malkia Moraa Abuga"
 image: "@assets/images/malkia-moraa-abuga.png"
 linkedin: "https://www.linkedin.com/in/malkia-abuga/"
 year: 2023
-timestamp: "00:02:22"
+timestamp: 60
 country_iso: "KE"
 presentation: "public/foobar.pdf"
 ---

@@ -4,7 +4,7 @@ image: "@assets/images/ashik-no-bkg.png"
 linkedin: "https://in.linkedin.com/in/ashik-s-v-6b9445149"
 country_iso: "IN"
 year: 2025
-timestamp: "00:02:22"
+timestamp: 60
 presentation: "public/foobar.pdf"
 ---
 

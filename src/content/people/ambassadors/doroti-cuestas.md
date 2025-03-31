@@ -4,7 +4,7 @@ image: "@assets/images/doroti-no-bkg.png"
 linkedin: "https://www.linkedin.com/in/doroti-cuestas/"
 country_iso: "PE"
 year: 2025
-timestamp: "00:02:22"
+timestamp: 60
 presentation: "public/foobar.pdf"
 ---
 

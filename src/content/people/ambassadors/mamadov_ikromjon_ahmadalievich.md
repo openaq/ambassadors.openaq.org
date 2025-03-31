@@ -4,7 +4,7 @@ image: "@assets/images/ikrom-pic.png"
 linkedin: "https://www.linkedin.com/in/ikromjon-mamadov-938468239/"
 facebook: "https://www.facebook.com/ikrom.mamadov"
 year: 2023
-timestamp: "00:02:22"
+timestamp: 60
 country_iso: "TJ"
 presentation: "public/foobar.pdf"
 ---

@@ -4,7 +4,7 @@ image: "@assets/images/abid-omar-pic.png"
 twitter: "https://twitter.com/abido"
 linkedin: "https://www.linkedin.com/in/abidomar/"
 year: 2023
-timestamp: "00:02:22"
+timestamp: 60
 country_iso: "PK"
 presentation: "public/foobar.pdf"
 ---

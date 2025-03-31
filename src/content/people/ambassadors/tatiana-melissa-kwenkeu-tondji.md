@@ -5,7 +5,7 @@ twitter: "https://twitter.com/MelissaKwenkeu"
 linkedin: "https://www.linkedin.com/in/melissa-kwenkeu-332609125"
 country_iso: "CM"
 year: 2024
-timestamp: "00:02:22"
+timestamp: 60
 presentation: "public/foobar.pdf"
 ---
 

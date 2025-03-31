@@ -14,7 +14,7 @@ const ambassadors = defineCollection({
       year: z.number().refine((x) => x > 2020 && x < 2030, {
         message: "Must be a valid year",
       }),
-      timestamp:  z.string().time(),
+      timestamp:  z.number(),
       presentation: z.string(),
       email: z.string().email().optional(),
       image: image(),
@@ -37,7 +37,7 @@ const cohorts = defineCollection({
         year: z.number().refine((x) => x > 2020 && x < 2030, {
           message: "Must be a valid year",
         }),
-        youtube_url: z.string().url(),
+        youtube_id: z.string().optional(),
       }),
   });
 

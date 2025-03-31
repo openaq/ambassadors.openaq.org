@@ -1,0 +1,33 @@
+---
+interface Props {
+    youtubeId: string;
+    timestamp?: number;
+}
+
+const { youtubeId, timestamp } = Astro.props;
+
+const timestampParam = timestamp ? `?start=${timestamp}` : '';
+const url = `https://www.youtube-nocookie.com/embed/${youtubeId}${timestampParam}`;
+---
+
+<style lang="scss">
+  .container {
+    display: flex;
+    justify-content: center;
+
+    iframe {
+      aspect-ratio: 16 / 9;
+      width: 80% !important;
+      border: 0px;
+    }
+
+    margin: 100px 0;
+  }
+</style>
+
+<div class="container">
+  <iframe
+    src={url}
+    allow="encrypted-media"
+    allowfullscreen></iframe>
+</div>

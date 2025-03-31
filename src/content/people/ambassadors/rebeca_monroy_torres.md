@@ -5,7 +5,7 @@ linkedin: "https://www.linkedin.com/in/rebeca-monroy-torres-99543b2b/"
 researchgate: "https://www.researchgate.net/profile/Rebeca-Monroy-Torres"
 google_scholar: "https://scholar.google.com.mx/citations?user=f-kEGd4AAAAJ&hl=es"
 year: 2023
-timestamp: "00:02:22"
+timestamp: 60
 country_iso: "MX"
 presentation: "public/foobar.pdf"
 ---

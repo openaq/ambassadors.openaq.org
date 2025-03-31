@@ -4,7 +4,7 @@ image: "@assets/images/rafa.png"
 email: "rafaborth@gmail.com"
 linkedin: "https://www.linkedin.com/in/rafaela-chiminelli-borth/ "
 year: 2024
-timestamp: "00:02:22"
+timestamp: 60
 country_iso: "BR"
 presentation: "public/foobar.pdf"
 ---

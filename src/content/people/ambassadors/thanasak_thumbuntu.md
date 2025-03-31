@@ -3,7 +3,7 @@ name: "Thanasak Thumbuntu"
 image: "@assets/images/thanasak-thumbuntu.png"
 linkedin: "https://www.linkedin.com/in/thanasak-thumbuntu-ab1170118/"
 year: 2023
-timestamp: "00:02:22"
+timestamp: 60
 country_iso: "TH"
 presentation: "public/foobar.pdf"
 ---

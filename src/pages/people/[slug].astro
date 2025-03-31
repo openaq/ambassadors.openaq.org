@@ -1,8 +1,9 @@
 ---
 import PageLayout from "@layouts/PageLayout.astro";
-import { getCollection, render, type CollectionEntry } from "astro:content";
+import { getCollection, getEntry, render, type CollectionEntry } from "astro:content";
 import { Image } from "astro:assets";
 import SocialIcons from "@components/people/SocialIcons.astro";
+import Youtube from "@components/Youtube.astro";
 
 export async function getStaticPaths() {
   const ambassadors = await getCollection("ambassadors");
@@ -29,6 +30,9 @@ const socials = (entry: CollectionEntry<CollectionName>) => {
 };
 
 const { ambassador } = Astro.props;
+const cohorts = await getCollection('cohorts');
+
+const cohort = cohorts.filter(o => o.data.year === ambassador.data.year)[0];
 
 const { Content } = await render(ambassador);
 ---
@@ -111,6 +115,7 @@ const { Content } = await render(ambassador);
 
 <PageLayout frontmatter={ambassador.data}>
   <div class="person-content">
+
     <article class="person">
       <Image
         src={ambassador.data.image}
@@ -128,4 +133,9 @@ const { Content } = await render(ambassador);
       </div>
     </article>
   </div>
+  {
+    cohort.data.youtube_id && ambassador.data.timestamp ?
+    <Youtube youtubeId={cohort.data.youtube_id} timestamp={ambassador.data.timestamp} />
+    : ''
+  }
 </PageLayout>

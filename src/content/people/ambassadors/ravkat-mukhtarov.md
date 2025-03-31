@@ -3,7 +3,7 @@ name: "Ravkat Mukhtarov"
 image: "@assets/images/ravkat.png"
 country_iso: "KZ"
 year: 2024
-timestamp: "00:02:22"
+timestamp: 60
 presentation: "public/foobar.pdf"
 ---
 

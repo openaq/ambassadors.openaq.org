@@ -4,7 +4,7 @@ image: "@assets/images/maiha.png"
 linkedin: "https://www.linkedin.com/in/aminathmaiha/"
 country_iso: "ML"
 year: 2024
-timestamp: "00:02:22"
+timestamp: 60
 presentation: "public/foobar.pdf"
 ---
 
