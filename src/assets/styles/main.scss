@@ -5,6 +5,24 @@
 
 @use "openaq-design-system/scss/variables";
 
+.gradient-title {
+  @include mixins.display1;
+  margin: 40px 0;
+
+  background-color: variables.$lavender100;
+  background-image: linear-gradient(
+    92deg,
+    variables.$sky120 0%,
+    variables.$lavender100 10%
+  );
+  background-size: 100%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
 @font-face {
   font-family: "Space Grotesk";
   src: url("/fonts/SpaceGrotesk-Regular.woff2") format("woff2"),
