@@ -1,14 +1,13 @@
 ---
 import AmbassadorsCard from "@components/people/AmbassadorsCard.astro";
 import PageLayout from "@layouts/PageLayout.astro";
-import Map from '@components/Map.astro';
+import Map from "@components/Map.astro";
 import type { CollectionEntry } from "astro:content";
 import { getCollection, render } from "astro:content";
 import Youtube from "@components/Youtube.astro";
 
 export async function getStaticPaths() {
   const cohorts = await getCollection("cohorts");
-  console.log("Fetched cohorts:", cohorts);
 
   return [...cohorts].map((cohort) => ({
     params: { slug: cohort.id },
@@ -25,9 +24,9 @@ type CollectionName = "ambassadors";
 
 const people = ambassadors.filter((o) => o.data.year === cohort.data.year);
 
-const isoCodes = people.map(ambassador => {
-    return ambassador.data.country_iso
-})
+const isoCodes = people.map((ambassador) => {
+  return ambassador.data.country_iso;
+});
 
 const socials = (entry: CollectionEntry<CollectionName>) => {
   return {
@@ -50,13 +49,15 @@ const sortByName = (
 ---
 
 <style lang="scss">
+  .cohort-page {
+    padding-bottom: 100px;
+  }
   .person-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     column-gap: 22px;
     row-gap: 22px;
-    margin: 0 auto;
-    overflow: hidden;
+    overflow: visible;
 
     @media (max-width: 800px) {
       grid-template-columns: repeat(2, 1fr);
@@ -71,30 +72,38 @@ const sortByName = (
 </style>
 
 <PageLayout>
-  <h1 class="gradient-title">{cohort.data.year}</h1>
-  <section class="person-grid">
+  <div class="cohort-page">
+    <h1 class="gradient-title">{cohort.data.year} Cohort</h1>
+    <div class="cohort-description">
+      <Content />
+    </div>
+    <section class="person-grid">
+      {
+        people
+          .sort(sortByName)
+          .map((ambassador) => (
+            <AmbassadorsCard
+              name={ambassador.data.name}
+              country={ambassador.data.country_iso}
+              url={`/people/${ambassador.id}/`}
+              data={ambassador.body}
+              socials={socials(ambassador)}
+              portrait={ambassador.data.image}
+            />
+          ))
+      }
+    </section>
+    <section>
+      <Map isoCodes={isoCodes} />
+    </section>
     {
-      people
-        .sort(sortByName)
-        .map((ambassador) => (
-          <AmbassadorsCard
-            name={ambassador.data.name}
-            country={ambassador.data.country_iso}
-            url={`/people/${ambassador.id}/`}
-            data={ambassador.body}
-            socials={socials(ambassador)}
-            portrait={ambassador.data.image}
-          />
-        ))
+      cohort.data.youtube_id ? (
+        <section>
+          <Youtube youtubeId={cohort.data.youtube_id} />
+        </section>
+      ) : (
+        ""
+      )
     }
-  </section>
-  <section>
-    <Map isoCodes={isoCodes} />
-  </section>
-  { cohort.data.youtube_id ? 
-  <section>
-    <Youtube youtubeId={cohort.data.youtube_id} />
-  </section>
-  : ''
-  }
+  </div>
 </PageLayout>
