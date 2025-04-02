@@ -27,13 +27,12 @@ for (const cohort of cohorts) {
   const isoCodes = people.map((ambassador) => {
     return ambassador.data.country_iso;
   });
-  cohortLookups.set(String(cohort.data.year), isoCodes)
+  cohortLookups.set(String(cohort.data.year), isoCodes);
 }
 
-
 export async function GET({ params, request }) {
-   const id = params.id;
-  const isoCodes = cohortLookups.get(id)
+  const id = params.id;
+  const isoCodes = cohortLookups.get(id);
 
   const paths = world.features.map((o) => {
     return `<path d="${path(o.geometry)}" fill="${
@@ -53,5 +52,9 @@ export async function GET({ params, request }) {
 }
 
 export function getStaticPaths() {
-  return [...Array.from(cohortLookups.keys()).map(o=> { return { params: { id: o } } })];
+  return [
+    ...Array.from(cohortLookups.keys()).map((o) => {
+      return { params: { id: o } };
+    }),
+  ];
 }
