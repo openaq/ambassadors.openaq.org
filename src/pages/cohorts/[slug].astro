@@ -69,6 +69,12 @@ const sortByName = (
       width: 250px;
     }
   }
+
+  .map-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: attr(width) / attr(height);
+  }
 </style>
 
 <PageLayout>
@@ -94,7 +100,8 @@ const sortByName = (
       }
     </section>
     <section>
-      <Map isoCodes={isoCodes} />
+        <h2>Representing {new Set(isoCodes).size} countries</h2>
+        <img class="map-image" src=`/imgs/map/${cohort.data.year}.png` alt="" height="392" width="800"/>
     </section>
     {
       cohort.data.youtube_id ? (
