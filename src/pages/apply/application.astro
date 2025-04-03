@@ -8,12 +8,19 @@ const active = referencesData?.data.active;
 const jotformId = referencesData?.data.jotformId;
 ---
 
+<style lang="scss">
+  .application-page {
+    padding-bottom: 100px;
+  }
+</style>
+
 <PageLayout>
+  <div class="application-page">
     { active && jotformId ? <script
   is:inline
     type="text/javascript"
     src=`https://form.jotform.com/jsform/${jotformId}`></script>
     : <h1>Not currently accepting applications</h1>
 }
-
+</div>
 </PageLayout>

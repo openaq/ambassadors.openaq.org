@@ -23,8 +23,6 @@ analyze, communicate and advocate for clean air. We work to facilitate
 collaboration across sectors and geographies so that those working with
 air quality data learn from each other.
 
----
-
 ## As an OpenAQ Community Ambassador, you will:
 
 - Grow leadership and technical skills to advance your work to fight air inequality
@@ -35,8 +33,6 @@ air quality data learn from each other.
 - Provide key perspectives to OpenAQ that help the organization increase its contributions to your and other communities
 - Be featured on the OpenAQ website and social media as an OpenAQ Community Ambassador
 - Learn about diverse opportunities such as related workshops, trainings, and conferences (with potential support from OpenAQ in reviewing your application or providing a letter of support)
-
----
 
 ## Qualifications:
 
@@ -61,8 +57,6 @@ participate in the program.
 - Interested in maintaining ongoing mutual relationships with OpenAQ and fellow ambassadors after the close of the program
 - Able to commit at least 200 hours over the course of the program, with an average time commitment of 5 hours per week
 
----
-
 Before you fill out this form, make sure to prepare the following documents (Accepted file types: .doc, .docx or .pdf)
 
 1. **A resume or CV**, no longer than two pages (one page front and back) (filename format: "Name_Resume")
@@ -73,8 +67,6 @@ Before you fill out this form, make sure to prepare the following documents (Acc
    - Describe a particular air quality challenge that your community is facing. How do you intend to tackle this challenge from the learnings you expect from the Ambassador Program?
    - What specific things do you hope to learn and achieve from participating in the OpenAQ Community Ambassador Program?
    - What life skills or professional experience can you share with other Ambassadors in the cohort? Feel free to be creative!
-
----
 
 Once you submit your application, you will receive a confirmation email within **5 business days**.
 

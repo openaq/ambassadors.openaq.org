@@ -131,7 +131,7 @@ import PageLayout from "@layouts/PageLayout.astro";
         text-align: center;
         z-index: 2;
         color: white;
-        font-size: 1.2rem;
+        font-size: 1.8rem;
         font-weight: bold;
         padding: 1rem;
       }
@@ -151,7 +151,7 @@ import PageLayout from "@layouts/PageLayout.astro";
     .support-container {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
+      gap: 20px;
       flex-wrap: no-wrap;
       max-width: 1200px;
       margin: 0 auto;
@@ -182,6 +182,7 @@ import PageLayout from "@layouts/PageLayout.astro";
       font-weight: bold;
       margin-bottom: 0.5rem;
       width: 150px;
+      margin: 0 auto;
     }
 
     .support-card p {
@@ -314,6 +315,91 @@ import PageLayout from "@layouts/PageLayout.astro";
       }
     }
   }
+
+  @media (max-width: 900px) {
+    .why-section {
+      padding: 4rem 3rem;
+    }
+    .support-container {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    .last-section {
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      max-width: 100%;
+      padding: 20px;
+
+      .left-article,
+      .right-article {
+        width: 100%;
+        text-align: center;
+      }
+
+      .left-article {
+        p {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      .right-article {
+        width: 100% !important;
+        p {
+          width: 80% !important;
+        }
+      }
+
+      .vertical-line {
+        display: none;
+      }
+    }
+  }
+  @media (max-width: 750px) {
+    .articles-section {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      .left-article {
+        width: 100%;
+        p {
+          width: 100%;
+        }
+      }
+
+      .right-article {
+        position: relative;
+        width: 100%;
+        transform: none;
+        top: 0;
+        .right-img-overlay {
+          img {
+            height: auto;
+            object-fit: cover;
+          }
+
+          .article-overlay {
+            font-size: 2.2rem;
+            padding: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+  @media (max-width: 450px) {
+    .articles-section {
+      .right-article {
+        .right-img-overlay {
+          .article-overlay {
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
 </style>
 
 <BaseLayout>
@@ -350,8 +436,8 @@ import PageLayout from "@layouts/PageLayout.astro";
       <p>
         Air pollution is, in fact, the 4th leading risk factor for early death
         worldwide and impacts health at all stages of life.
-        <br/> We can, and must,
-        clean up our air, especially to protect the most vulnerable.
+        <br /> We can, and must, clean up our air, especially to protect the most
+        vulnerable.
       </p>
       <a href="#" class="button">Become a Funder</a>
     </section>
