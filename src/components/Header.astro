@@ -3,8 +3,14 @@ const pathname = new URL(Astro.request.url).pathname;
 const currentPath = pathname.split("/")[1];
 import Logo from "@assets/logo.svg";
 import { getCollection } from "astro:content";
-
+import { getEntry } from "astro:content";
 const cohorts = await getCollection("cohorts");
+
+const referencesData = await getEntry("forms", "references");
+const applicationsData = await getEntry("forms", "application");
+
+const referencesActive = referencesData?.data.active ?? false;
+const applicationActive = applicationsData?.data.active ?? false;
 ---
 
 <style lang="scss">
@@ -330,12 +336,41 @@ const cohorts = await getCollection("cohorts");
             }
           </ul>
         </li>
-        <li>
+        <li class="dropdown">
           <a
             href="/apply/about"
             class=`nav__item open-data-tab ${currentPath === "why-open-data" ? "nav__item--active" : ""}`
             >How to Apply</a
           >
+          <ul class="submenu">
+            <li class="submenu__item">
+              <a class="nav__item" href="/apply/about">About</a>
+            </li>
+            {
+              applicationActive && (
+                <li class="submenu__item">
+                  <a class="nav__item" href="/apply/application">
+                    {" "}
+                    Application{" "}
+                  </a>
+                </li>
+              )
+            }
+            {
+              referencesActive && (
+                <li class="submenu__item">
+                  <a class="nav__item" href="/apply/references">
+                    {" "}
+                    References{" "}
+                  </a>
+                </li>
+              )
+            }
+
+            <li class="submenu__item">
+              <a class="nav__item" href="/apply/faq">FAQ</a>
+            </li>
+          </ul>
         </li>
         <li>
           <a
@@ -346,7 +381,7 @@ const cohorts = await getCollection("cohorts");
         </li>
       </ul>
     </nav>
-    <a href="/apply/" class="btn btn-primary learn-more-btn" role="button"
+    <a href="/apply/about" class="btn btn-primary learn-more-btn" role="button"
       >Apply</a
     >
   </div>
