@@ -88,6 +88,14 @@ const cohorts = defineCollection({
       }),
   });
 
+  const faq = defineCollection({
+    loader: glob({ pattern: ["*.md"], base: "src/content/apply/" }),
+    schema: () =>
+      z.object({
+        title: z.string(),
+      }),
+  });
+
 export const collections = {
     ambassadors,
     cohorts,
@@ -95,5 +103,6 @@ export const collections = {
     projects,
     testimonials,
     forms,
-    apply
+    apply,
+    faq
 };

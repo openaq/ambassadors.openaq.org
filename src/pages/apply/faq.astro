@@ -1,0 +1,25 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import { Content, frontmatter } from "@content/apply/faq.md";
+---
+
+<style lang="scss">
+  @use "openaq-design-system/scss/variables" as variables;
+  @use "openaq-design-system/scss/mixins/index" as mixins;
+
+  .faq-page {
+    padding-bottom: 100px;
+  }
+</style>
+
+<PageLayout>
+  <div class="faq-page">
+    <section class="title-section">
+      <h1 class="gradient-title">{frontmatter.title}</h1>
+    </section>
+
+    <section class="description-section">
+      <Content />
+    </section>
+  </div>
+</PageLayout>
