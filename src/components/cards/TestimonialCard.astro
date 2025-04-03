@@ -40,7 +40,7 @@ const { testimonials } = Astro.props;
         font-weight: 600;
         margin-bottom: 5px;
       }
-      p {
+      q {
         font-size: 1.3rem;
         font-weight: bold;
       }
@@ -81,7 +81,7 @@ const { testimonials } = Astro.props;
           </a>
         </div>
         <div class="testimonial-content">
-          <p>"{testimonal.body}"</p>
+          <q class="quote">{testimonal.body}</q>
         </div>
       </article>
     );
