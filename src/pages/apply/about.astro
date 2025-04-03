@@ -1,0 +1,52 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import { Content, frontmatter } from "@content/apply/about.md";
+---
+
+<style lang="scss">
+  @use "openaq-design-system/scss/variables" as variables;
+  @use "openaq-design-system/scss/mixins/index" as mixins;
+
+  h2 {
+    @include mixins.heading1;
+    color: variables.$sky120;
+  }
+  .apply-page {
+    padding-bottom: 100px;
+    .title-section {
+      border-bottom: 2px solid variables.$sky120;
+
+      h1 {
+        margin-bottom: 0;
+      }
+
+      .subtitle {
+        font-weight: bold;
+        margin-bottom: 50px;
+      }
+    }
+    .description-section {
+      padding-top: 50px;
+      margin-bottom: 50px;
+    }
+  }
+</style>
+
+<PageLayout>
+  <div class="apply-page">
+    <section class="title-section">
+      <h1 class="gradient-title">{frontmatter.title}</h1>
+      <p class="subtitle">{frontmatter.subtitle}</p>
+    </section>
+
+    <section class="description-section">
+      <Content />
+    </section>
+
+    <p>
+      <strong
+        >Applications will close by {frontmatter.application_deadline}.</strong
+      >
+    </p>
+  </div>
+</PageLayout>

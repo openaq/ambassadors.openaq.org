@@ -78,11 +78,22 @@ const cohorts = defineCollection({
       }),
   });
 
+  const apply = defineCollection({
+    loader: glob({ pattern: ["*.md"], base: "src/content/apply/" }),
+    schema: () =>
+      z.object({
+        title: z.string(),
+        subtitle: z.string().optional(),
+        application_deadline: z.string().optional(),
+      }),
+  });
+
 export const collections = {
     ambassadors,
     cohorts,
     partners,
     projects,
     testimonials,
-    forms
+    forms,
+    apply
 };
