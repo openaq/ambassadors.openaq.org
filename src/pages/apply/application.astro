@@ -1,0 +1,19 @@
+---
+import PageLayout from '@layouts/PageLayout.astro';
+import { getEntry } from 'astro:content';
+
+const referencesData = await getEntry('forms', 'application');
+
+const active = referencesData?.data.active;
+const jotformId = referencesData?.data.jotformId;
+---
+
+<PageLayout>
+    { active && jotformId ? <script
+  is:inline
+    type="text/javascript"
+    src=`https://form.jotform.com/jsform/${jotformId}`></script>
+    : <h1>Not currently accepting applications</h1>
+}
+
+</PageLayout>
