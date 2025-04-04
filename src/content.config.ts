@@ -1,6 +1,6 @@
 import { defineCollection, z } from "astro:content";
 
-import { glob } from "astro/loaders";
+import { file, glob } from "astro/loaders";
 import { ISO_A2 } from './utils/constants'
 
 const [isoCode, ...isoCodes] = Object.keys(ISO_A2)
@@ -37,7 +37,7 @@ const cohorts = defineCollection({
         year: z.number().refine((x) => x > 2020 && x < 2030, {
           message: "Must be a valid year",
         }),
-        youtube_id: z.string().optional(),
+        youtubeId: z.string().optional(),
       }),
   });
 
@@ -97,7 +97,7 @@ const cohorts = defineCollection({
   });
 
   const homepage = defineCollection({
-    loader: glob({ pattern: ["*.md"], base: "src/content/index.md" }),
+    loader: file("src/content/index.md"),
     schema: () =>
       z.object({
         title: z.string(),
