@@ -2,7 +2,6 @@
 name: "Melusi Molefe"
 image: "@assets/images/melusi.png"
 year: 2021
-timestamp: 60
 countryIso: "ZA"
 presentation: "public/foobar.pdf"
 ---

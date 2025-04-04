@@ -4,7 +4,7 @@ image: "@assets/images/sapana.png"
 linkedin: "https://linkedin.com/in/sapana-bhujel-01814616b"
 countryIso: "NP"
 year: 2024
-timestamp: 60
+timestamp: 3180
 presentation: "public/foobar.pdf"
 ---
 

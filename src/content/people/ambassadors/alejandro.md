@@ -4,7 +4,6 @@ image: "@assets/images/alejandro-no-bkg.png"
 linkedin: "https://linkedin.com/in/alejandro-piracoca-mayorga"
 countryIso: "CO"
 year: 2025
-timestamp: 60
 presentation: "public/foobar.pdf"
 ---
 

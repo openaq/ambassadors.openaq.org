@@ -4,7 +4,7 @@ image: "@assets/images/rakib.png"
 linkedin: "https://linkedin.com/in/rakib-hossain-897856230"
 countryIso: "BD"
 year: 2024
-timestamp: 60
+timestamp: 1962
 presentation: "public/foobar.pdf"
 ---
 

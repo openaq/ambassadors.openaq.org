@@ -5,7 +5,6 @@ x: "https://x.com/oscar1716"
 linkedin: "https://www.linkedin.com/in/oscar-umwanzisiwemuremyi-64bab230"
 countryIso: "RW"
 year: 2025
-timestamp: 60
 presentation: "public/foobar.pdf"
 ---
 

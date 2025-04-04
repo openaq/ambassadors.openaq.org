@@ -2,7 +2,7 @@
 name: "Nurzhan Chunueva"
 image: "@assets/images/nurzhan-chunueva.png"
 year: 2023
-timestamp: 60
+timestamp: 2778
 countryIso: "KG"
 presentation: "public/foobar.pdf"
 ---

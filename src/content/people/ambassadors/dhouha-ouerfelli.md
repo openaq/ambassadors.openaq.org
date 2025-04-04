@@ -4,7 +4,6 @@ image: "@assets/images/dhouha-no-bkg.png"
 linkedin: "https://www.linkedin.com/in/dhouha-ouerfelli1/"
 countryIso: "TN"
 year: 2025
-timestamp: 60
 presentation: "public/foobar.pdf"
 ---
 

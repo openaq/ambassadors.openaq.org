@@ -4,7 +4,6 @@ image: "@assets/images/anshika-no-bkg.png"
 linkedin: "https://www.linkedin.com/in/anshika-kansal"
 countryIso: "IN"
 year: 2025
-timestamp: 60
 presentation: "public/foobar.pdf"
 ---
 

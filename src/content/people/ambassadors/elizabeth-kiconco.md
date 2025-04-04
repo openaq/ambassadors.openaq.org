@@ -5,7 +5,6 @@ x: "https://x.com/BethKiconco"
 linkedin: "https://www.linkedin.com/in/kiconco-elizabeth/"
 countryIso: "UG"
 year: 2025
-timestamp: 60
 presentation: "public/foobar.pdf"
 ---
 

@@ -3,7 +3,7 @@ name: "Victor John Magtulis"
 image: "@assets/images/victor.png"
 linkedin: "https://www.linkedin.com/in/vjmmagtulis"
 year: 2024
-timestamp: 60
+timestamp: 4007
 countryIso: "PH"
 presentation: "public/foobar.pdf"
 ---

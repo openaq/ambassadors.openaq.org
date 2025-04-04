@@ -2,7 +2,6 @@
 name: "Ray Koçi"
 image: "@assets/images/ray.png"
 year: 2021
-timestamp: 60
 countryIso: "AL"
 presentation: "public/foobar.pdf"
 ---

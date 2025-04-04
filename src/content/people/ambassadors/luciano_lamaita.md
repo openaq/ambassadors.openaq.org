@@ -5,7 +5,7 @@ twitter: "https://twitter.com/lemeit"
 linkedin: "https://www.linkedin.com/in/llamaita/"
 researchgate: "https://www.researchgate.net/profile/Luciano-Lamaita"
 year: 2023
-timestamp: 60
+timestamp: 1980
 countryIso: "AR"
 presentation: "public/foobar.pdf"
 ---

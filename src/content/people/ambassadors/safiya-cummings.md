@@ -2,8 +2,9 @@
 name: "Safiya Cummings"
 image: "@assets/images/safiya.png"
 linkedin: "https://www.linkedin.com/in/safiya-cummings/"
+countryIso: "TT"
 year: 2024
-timestamp: 60
+timestamp: 2776
 presentation: "public/foobar.pdf"
 ---
 

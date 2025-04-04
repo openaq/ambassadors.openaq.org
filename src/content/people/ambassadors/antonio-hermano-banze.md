@@ -4,7 +4,7 @@ image: "@assets/images/antonio.png"
 twitter: "https://twitter.com/Antonio_H_Banze"
 countryIso: "MZ"
 year: 2024
-timestamp: 60
+timestamp: 767
 presentation: "public/foobar.pdf"
 ---
 
