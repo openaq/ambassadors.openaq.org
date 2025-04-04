@@ -7,11 +7,10 @@ import { getCollection } from "astro:content";
 import TestimonialCard from "@components/cards/TestimonialCard.astro";
 import { Image } from "astro:assets";
 import AmbassadorsWorkshopImg from "/src/assets/images/ambassadors_workshops_monthly_sessions.webp";
-
+import { frontmatter } from "@content/index.md";
 const partners = await getCollection("partners");
 const projects = await getCollection("projects");
 const testimonials = await getCollection("testimonials");
-
 const ambassadors = await getCollection("ambassadors");
 const isoCodes = ambassadors.map((ambassador) => {
   return ambassador.data.countryIso;
@@ -212,7 +211,7 @@ const isoCodes = ambassadors.map((ambassador) => {
     <div class="hero-curve"></div>
     <div class="hero-content">
       <p>Lorem ipsum dolor sit amet, consectetur.</p>
-      <h1>OpenAQ Ambassadors Program</h1>
+      <h1>{frontmatter.title}</h1>
       <p class="hero-subtitle">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
         sapiente quasi blanditiis earum facilis doloremque. Ipsa quis deserunt
