@@ -1,8 +1,12 @@
 ---
+import type {
+  InferGetStaticPropsType,
+  GetStaticPaths,
+} from "astro";
+
 import PageLayout from "@layouts/PageLayout.astro";
 import {
   getCollection,
-  getEntry,
   render,
   type CollectionEntry,
 } from "astro:content";
@@ -10,20 +14,22 @@ import { Image } from "astro:assets";
 import SocialIcons from "@components/people/SocialIcons.astro";
 import Youtube from "@components/Youtube.astro";
 import { ISO_A2 } from "src/utils/constants";
+import { Schema } from "astro-seo-schema"
+import { personStructuredData, type SocialsDefinition } from 'src/utils/structuredData';
 
-export async function getStaticPaths() {
+export const getStaticPaths = (async () => {
   const ambassadors = await getCollection("ambassadors");
 
   return [...ambassadors].map((ambassador) => ({
     params: { slug: ambassador.id },
     props: { ambassador },
   }));
-}
-type CollectionName = "ambassadors";
+}) satisfies GetStaticPaths;
 
-const socials = (entry: CollectionEntry<CollectionName>) => {
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
+
+const socials = (entry: CollectionEntry<"ambassadors">): SocialsDefinition => {
   return {
-    email: entry.data.email,
     x: entry.data.x,
     mastadon: entry.data.mastadon,
     linkedin: entry.data.linkedin,
@@ -36,6 +42,7 @@ const socials = (entry: CollectionEntry<CollectionName>) => {
 };
 
 const { ambassador } = Astro.props;
+
 const cohorts = await getCollection("cohorts");
 
 const cohort = cohorts.filter((o) => o.data.year === ambassador.data.year)[0];
@@ -143,6 +150,9 @@ const { Content } = await render(ambassador);
 </style>
 
 <PageLayout frontmatter={ambassador.data}>
+  <Schema slot="structured-data"
+  item={personStructuredData(socials(ambassador),ambassador)}
+/>
   <div class="person-content">
     <article class="person">
       <Image
@@ -156,7 +166,7 @@ const { Content } = await render(ambassador);
       <div class="person-description">
         <h1 class="person-name gradient-title">{ambassador.data.name}</h1>
         <h2 class="person-title">{ambassador.data.year}</h2>
-        <h3 class="person-country">{ISO_A2[ambassador.data.country_iso]}</h3>
+        <h3 class="person-country">{ISO_A2[ambassador.data.country_iso!]}</h3>
         <SocialIcons {...socials(ambassador)} />
         <div class="person-bio"><Content /></div>
       </div>

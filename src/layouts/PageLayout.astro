@@ -31,6 +31,7 @@ const { pageTitle } = Astro.props;
 </style>
 
 <BaseLayout>
+  <slot name="structured-data" slot="structured-data" />
   <Breadcrumb />
   <Bubbles />
   <div class="content">
