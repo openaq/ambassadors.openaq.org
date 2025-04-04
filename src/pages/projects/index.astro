@@ -1,0 +1,85 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+---
+
+<style lang="scss">
+  .project-section {
+    padding-bottom: 100px;
+  }
+
+  .project-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 80px;
+  }
+
+  .project-card {
+    background: #ffffff;
+    padding: 8px 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    width: 200px;
+    height: 200px;
+    text-decoration: none;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    .project-image {
+      width: 150px;
+      height: 120px;
+      border-radius: 2px;
+      margin-bottom: 15px;
+      object-fit: cover;
+      border: 1px solid #ddd;
+    }
+
+    .project-name {
+      font-size: 1rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .project-title {
+      font-size: 1rem;
+      color: #777;
+      margin-top: 5px;
+    }
+  }
+</style>
+
+<PageLayout>
+  <section class="project-section">
+    <h1 class="gradient-title">Projects</h1>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam quaerat
+      dolore fugiat dolorum fuga. Doloremque voluptatibus fuga totam, minus
+      exercitationem quod vero praesentium blanditiis voluptatum consectetur.
+      Cumque fugiat eos quas.
+    </p>
+
+    <div class="project-list">
+      {
+        projects.map((project) => (
+          <a href={`/projects/${project.id}`} class="project-card">
+            <Image
+              src={project.data.image}
+              alt={`Image of ${project.data.name}`}
+              class="project-image"
+            />
+            <div class="project-name">{project.data.name}</div>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</PageLayout>
