@@ -338,13 +338,13 @@ const applicationActive = applicationsData?.data.active ?? false;
         </li>
         <li class="dropdown">
           <a
-            href="/apply/about"
+            href="/apply"
             class=`nav__item open-data-tab ${currentPath === "why-open-data" ? "nav__item--active" : ""}`
             >How to Apply</a
           >
           <ul class="submenu">
             <li class="submenu__item">
-              <a class="nav__item" href="/apply/about">About</a>
+              <a class="nav__item" href="/apply">About applying</a>
             </li>
             {
               applicationActive && (
@@ -381,7 +381,7 @@ const applicationActive = applicationsData?.data.active ?? false;
         </li>
       </ul>
     </nav>
-    <a href="/apply/about" class="btn btn-primary learn-more-btn" role="button"
+    <a href="/apply" class="btn btn-primary learn-more-btn" role="button"
       >Apply</a
     >
   </div>
