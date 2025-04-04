@@ -4,15 +4,18 @@ import PageLayout from "@layouts/PageLayout.astro";
 import type { CollectionEntry } from "astro:content";
 import { getCollection, render } from "astro:content";
 import Youtube from "@components/Youtube.astro";
+import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
 
-export async function getStaticPaths() {
-  const cohorts = await getCollection("cohorts");
+export const getStaticPaths = (async () => {
+    const cohorts = await getCollection("cohorts");
 
   return [...cohorts].map((cohort) => ({
     params: { slug: cohort.id },
     props: { cohort },
   }));
-}
+}) satisfies GetStaticPaths; 
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { cohort } = Astro.props;
 

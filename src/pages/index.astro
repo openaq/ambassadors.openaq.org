@@ -3,10 +3,8 @@ import MiniCards from "@components/cards/MiniCards.astro";
 import PartnerCards from "@components/cards/PartnerCards.astro";
 import ProjectCard from "@components/cards/ProjectCard.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
-import Map from "@components/Map.astro";
 import { getCollection } from "astro:content";
 import TestimonialCard from "@components/cards/TestimonialCard.astro";
-import { Image } from 'astro:assets';
 
 const partners = await getCollection("partners");
 const projects = await getCollection("projects");
