@@ -166,7 +166,7 @@ const { Content } = await render(ambassador);
       <div class="person-description">
         <h1 class="person-name gradient-title">{ambassador.data.name}</h1>
         <h2 class="person-title">{ambassador.data.year}</h2>
-        <h3 class="person-country">{ISO_A2[ambassador.data.country_iso!]}</h3>
+        <h3 class="person-country">{ISO_A2[ambassador.data.countryIso!]}</h3>
         <SocialIcons {...socials(ambassador)} />
         <div class="person-bio"><Content /></div>
       </div>

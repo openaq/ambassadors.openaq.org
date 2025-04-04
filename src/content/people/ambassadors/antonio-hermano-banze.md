@@ -2,7 +2,7 @@
 name: "António Hermano Banze"
 image: "@assets/images/antonio.png"
 twitter: "https://twitter.com/Antonio_H_Banze"
-country_iso: "MZ"
+countryIso: "MZ"
 year: 2024
 timestamp: 60
 presentation: "public/foobar.pdf"

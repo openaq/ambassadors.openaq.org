@@ -2,7 +2,7 @@
 name: "Sapana Bhujel"
 image: "@assets/images/sapana.png"
 linkedin: "https://linkedin.com/in/sapana-bhujel-01814616b"
-country_iso: "NP"
+countryIso: "NP"
 year: 2024
 timestamp: 60
 presentation: "public/foobar.pdf"

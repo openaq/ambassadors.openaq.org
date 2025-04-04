@@ -3,7 +3,7 @@ name: "Oscar Umwanzisiwemuremyi"
 image: "@assets/images/oscar-no-bkg.png"
 x: "https://x.com/oscar1716"
 linkedin: "https://www.linkedin.com/in/oscar-umwanzisiwemuremyi-64bab230"
-country_iso: "RW"
+countryIso: "RW"
 year: 2025
 timestamp: 60
 presentation: "public/foobar.pdf"

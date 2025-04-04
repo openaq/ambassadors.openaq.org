@@ -3,7 +3,7 @@ name: "Theresa Igwe Ewona"
 image: "@assets/images/theresa-igwe-pic.png"
 year: 2023
 timestamp: 60
-country_iso: "NG"
+countryIso: "NG"
 presentation: "public/foobar.pdf"
 ---
 

@@ -5,7 +5,7 @@ email: "rafaborth@gmail.com"
 linkedin: "https://www.linkedin.com/in/rafaela-chiminelli-borth/ "
 year: 2024
 timestamp: 60
-country_iso: "BR"
+countryIso: "BR"
 presentation: "public/foobar.pdf"
 ---
 

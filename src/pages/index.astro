@@ -12,7 +12,7 @@ const testimonials = await getCollection("testimonials");
 
 const ambassadors = await getCollection("ambassadors");
 const isoCodes = ambassadors.map((ambassador) => {
-  return ambassador.data.country_iso;
+  return ambassador.data.countryIso;
 });
 ---
 
@@ -239,7 +239,13 @@ const isoCodes = ambassadors.map((ambassador) => {
     <h1>The global reach of OpenAQ ambassadors</h1>
     <h2>Representing {new Set(isoCodes).size} countries</h2>
     <div class="global-image">
-        <img class="map-image" src="/imgs/map/all.png" alt="" height="588" width="1200"/>
+      <img
+        class="map-image"
+        src="/imgs/map/all.png"
+        alt=""
+        height="588"
+        width="1200"
+      />
     </div>
   </section>
   <section class="cards-section">

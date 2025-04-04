@@ -2,7 +2,7 @@
 name: "Aziza Sharofova"
 image: "@assets/images/aziza-no-bkg.png"
 linkedin: "https://www.linkedin.com/in/aziza-sharofova-0185b9226"
-country_iso: "UZ"
+countryIso: "UZ"
 year: 2025
 timestamp: 60
 presentation: "public/foobar.pdf"

@@ -3,7 +3,7 @@ name: "Farah Kazi"
 image: "@assets/images/farah-kazi.png"
 year: 2021
 timestamp: 60
-country_iso: "IN"
+countryIso: "IN"
 presentation: "public/foobar.pdf"
 ---
 

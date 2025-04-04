@@ -7,13 +7,13 @@ import Youtube from "@components/Youtube.astro";
 import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
 
 export const getStaticPaths = (async () => {
-    const cohorts = await getCollection("cohorts");
+  const cohorts = await getCollection("cohorts");
 
   return [...cohorts].map((cohort) => ({
     params: { slug: cohort.id },
     props: { cohort },
   }));
-}) satisfies GetStaticPaths; 
+}) satisfies GetStaticPaths;
 
 type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
@@ -27,7 +27,7 @@ type CollectionName = "ambassadors";
 const people = ambassadors.filter((o) => o.data.year === cohort.data.year);
 
 const isoCodes = people.map((ambassador) => {
-  return ambassador.data.country_iso;
+  return ambassador.data.countryIso;
 });
 
 const socials = (entry: CollectionEntry<CollectionName>) => {
@@ -92,7 +92,7 @@ const sortByName = (
           .map((ambassador) => (
             <AmbassadorsCard
               name={ambassador.data.name}
-              country={ambassador.data.country_iso}
+              country={ambassador.data.countryIso}
               url={`/people/${ambassador.id}/`}
               data={ambassador.body}
               socials={socials(ambassador)}
@@ -102,8 +102,14 @@ const sortByName = (
       }
     </section>
     <section>
-        <h2>Representing {new Set(isoCodes).size} countries</h2>
-        <img class="map-image" src=`/imgs/map/${cohort.data.year}.png` alt="" height="392" width="800"/>
+      <h2>Representing {new Set(isoCodes).size} countries</h2>
+      <img
+        class="map-image"
+        src=`/imgs/map/${cohort.data.year}.png`
+        alt=""
+        height="392"
+        width="800"
+      />
     </section>
     {
       cohort.data.youtube_id ? (

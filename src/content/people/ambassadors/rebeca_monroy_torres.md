@@ -6,7 +6,7 @@ researchgate: "https://www.researchgate.net/profile/Rebeca-Monroy-Torres"
 google_scholar: "https://scholar.google.com.mx/citations?user=f-kEGd4AAAAJ&hl=es"
 year: 2023
 timestamp: 60
-country_iso: "MX"
+countryIso: "MX"
 presentation: "public/foobar.pdf"
 ---
 

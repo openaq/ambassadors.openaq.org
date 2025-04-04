@@ -5,7 +5,7 @@ linkedin: "https://www.linkedin.com/in/jihan-fauziah-hamdi-096008182"
 instagram: "https://www.instagram.com/jihanfh"
 year: 2023
 timestamp: 60
-country_iso: "ID"
+countryIso: "ID"
 presentation: "public/foobar.pdf"
 ---
 

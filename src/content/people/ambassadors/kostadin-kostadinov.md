@@ -6,7 +6,7 @@ linkedin: "https://www.linkedin.com/in/kostadinovmd/"
 github: "https://github.com/kostadinoff "
 orcid: "https://orcid.org/0000-0003-1414-8738"
 google_scholar: "https://scholar.google.com/citations?user=nQOcsJkAAAAJ&hl=bg"
-country_iso: "BG"
+countryIso: "BG"
 year: 2024
 timestamp: 60
 presentation: "public/foobar.pdf"

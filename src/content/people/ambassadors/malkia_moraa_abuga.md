@@ -4,7 +4,7 @@ image: "@assets/images/malkia-moraa-abuga.png"
 linkedin: "https://www.linkedin.com/in/malkia-abuga/"
 year: 2023
 timestamp: 60
-country_iso: "KE"
+countryIso: "KE"
 presentation: "public/foobar.pdf"
 ---
 

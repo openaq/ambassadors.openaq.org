@@ -2,7 +2,7 @@
 name: "Naaima Ben Kadour"
 image: "@assets/images/naaima-no-bkg.png"
 linkedin: "https://www.linkedin.com/in/naaima-ben-kadour/"
-country_iso: "MA"
+countryIso: "MA"
 year: 2025
 timestamp: 60
 presentation: "public/foobar.pdf"

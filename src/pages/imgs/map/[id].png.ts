@@ -17,7 +17,7 @@ const l = Math.min(Math.ceil(x1 - x0), height);
 projection.scale((projection.scale() * (l - 1)) / l).precision(0.2);
 const ambassadors = await getCollection('ambassadors');
 const allIsoCodes = ambassadors.map((ambassador) => {
-  return ambassador.data.country_iso;
+  return ambassador.data.countryIso;
 });
 let cohortLookups = new Map();
 cohortLookups.set('all', allIsoCodes);
@@ -25,7 +25,7 @@ const cohorts = await getCollection('cohorts');
 for (const cohort of cohorts) {
   const people = ambassadors.filter((o) => o.data.year === cohort.data.year);
   const isoCodes = people.map((ambassador) => {
-    return ambassador.data.country_iso;
+    return ambassador.data.countryIso;
   });
   cohortLookups.set(String(cohort.data.year), isoCodes);
 }

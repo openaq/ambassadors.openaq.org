@@ -5,7 +5,7 @@ linkedin: "https://www.linkedin.com/in/ikromjon-mamadov-938468239/"
 facebook: "https://www.facebook.com/ikrom.mamadov"
 year: 2023
 timestamp: 60
-country_iso: "TJ"
+countryIso: "TJ"
 presentation: "public/foobar.pdf"
 ---
 

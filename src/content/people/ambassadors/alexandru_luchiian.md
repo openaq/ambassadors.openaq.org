@@ -4,7 +4,7 @@ image: "@assets/images/alexandru-pic.png"
 linkedin: "https://www.linkedin.com/in/alexandru-luchiian/"
 year: 2023
 timestamp: 60
-country_iso: "RO"
+countryIso: "RO"
 presentation: "public/foobar.pdf"
 ---
 

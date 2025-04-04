@@ -2,7 +2,7 @@
 name: "Alejandro Piracoca"
 image: "@assets/images/alejandro-no-bkg.png"
 linkedin: "https://linkedin.com/in/alejandro-piracoca-mayorga"
-country_iso: "CO"
+countryIso: "CO"
 year: 2025
 timestamp: 60
 presentation: "public/foobar.pdf"

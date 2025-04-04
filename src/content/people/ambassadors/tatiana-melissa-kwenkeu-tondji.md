@@ -3,7 +3,7 @@ name: "Tatiana Melissa Kwenkeu Tondji"
 image: "@assets/images/melissa.png"
 twitter: "https://twitter.com/MelissaKwenkeu"
 linkedin: "https://www.linkedin.com/in/melissa-kwenkeu-332609125"
-country_iso: "CM"
+countryIso: "CM"
 year: 2024
 timestamp: 60
 presentation: "public/foobar.pdf"

@@ -2,7 +2,7 @@
 name: "Rakib Hossain"
 image: "@assets/images/rakib.png"
 linkedin: "https://linkedin.com/in/rakib-hossain-897856230"
-country_iso: "BD"
+countryIso: "BD"
 year: 2024
 timestamp: 60
 presentation: "public/foobar.pdf"

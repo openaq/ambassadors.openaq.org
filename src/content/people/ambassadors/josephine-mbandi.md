@@ -3,7 +3,7 @@ name: "Josephine Mbandi"
 image: "@assets/images/josephine.png"
 year: 2021
 timestamp: 60
-country_iso: "KE"
+countryIso: "KE"
 presentation: "public/foobar.pdf"
 ---
 

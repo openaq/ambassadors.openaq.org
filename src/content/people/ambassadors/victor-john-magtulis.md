@@ -4,7 +4,7 @@ image: "@assets/images/victor.png"
 linkedin: "https://www.linkedin.com/in/vjmmagtulis"
 year: 2024
 timestamp: 60
-country_iso: "PH"
+countryIso: "PH"
 presentation: "public/foobar.pdf"
 ---
 
