@@ -1,6 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 
-import { file, glob } from 'astro/loaders';
+import { glob } from 'astro/loaders';
 import { ISO_A2 } from './utils/constants';
 
 const [isoCode, ...isoCodes] = Object.keys(ISO_A2);
@@ -78,7 +78,7 @@ const forms = defineCollection({
 });
 
 const apply = defineCollection({
-  loader: glob({ pattern: ['*.md'], base: 'src/content/apply/' }),
+  loader: glob({ pattern: ['about.md'], base: 'src/content/apply' }),
   schema: () =>
     z.object({
       title: z.string(),
@@ -88,7 +88,7 @@ const apply = defineCollection({
 });
 
 const faq = defineCollection({
-  loader: glob({ pattern: ['*.md'], base: 'src/content/apply/' }),
+  loader: glob({ pattern: ['faq.md'], base: 'src/content/apply' }),
   schema: () =>
     z.object({
       title: z.string(),

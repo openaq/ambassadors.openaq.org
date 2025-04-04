@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Image } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 
 interface Props {
@@ -10,8 +10,8 @@ const { testimonial } = Astro.props;
 ---
 
 <style lang="scss">
-  @use "openaq-design-system/scss/variables";
-  @use "openaq-design-system/scss/mixins/index.scss" as mixins;
+  @use 'openaq-design-system/scss/variables';
+  @use 'openaq-design-system/scss/mixins/index.scss' as mixins;
 
   .testimonial-card {
     display: flex;
@@ -75,12 +75,11 @@ const { testimonial } = Astro.props;
   }
 </style>
 
-      <article class="testimonial-card">
-        <div class="testimonial-card__img">
-            <Image src={testimonial.data.image} alt={testimonial.data.name} />
-        </div>
-        <div class="testimonial-content">
-          <q class="quote">{testimonial.body}</q>
-        </div>
-      </article>
-
+<article class="testimonial-card">
+  <div class="testimonial-card__img">
+    <Image src={testimonial.data.image} alt={testimonial.data.name} />
+  </div>
+  <div class="testimonial-content">
+    <q class="quote">{testimonial.body}</q>
+  </div>
+</article>
