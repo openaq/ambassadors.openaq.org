@@ -94,7 +94,7 @@ const sortByName = (
               name={ambassador.data.name}
               country={ambassador.data.countryIso}
               url={`/people/${ambassador.id}/`}
-              data={ambassador.body}
+              bio={String(ambassador.body)}
               socials={socials(ambassador)}
               portrait={ambassador.data.image}
             />
@@ -112,9 +112,9 @@ const sortByName = (
       />
     </section>
     {
-      cohort.data.youtube_id ? (
+      cohort.data.youtubeId ? (
         <section>
-          <Youtube youtubeId={cohort.data.youtube_id} />
+          <Youtube youtubeId={cohort.data.youtubeId} />
         </section>
       ) : (
         ""

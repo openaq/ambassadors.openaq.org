@@ -1,8 +1,29 @@
 ---
 import SocialIcons from "./SocialIcons.astro";
 import removeMarkdown from "remove-markdown";
+import type { SocialsDefinition } from "src/utils/structuredData";
 
-const { name, url, data, socials, portrait, country } = Astro.props;
+interface ImageDefinition {
+  
+  src: string;
+  width: number;
+  height: number;
+  format: "png" | "jpg" | "jpeg" | "tiff" | "webp" | "gif" | "svg" | "avif";
+  
+}
+
+interface Props {
+  name: string;
+  url?: string;
+  bio: string;
+  socials?: SocialsDefinition;
+  portrait: ImageDefinition;
+  country: string;
+}
+
+
+
+const { name, url, bio, socials, portrait, country } = Astro.props;
 
 import { Image } from "astro:assets";
 
@@ -50,7 +71,7 @@ const summary = (bio: string, length = 300): string => {
     <div class="team-card__description">
       <h2 class="person-name">{name}</h2>
       <p class="person-country">{ISO_A2[country]}</p>
-      <p class="person-bio">{summary(data)}</p>
+      <p class="person-bio">{summary(bio)}</p>
       <SocialIcons {...socials} />
     </div>
   </a>

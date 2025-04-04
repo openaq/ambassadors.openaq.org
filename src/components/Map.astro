@@ -1,6 +1,4 @@
 ---
-import { type FeatureCollection } from 'geojson';
- 
 import world from '@assets/data/countries_110m.json';
 import { geoEqualEarth, geoPath } from 'd3';
 
@@ -12,6 +10,10 @@ const [[x0, y0], [x1, y1]] = geoPath(projection.fitWidth(200, outline)).bounds(o
 const height = Math.ceil(y1 - y0);
 const l = Math.min(Math.ceil(x1 - x0), height);
 projection.scale(projection.scale() * (l - 1) / l).precision(0.2);
+
+interface Props {
+  isoCodes: string[];
+}
 
 const { isoCodes } = Astro.props;
 

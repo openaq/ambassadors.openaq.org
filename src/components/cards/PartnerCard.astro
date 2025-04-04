@@ -1,11 +1,17 @@
 ---
-const { partners } = Astro.props;
-import { Image } from "astro:assets";
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+
+interface Props {
+  partner: CollectionEntry<'partners'>;
+}
+
+const { partner } = Astro.props;
 ---
 
 <style lang="scss">
-  @use "openaq-design-system/scss/variables";
-  @use "openaq-design-system/scss/mixins/index.scss" as mixins;
+  @use 'openaq-design-system/scss/variables';
+  @use 'openaq-design-system/scss/mixins/index.scss' as mixins;
 
   .partner-card {
     background-color: white;
@@ -49,16 +55,11 @@ import { Image } from "astro:assets";
     }
   }
 </style>
-{
-  partners.map((partner) => {
-    return (
-      <article class="partner-card">
-        <div class="partner-card__img">
-          <a href={partner.data.url} target="_blank" rel="noopener noreferrer">
-            <Image src={partner.data.image} alt={partner.data.name} />
-          </a>
-        </div>
-      </article>
-    );
-  })
-}
+
+<article class="partner-card">
+  <div class="partner-card__img">
+    <a href={partner.data.url} target="_blank" rel="noopener noreferrer">
+      <Image src={partner.data.image} alt={partner.data.name} />
+    </a>
+  </div>
+</article>

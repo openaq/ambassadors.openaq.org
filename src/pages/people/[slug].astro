@@ -26,7 +26,6 @@ export const getStaticPaths = (async () => {
   }));
 }) satisfies GetStaticPaths;
 
-type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const socials = (entry: CollectionEntry<"ambassadors">): SocialsDefinition => {
   return {
@@ -40,6 +39,8 @@ const socials = (entry: CollectionEntry<"ambassadors">): SocialsDefinition => {
     bluesky: entry.data.bluesky,
   };
 };
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { ambassador } = Astro.props;
 
@@ -174,11 +175,11 @@ const { Content } = await render(ambassador);
   </div>
   <section class="video-section">
     {
-      cohort.data.youtube_id && ambassador.data.timestamp ? (
+      cohort.data.youtubeId && ambassador.data.timestamp ? (
       <h2>Capstone presentation</h2>
       <div class="youtube-video">
         <Youtube
-          youtubeId={cohort.data.youtube_id}
+          youtubeId={cohort.data.youtubeId}
           timestamp={ambassador.data.timestamp}
         />
       </div>

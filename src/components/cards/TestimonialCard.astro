@@ -1,7 +1,12 @@
 ---
 import { Image } from "astro:assets";
+import type { CollectionEntry } from 'astro:content';
 
-const { testimonials } = Astro.props;
+interface Props {
+  testimonial: CollectionEntry<'testimonials'>;
+}
+
+const { testimonial } = Astro.props;
 ---
 
 <style lang="scss">
@@ -69,23 +74,13 @@ const { testimonials } = Astro.props;
     }
   }
 </style>
-{
-  testimonials.map((testimonal) => {
-    return (
+
       <article class="testimonial-card">
         <div class="testimonial-card__img">
-          <a
-            href={testimonal.data.url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image src={testimonal.data.image} alt={testimonal.data.name} />
-          </a>
+            <Image src={testimonial.data.image} alt={testimonial.data.name} />
         </div>
         <div class="testimonial-content">
-          <q class="quote">{testimonal.body}</q>
+          <q class="quote">{testimonial.body}</q>
         </div>
       </article>
-    );
-  })
-}
+

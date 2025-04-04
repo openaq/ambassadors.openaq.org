@@ -10,7 +10,7 @@ const ambassadors = defineCollection({
   schema: ({ image }) =>
     z.object({
       name: z.string(),
-      countryIso: z.enum([isoCode, ...isoCodes]).optional(),
+      countryIso: z.enum([isoCode, ...isoCodes]),
       year: z.number().refine((x) => x > 2020 && x < 2030, {
         message: "Must be a valid year",
       }),
@@ -71,7 +71,7 @@ const cohorts = defineCollection({
 
   const forms = defineCollection({
     loader: glob({ pattern: ["*.md"], base: "src/content/apply/forms" }),
-    schema: ({ image }) =>
+    schema: () =>
       z.object({
         active: z.boolean(),
         jotformId: z.string().optional()
@@ -97,7 +97,7 @@ const cohorts = defineCollection({
   });
 
   const homepage = defineCollection({
-    loader: file("src/content/index.md"),
+    loader: glob({ pattern: ["index.md"], base: "src/content/"}),
     schema: () =>
       z.object({
         title: z.string(),
