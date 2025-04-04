@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 const { testimonials } = Astro.props;
 ---
 
@@ -77,7 +79,7 @@ const { testimonials } = Astro.props;
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={testimonal.data.image.src} alt={testimonal.data.name} />
+            <Image src={testimonal.data.image} alt={testimonal.data.name} />
           </a>
         </div>
         <div class="testimonial-content">

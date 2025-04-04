@@ -1,5 +1,6 @@
 ---
 const { partners } = Astro.props;
+import { Image } from "astro:assets";
 ---
 
 <style lang="scss">
@@ -54,7 +55,7 @@ const { partners } = Astro.props;
       <article class="partner-card">
         <div class="partner-card__img">
           <a href={partner.data.url} target="_blank" rel="noopener noreferrer">
-            <img src={partner.data.image.src} alt={partner.data.name} />
+            <Image src={partner.data.image} alt={partner.data.name} />
           </a>
         </div>
       </article>

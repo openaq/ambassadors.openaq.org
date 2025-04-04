@@ -1,4 +1,6 @@
 ---
+import { Image } from "astro:assets";
+
 const { project } = Astro.props;
 ---
 
@@ -55,7 +57,7 @@ const { project } = Astro.props;
 <article class="project-card">
   <a href={`/projects/${project.id}`} rel="noopener noreferrer">
     <div class="project-card__img">
-      <img src={project.data.image.src} alt={project.data.name} />
+      <Image src={project.data.image} alt={project.data.name} />
     </div>
     <div class="project-content">
       <h3>{project.data.name}</h3>

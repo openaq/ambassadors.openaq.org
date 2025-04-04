@@ -1,6 +1,14 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import PageLayout from "@layouts/PageLayout.astro";
+import { Image } from "astro:assets";
+import HeroImg from "src/assets/images/casey-horner-4rDCa5hBlCs-unsplash.jpg";
+import PollutionImg from "src/assets/images/ella-ivanescu-JbfhNrpQ_dw-unsplash.jpg";
+import GlobeSvg from "src/assets/svg/globe.svg";
+import HeartSvg from "src/assets/svg/heart.svg";
+import CommunitySvg from "src/assets/svg/community.svg";
+import InfrastructureSvg from "src/assets/svg/infrastructure.svg";
+import FutureImg from "src/assets/images/josue-michel-xCU7nCMNfI8-unsplash.jpg";
 ---
 
 <style lang="scss">
@@ -406,10 +414,7 @@ import PageLayout from "@layouts/PageLayout.astro";
   <div class="support-page">
     <section class="hero">
       <div class="img-overlay">
-        <img
-          src="src/assets/images/casey-horner-4rDCa5hBlCs-unsplash.jpg"
-          alt=""
-        />
+        <Image src={HeroImg} alt="" />
       </div>
       <div class="hero-overlay">
         <h1>TOGETHER WE CAN MAKE A DIFFERENCE</h1>
@@ -456,10 +461,7 @@ import PageLayout from "@layouts/PageLayout.astro";
       </article>
       <article class="right-article">
         <div class="right-img-overlay">
-          <img
-            src="src/assets/images/ella-ivanescu-JbfhNrpQ_dw-unsplash.jpg"
-            alt=""
-          />
+          <Image src={PollutionImg} alt="" />
           <div class="article-overlay">
             <p>
               "9 out of 10 people globally breathe polluted air every day." —
@@ -475,7 +477,7 @@ import PageLayout from "@layouts/PageLayout.astro";
       <div class="support-container">
         <div class="support-card">
           <div class="support-icon">
-            <img src="src/assets/svg/globe.svg" alt="Global Coverage Icon" />
+            <Image src={GlobeSvg} alt="Global Coverage Icon" />
           </div>
           <h3>Expanding Global Coverage</h3>
           <p>
@@ -485,7 +487,7 @@ import PageLayout from "@layouts/PageLayout.astro";
         </div>
         <div class="support-card">
           <div class="support-icon">
-            <img src="src/assets/svg/heart.svg" alt="Tools Icon" />
+            <Image src={HeartSvg} alt="Heart Icon" />
           </div>
           <h3>Building Tools for Everyone</h3>
           <p>
@@ -495,7 +497,7 @@ import PageLayout from "@layouts/PageLayout.astro";
         </div>
         <div class="support-card">
           <div class="support-icon">
-            <img src="src/assets/svg/community.svg" alt="Training Icon" />
+            <Image src={CommunitySvg} alt="Community Icon" />
           </div>
           <h3>Training Changemakers</h3>
           <p>
@@ -505,7 +507,7 @@ import PageLayout from "@layouts/PageLayout.astro";
         </div>
         <div class="support-card">
           <div class="support-icon">
-            <img src="src/assets/svg/infrastructure.svg" alt="Platform Icon" />
+            <Image src={InfrastructureSvg} alt="Infrastructure Icon" />
           </div>
           <h3>Sustaining Our Platform</h3>
           <p>Ensuring our air quality data remains accessible to all.</p>
@@ -516,10 +518,7 @@ import PageLayout from "@layouts/PageLayout.astro";
 
     <section class="future-section">
       <div class="img-overlay">
-        <img
-          src="src/assets/images/josue-michel-xCU7nCMNfI8-unsplash.jpg"
-          alt=""
-        />
+        <Image src={FutureImg} alt="" />
       </div>
       <div class="future-overlay">
         <h1>JOIN US IN CREATING A FUTURE WITH CLEAN AIR FOR ALL</h1>

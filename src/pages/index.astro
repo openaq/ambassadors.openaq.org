@@ -5,6 +5,8 @@ import ProjectCard from "@components/cards/ProjectCard.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import TestimonialCard from "@components/cards/TestimonialCard.astro";
+import { Image } from "astro:assets";
+import AmbassadorsWorkshopImg from "/src/assets/images/ambassadors_workshops_monthly_sessions.webp";
 
 const partners = await getCollection("partners");
 const projects = await getCollection("projects");
@@ -221,10 +223,7 @@ const isoCodes = ambassadors.map((ambassador) => {
       >
     </div>
     <div class="hero-image">
-      <img
-        src="/src/assets/images/ambassadors_workshops_monthly_sessions.webp"
-        alt=""
-      />
+      <Image src={AmbassadorsWorkshopImg} alt="Ambassadors Workshops" />
     </div>
   </section>
 
