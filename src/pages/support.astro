@@ -1,8 +1,7 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
-import PageLayout from "@layouts/PageLayout.astro";
 import { Image } from "astro:assets";
-import HeroImg from "src/assets/images/casey-horner-4rDCa5hBlCs-unsplash.jpg";
+import HeroImg from "src/assets/images/casey-horner-4rDCa5hBlCs-unsplash2.jpg";
 import PollutionImg from "src/assets/images/ella-ivanescu-JbfhNrpQ_dw-unsplash.jpg";
 import GlobeSvg from "src/assets/svg/globe.svg";
 import HeartSvg from "src/assets/svg/heart.svg";
@@ -414,7 +413,7 @@ import FutureImg from "src/assets/images/josue-michel-xCU7nCMNfI8-unsplash.jpg";
   <div class="support-page">
     <section class="hero">
       <div class="img-overlay">
-        <Image src={HeroImg} alt="" />
+        <Image src={HeroImg} alt="hero image" loading="lazy" />
       </div>
       <div class="hero-overlay">
         <h1>TOGETHER WE CAN MAKE A DIFFERENCE</h1>
@@ -461,7 +460,7 @@ import FutureImg from "src/assets/images/josue-michel-xCU7nCMNfI8-unsplash.jpg";
       </article>
       <article class="right-article">
         <div class="right-img-overlay">
-          <Image src={PollutionImg} alt="" />
+          <Image src={PollutionImg} alt="pollution image" loading="lazy" />
           <div class="article-overlay">
             <p>
               "9 out of 10 people globally breathe polluted air every day." —
@@ -518,7 +517,7 @@ import FutureImg from "src/assets/images/josue-michel-xCU7nCMNfI8-unsplash.jpg";
 
     <section class="future-section">
       <div class="img-overlay">
-        <Image src={FutureImg} alt="" />
+        <Image src={FutureImg} alt="future image" loading="lazy" />
       </div>
       <div class="future-overlay">
         <h1>JOIN US IN CREATING A FUTURE WITH CLEAN AIR FOR ALL</h1>
