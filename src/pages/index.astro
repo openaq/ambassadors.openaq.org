@@ -1,34 +1,34 @@
 ---
-import MiniCards from '@components/cards/MiniCards.astro';
-import PartnerCard from '@components/cards/PartnerCard.astro';
-import ProjectCard from '@components/cards/ProjectCard.astro';
-import BaseLayout from '@layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
-import TestimonialCard from '@components/cards/TestimonialCard.astro';
-import { Image } from 'astro:assets';
-import AmbassadorsWorkshopImg from '/src/assets/images/ambassadors_workshops_monthly_sessions.webp';
-import { getEntry } from 'astro:content';
+import MiniCards from "@components/cards/MiniCards.astro";
+import PartnerCard from "@components/cards/PartnerCard.astro";
+import ProjectCard from "@components/cards/ProjectCard.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import TestimonialCard from "@components/cards/TestimonialCard.astro";
+import { Image } from "astro:assets";
+import AmbassadorsWorkshopImg from "/src/assets/images/ambassadors_workshops_monthly_sessions.webp";
+import { getEntry } from "astro:content";
 
-const index = await getEntry('homepage', 'index');
+const index = await getEntry("homepage", "index");
 
-const partners = await getCollection('partners');
-const projects = await getCollection('projects');
-const testimonials = await getCollection('testimonials');
-const ambassadors = await getCollection('ambassadors');
+const partners = await getCollection("partners");
+const projects = await getCollection("projects");
+const testimonials = await getCollection("testimonials");
+const ambassadors = await getCollection("ambassadors");
 const isoCodes = ambassadors.map((ambassador) => {
   return ambassador.data.countryIso;
 });
 ---
 
 <style lang="scss">
-  @use 'openaq-design-system/scss/variables' as variables;
+  @use "openaq-design-system/scss/variables" as variables;
 
-  @use 'openaq-design-system/scss/mixins/index.scss' as mixins;
-  @use 'openaq-design-system/scss/utilities/types.scss';
-  @use 'openaq-design-system/scss/utilities/colors.scss';
-  @use 'openaq-design-system/scss/inputs';
+  @use "openaq-design-system/scss/mixins/index.scss" as mixins;
+  @use "openaq-design-system/scss/utilities/types.scss";
+  @use "openaq-design-system/scss/utilities/colors.scss";
+  @use "openaq-design-system/scss/inputs";
 
-  @use 'openaq-design-system/scss/buttons';
+  @use "openaq-design-system/scss/buttons";
 
   .hero-section {
     position: relative;
@@ -55,8 +55,10 @@ const isoCodes = ambassadors.map((ambassador) => {
 
     .hero-content {
       position: absolute;
-      left: 50px;
-      width: 450px;
+      left: 5%;
+      right: 5%;
+      max-width: 450px;
+      width: 90%;
       padding-top: 80px;
       background-color: #e2ebe1;
       padding-left: 40px;
@@ -64,17 +66,48 @@ const isoCodes = ambassadors.map((ambassador) => {
 
       h1 {
         font-size: 2.9rem;
-        margin-top: 0;
+        margin-top: 20px;
         margin-bottom: 10px;
-        font-weight: 500;
+        font-weight: bold;
+        width: 600px;
+        background: linear-gradient(
+          125deg,
+          rgb(39, 66, 56),
+          rgb(100, 162, 137)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
       .hero-subtitle {
-        max-width: 280px;
+        max-width: 480px;
         width: 100%;
+        font-weight: bold;
+        margin-top: 20px;
       }
 
       .learn-more-btn {
         width: fit-content;
+        margin-top: 30px;
+      }
+    }
+    @media (max-width: 650px) {
+      .hero-content {
+        padding-top: 20px;
+        h1 {
+          width: 400px;
+        }
+        .hero-subtitle {
+          max-width: 450px;
+          width: 100%;
+          font-weight: bold;
+          margin-top: 20px;
+        }
+      }
+    }
+    @media (max-width: 400px) {
+      .hero-content {
+        left: 0%;
+        right: 0%;
       }
     }
   }
@@ -269,9 +302,9 @@ const isoCodes = ambassadors.map((ambassador) => {
     <h1>Testimonials</h1>
     <div class="testimonial-cards-container">
       {
-        testimonials.map((testimonial) => 
+        testimonials.map((testimonial) => (
           <TestimonialCard testimonial={testimonial} />
-        )
+        ))
       }
     </div>
   </section>
