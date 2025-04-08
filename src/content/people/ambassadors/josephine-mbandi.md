@@ -1,5 +1,5 @@
 ---
-name: "Josephine Mbandi"
+name: "Josephine Mbandi †"
 image: "@assets/images/josephine.png"
 year: 2021
 countryIso: "KE"
