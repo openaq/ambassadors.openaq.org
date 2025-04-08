@@ -1,6 +1,6 @@
 ---
 name: "Farah Kazi"
-image: "@assets/images/farah-kazi.png"
+image: "@assets/images/farah.png"
 year: 2021
 countryIso: "IN"
 presentation: "public/foobar.pdf"
