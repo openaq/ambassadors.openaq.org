@@ -8,7 +8,7 @@ import TestimonialCard from "@components/cards/TestimonialCard.astro";
 import { Image } from "astro:assets";
 import AmbassadorsWorkshopImg from "/src/assets/images/ambassadors_workshops_monthly_sessions.webp";
 import { getEntry } from "astro:content";
-
+const baseUrl = import.meta.env.BASE_URL
 const index = await getEntry("homepage", "index");
 
 const partners = await getCollection("partners");
@@ -254,7 +254,7 @@ const isoCodes = ambassadors.map((ambassador) => {
         sapiente quasi blanditiis earum facilis doloremque. Ipsa quis deserunt
         fugiat est?
       </p>
-      <a href="/apply/" class="btn btn-primary learn-more-btn" role="button"
+      <a href={`${baseUrl}/apply/`} class="btn btn-primary learn-more-btn" role="button"
         >Apply</a
       >
     </div>
@@ -276,7 +276,7 @@ const isoCodes = ambassadors.map((ambassador) => {
     <div class="global-image">
       <img
         class="map-image"
-        src="/imgs/map/all.png"
+        src=`${baseUrl}/imgs/map/all.png`
         alt=""
         height="588"
         width="1200"
