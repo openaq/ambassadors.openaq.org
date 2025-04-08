@@ -6,6 +6,8 @@ import { getCollection, render } from "astro:content";
 import Youtube from "@components/Youtube.astro";
 import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
 
+const baseUrl = import.meta.env.BASE_URL;
+
 export const getStaticPaths = (async () => {
   const cohorts = await getCollection("cohorts");
 
@@ -94,7 +96,7 @@ const sortByName = (
             <AmbassadorsCard
               name={ambassador.data.name}
               country={ambassador.data.countryIso}
-              url={`/people/${ambassador.id}/`}
+              url={`${baseUrl}/people/${ambassador.id}/`}
               bio={String(ambassador.body)}
               socials={socials(ambassador)}
               portrait={ambassador.data.image}

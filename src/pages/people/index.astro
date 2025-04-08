@@ -2,7 +2,7 @@
 import PageLayout from "@layouts/PageLayout.astro";
 import { Image } from "astro:assets";
 import { getCollection } from "astro:content";
-
+const baseUrl = import.meta.env.BASE_URL;
 const ambassadors = await getCollection("ambassadors");
 ---
 
@@ -63,7 +63,7 @@ const ambassadors = await getCollection("ambassadors");
     <div class="ambassador-list">
       {
         ambassadors.map((ambassador) => (
-          <a href={`/people/${ambassador.id}`} class="ambassador-card">
+          <a href={`${baseUrl}/people/${ambassador.id}`} class="ambassador-card">
             <Image
               src={ambassador.data.image}
               alt={`Image of ${ambassador.data.name}`}
