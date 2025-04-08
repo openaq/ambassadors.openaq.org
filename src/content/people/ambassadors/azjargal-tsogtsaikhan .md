@@ -1,6 +1,6 @@
 ---
 name: "Azjargal (Aza) Tsogtsaikhan"
-image: "@assets/images/Aza.png"
+image: "@assets/images/aza.png"
 year: 2021
 countryIso: "MN"
 presentation: "public/foobar.pdf"
