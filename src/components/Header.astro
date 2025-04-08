@@ -315,7 +315,7 @@ const applicationActive = applicationsData?.data.active ?? false;
       </label>
       <ul class="nav-list">
         <li>
-          <a class="nav__item explore-data-tab" href="/">About</a>
+          <a class="nav__item explore-data-tab" href="index.html">About</a>
         </li>
         <li class="dropdown">
           <a class="nav__item">Ambassadors</a>
@@ -326,7 +326,7 @@ const applicationActive = applicationsData?.data.active ?? false;
                 .map((o) => {
                   return (
                     <li class="submenu__item">
-                      <a class="nav__item" href={`/cohorts/${o.data.year}/`}>
+                      <a class="nav__item" href={`cohorts/${o.data.year}/`}>
                         {o.data.year}
                       </a>
                     </li>
@@ -343,12 +343,12 @@ const applicationActive = applicationsData?.data.active ?? false;
           >
           <ul class="submenu">
             <li class="submenu__item">
-              <a class="nav__item" href="/apply">About applying</a>
+              <a class="nav__item" href="apply">About applying</a>
             </li>
             {
               applicationActive && (
                 <li class="submenu__item">
-                  <a class="nav__item" href="/apply/application">
+                  <a class="nav__item" href="apply/application">
                     {" "}
                     Application{" "}
                   </a>
@@ -358,7 +358,7 @@ const applicationActive = applicationsData?.data.active ?? false;
             {
               referencesActive && (
                 <li class="submenu__item">
-                  <a class="nav__item" href="/apply/references">
+                  <a class="nav__item" href="apply/references">
                     {" "}
                     References{" "}
                   </a>
@@ -367,20 +367,20 @@ const applicationActive = applicationsData?.data.active ?? false;
             }
 
             <li class="submenu__item">
-              <a class="nav__item" href="/apply/faq">FAQ</a>
+              <a class="nav__item" href="apply/faq">FAQ</a>
             </li>
           </ul>
         </li>
         <li>
           <a
-            href="/support"
+            href="support"
             class=`nav__item partners-tab ${currentPath === "partners" ? "nav__item--active" : ""}`
             >Support us</a
           >
         </li>
       </ul>
     </nav>
-    <a href="/apply" class="btn btn-primary learn-more-btn" role="button"
+    <a href="apply" class="btn btn-primary learn-more-btn" role="button"
       >Apply</a
     >
   </div>
