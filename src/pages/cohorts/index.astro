@@ -72,7 +72,7 @@ const cohortYears = [...new Set(ambassadors.map((amb) => amb.data.year))].sort(
     <div class="cohort-list">
       {
         cohortYears.map((year) => (
-          <a href={`/cohorts/${year}`} class="cohort-button">
+          <a href={`cohorts/${year}`} class="cohort-button">
             <div class="cohort-year">{year}</div>
           </a>
         ))
