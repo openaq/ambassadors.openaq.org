@@ -13,6 +13,6 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [remarkModifiedTime],
   },
-
-  site: "http://localhost:4321",
+  site: 'https://openaq.github.io',
+  base: 'ambassadors.openaq.org',
 });
