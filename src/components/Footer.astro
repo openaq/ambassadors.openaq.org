@@ -8,6 +8,8 @@ import XLogo from "@assets/svg/x_logo.svg";
 import BlueskyLogo from "@assets/svg/bluesky_logo.svg";
 import LinkedinLogo from "@assets/svg/linkedin.svg";
 import YoutubeLogo from "@assets/svg/youtube.svg";
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <style lang="scss">
@@ -220,9 +222,9 @@ import YoutubeLogo from "@assets/svg/youtube.svg";
     <section class="nav-section">
       <LogoWhite width="72" height="40" aria-label="OpenAQ logo" />
       <nav class="footer-nav">
-        <a class="footer-about" href="/">About</a>
-        <a class="footer-apply" href="/apply">Apply</a>
-        <a class="footer-support" href="/support">Support</a>
+        <a class="footer-about" href={`${baseUrl}/`}>About</a>
+        <a class="footer-apply" href={`${baseUrl}/apply`}>Apply</a>
+        <a class="footer-support" href={`${baseUrl}/support`}>Support</a>
       </nav>
     </section>
     <section class="contact-section">
