@@ -1,17 +1,17 @@
 ---
-import { Image } from 'astro:assets';
-import type { CollectionEntry } from 'astro:content';
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
 
 interface Props {
-  testimonial: CollectionEntry<'testimonials'>;
+  testimonial: CollectionEntry<"testimonials">;
 }
 
 const { testimonial } = Astro.props;
 ---
 
 <style lang="scss">
-  @use 'openaq-design-system/scss/variables';
-  @use 'openaq-design-system/scss/mixins/index.scss' as mixins;
+  @use "openaq-design-system/scss/variables";
+  @use "openaq-design-system/scss/mixins/index.scss" as mixins;
 
   .testimonial-card {
     display: flex;
@@ -31,6 +31,7 @@ const { testimonial } = Astro.props;
         width: 100%;
         height: 100%;
         object-fit: cover;
+        border: 1px solid #ddd;
       }
     }
     .testimonial-content {
@@ -39,17 +40,15 @@ const { testimonial } = Astro.props;
       justify-content: center;
       padding: 15px;
       text-align: left;
-      max-width: 350px;
+      max-width: 280px;
       flex-grow: 1;
 
-      h3 {
-        font-size: 1rem;
-        font-weight: 600;
-        margin-bottom: 5px;
-      }
       q {
-        font-size: 1.3rem;
+        font-size: 0.85rem;
         font-weight: bold;
+      }
+      p {
+        font-size: 0.8rem;
       }
     }
   }
@@ -81,5 +80,6 @@ const { testimonial } = Astro.props;
   </div>
   <div class="testimonial-content">
     <q class="quote">{testimonial.body}</q>
+    <p>— {testimonial.data.name} '24 Cohort</p>
   </div>
 </article>

@@ -1,5 +1,5 @@
 ---
-name: "Rakib Hossain"
+name: "Rafaela Chiminelli Borth"
 image: "@assets/images/rafa.png"
 ---
 
