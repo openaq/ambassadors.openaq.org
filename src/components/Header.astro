@@ -139,6 +139,12 @@ const applicationActive = applicationsData?.data.active ?? false;
       padding: 5px 40px;
     }
 
+    .header-contents {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
     .menu-button-container {
       input {
         display: none;
@@ -152,11 +158,22 @@ const applicationActive = applicationsData?.data.active ?? false;
     }
 
     .header-logo {
-      justify-content: center;
-      order: 2;
-    }
-    .nav {
       order: 1;
+      justify-content: flex-start;
+    }
+
+    .nav {
+      order: 2;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .learn-more-btn {
+      order: 3;
+      display: block;
+      margin-left: auto;
+      display: flex;
+      align-items: center;
     }
 
     .donate-btn {
@@ -327,7 +344,10 @@ const applicationActive = applicationsData?.data.active ?? false;
                 .map((o) => {
                   return (
                     <li class="submenu__item">
-                      <a class="nav__item" href={`${baseUrl}/cohorts/${o.data.year}/`}>
+                      <a
+                        class="nav__item"
+                        href={`${baseUrl}/cohorts/${o.data.year}/`}
+                      >
                         {o.data.year}
                       </a>
                     </li>
@@ -381,8 +401,10 @@ const applicationActive = applicationsData?.data.active ?? false;
         </li>
       </ul>
     </nav>
-    <a href={`${baseUrl}/apply`} class="btn btn-primary learn-more-btn" role="button"
-      >Apply</a
+    <a
+      href={`${baseUrl}/apply`}
+      class="btn btn-primary learn-more-btn"
+      role="button">Apply</a
     >
   </div>
 </header>
