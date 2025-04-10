@@ -5,6 +5,11 @@ import purgecss from "astro-purgecss";
 
 // https://astro.build/config
 export default defineConfig({
+  vite: {
+    scss: {
+      transformer: "lightningcss",
+    },
+  },
   build: {
     inlineStylesheets: "never",
   },
