@@ -25,8 +25,8 @@ const ambassadors = await getCollection("ambassadors");
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: all 0.3s ease;
-    width: 200px;
-    height: 200px;
+    width: 230px;
+    height: 230px;
     text-decoration: none;
 
     &:hover {
@@ -63,7 +63,10 @@ const ambassadors = await getCollection("ambassadors");
     <div class="ambassador-list">
       {
         ambassadors.map((ambassador) => (
-          <a href={`${baseUrl}/people/${ambassador.id}`} class="ambassador-card">
+          <a
+            href={`${baseUrl}/people/${ambassador.id}`}
+            class="ambassador-card"
+          >
             <Image
               src={ambassador.data.image}
               alt={`Image of ${ambassador.data.name}`}
