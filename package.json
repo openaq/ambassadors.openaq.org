@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",
-    "astro": "^5.3.0",
+    "astro": "^5.6.2",
     "astro-purgecss": "^5.2.2",
     "astro-seo-schema": "^5.0.0",
     "d3": "^7.9.0",
@@ -30,6 +30,7 @@
     "knip": "^5.50.1",
     "postcss": "^8.5.3",
     "postcss-csso": "^6.0.1",
+    "sass-embedded": "^1.86.3",
     "typescript": "^5.8.3"
   }
 }
