@@ -6,10 +6,6 @@ import purgecss from "astro-purgecss";
 // https://astro.build/config
 export default defineConfig({
   output: "static",
-  experimental: {
-    svg: true,
-    responsiveImages: true,
-  },
   integrations: [purgecss()],
 
   markdown: {
