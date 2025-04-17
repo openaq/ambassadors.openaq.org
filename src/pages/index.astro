@@ -32,7 +32,7 @@ const isoCodes = ambassadors.map((ambassador) => {
 
   .hero-section {
     position: relative;
-    height: 500px;
+    height: 650px;
     width: 100%;
     overflow: hidden;
     display: flex;
@@ -42,7 +42,7 @@ const isoCodes = ambassadors.map((ambassador) => {
       left: 0;
       background-color: #e2ebe1;
       height: 1000px;
-      width: 1000px;
+      width: 1100px;
       z-index: 1;
       border-radius: 0 100% 100% 0;
       transform: translateY(-250px) translateX(-350px);
@@ -247,26 +247,40 @@ const isoCodes = ambassadors.map((ambassador) => {
   <section class="hero-section">
     <div class="hero-curve"></div>
     <div class="hero-content">
-      <p>Lorem ipsum dolor sit amet, consectetur.</p>
       <h1>{index?.data.title}</h1>
       <p class="hero-subtitle">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur
-        sapiente quasi blanditiis earum facilis doloremque. Ipsa quis deserunt
-        fugiat est?
+        Air pollution is a “silent killer” that accounts for more than 8 million premature deaths each year1 and 90% of deaths attributed to outdoor air pollution are in low- and middle-income countries.
+        <br/>
+        OpenAQ's Community Ambassador Program empowers the next generation of changemakers to tackle this global air quality epidemic locally in the planet's most polluted regions through the use of open data.
+        
       </p>
       <a href={`${baseUrl}/apply/`} class="btn btn-primary learn-more-btn" role="button"
         >Apply</a
       >
     </div>
     <div class="hero-image">
-      <Image src={AmbassadorsWorkshopImg} alt="Ambassadors Workshops" />
+      <Image src={AmbassadorsWorkshopImg} height={800} alt="Ambassadors Workshops" />
     </div>
   </section>
-
-  <section class="partner-section">
-    <h1>Partners</h1>
-    <div class="partner-logos">
-      {partners.map((partner) => <PartnerCard partner={partner} />)}
+  <section class="cards-section">
+    <div class="mini-cards">
+      <MiniCards />
+    </div>
+  </section>
+  <section class="projects-section">
+    <h1>Featured projects</h1>
+    <div class="project-container">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </section>
+  <section class="testimonials-section">
+    <h1>Testimonials</h1>
+    <div class="testimonial-cards-container">
+      {
+        testimonials.map((testimonial) => (
+          <TestimonialCard testimonial={testimonial} />
+        ))
+      }
     </div>
   </section>
 
@@ -291,22 +305,10 @@ const isoCodes = ambassadors.map((ambassador) => {
       <MiniCards />
     </div>
   </section>
-
-  <section class="projects-section">
-    <h1>Featured projects</h1>
-    <div class="project-container">
-      {projects.map((project) => <ProjectCard project={project} />)}
-    </div>
-  </section>
-
-  <section class="testimonials-section">
-    <h1>Testimonials</h1>
-    <div class="testimonial-cards-container">
-      {
-        testimonials.map((testimonial) => (
-          <TestimonialCard testimonial={testimonial} />
-        ))
-      }
+  <section class="partner-section">
+    <h1>Partners</h1>
+    <div class="partner-logos">
+      {partners.map((partner) => <PartnerCard partner={partner} />)}
     </div>
   </section>
 </BaseLayout>

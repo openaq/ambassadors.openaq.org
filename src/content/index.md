@@ -1,3 +1,3 @@
 ---
-title: "OpenAQ Ambassadors Program"
+title: "The OpenAQ Community Ambassador Program"
 ---
