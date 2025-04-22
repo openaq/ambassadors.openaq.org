@@ -111,6 +111,14 @@ const miniCards = defineCollection({
     }),
 });
 
+const impacts = defineCollection({
+  loader: glob({ pattern: ['*.md'], base: 'src/content/impacts' }),
+  schema: () =>
+    z.object({
+      title: z.string(),
+    }),
+});
+
 export const collections = {
   ambassadors,
   cohorts,
@@ -122,4 +130,5 @@ export const collections = {
   faq,
   homepage,
   miniCards,
+  impacts,
 };

@@ -1,0 +1,30 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  impact: CollectionEntry<"impacts">;
+}
+
+const { impact } = Astro.props;
+---
+
+<style lang="scss">
+  @use "openaq-design-system/scss/variables";
+  @use "openaq-design-system/scss/mixins/index.scss" as mixins;
+
+  .impact-card {
+    .impact-content {
+      padding: 5px;
+      text-align: center;
+      p {
+        font-size: 1rem;
+      }
+    }
+  }
+</style>
+
+<article class="impact-card">
+  <div class="impact-content">
+    <p>{impact.body}</p>
+  </div>
+</article>

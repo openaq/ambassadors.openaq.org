@@ -8,6 +8,7 @@ import TestimonialCard from "@components/cards/TestimonialCard.astro";
 import { Image } from "astro:assets";
 import AmbassadorsWorkshopImg from "/src/assets/images/ambassadors_workshops_monthly_sessions.webp";
 import { getEntry } from "astro:content";
+import Impacts from "@components/impacts/Impacts.astro";
 const baseUrl = import.meta.env.BASE_URL;
 const index = await getEntry("homepage", "index");
 
@@ -16,6 +17,7 @@ const projects = await getCollection("projects");
 const testimonials = await getCollection("testimonials");
 const ambassadors = await getCollection("ambassadors");
 const miniCards = await getCollection("miniCards");
+const impacts = await getCollection("impacts");
 
 const isoCodes = ambassadors.map((ambassador) => {
   return ambassador.data.countryIso;
@@ -355,6 +357,9 @@ const isoCodes = ambassadors.map((ambassador) => {
         width="1200"
       />
     </div>
+  </section>
+  <section class="impacts-section">
+    {impacts.map((impact) => <Impacts impact={impact} />)}
   </section>
   <section class="cards-section">
     <h1>
