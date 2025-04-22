@@ -57,8 +57,6 @@ const isoCodes = ambassadors.map((ambassador) => {
 
     .hero-content {
       position: absolute;
-      left: 2.5%;
-      right: 5%;
       max-width: 450px;
       width: 90%;
       padding-top: 80px;
@@ -70,6 +68,7 @@ const isoCodes = ambassadors.map((ambassador) => {
         font-size: 2.9rem;
         margin-top: 20px;
         margin-bottom: 10px;
+        text-align: left;
         font-weight: bold;
         width: 600px;
         background: linear-gradient(
@@ -81,35 +80,75 @@ const isoCodes = ambassadors.map((ambassador) => {
         -webkit-text-fill-color: transparent;
       }
       .hero-subtitle {
+        text-align: center;
+        font-size: 1.2rem;
         max-width: 480px;
-        width: 100%;
-        font-weight: bold;
+        width: 120%;
         margin-top: 20px;
+        .hero-first-subtitle {
+          display: block;
+          padding-bottom: 25px;
+          border-bottom: 2px solid #555;
+        }
+        .highlight {
+          color: variables.$mantis120;
+          font-size: 1.3rem;
+          font-weight: bold;
+        }
       }
 
       .learn-more-btn {
         width: fit-content;
         margin-top: 30px;
+        margin: 0 auto;
       }
     }
-    @media (max-width: 650px) {
+  }
+
+  @media (max-width: 650px) {
+    .hero-section {
+      height: 880px;
+      .hero-curve {
+        height: 1400px;
+      }
+    }
+    .hero-content {
+      padding-top: 20px;
+      padding-bottom: 150px;
+      h1 {
+        width: 500px !important;
+        width: 100% !important;
+        text-align: center !important;
+      }
+      .hero-subtitle {
+        width: 100% !important;
+        max-width: 600px !important;
+        margin: 0 auto;
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+      }
+    }
+  }
+  @media (max-width: 400px) {
+    .hero-section {
+      height: 880px;
+      .hero-curve {
+        height: 1200px;
+      }
+
       .hero-content {
-        padding-top: 20px;
         h1 {
-          width: 400px;
+          width: 90%;
+          max-width: 260px;
         }
+
         .hero-subtitle {
-          max-width: 450px;
           width: 100%;
-          font-weight: bold;
-          margin-top: 20px;
+          max-width: 360px;
+          margin: 0 auto;
+          font-size: 1rem;
+          margin-bottom: 30px;
         }
-      }
-    }
-    @media (max-width: 400px) {
-      .hero-content {
-        left: 0%;
-        right: 0%;
       }
     }
   }
@@ -251,13 +290,22 @@ const isoCodes = ambassadors.map((ambassador) => {
     <div class="hero-content">
       <h1>{index?.data.title}</h1>
       <p class="hero-subtitle">
-        Air pollution is a “silent killer” that accounts for more than 8 million
-        premature deaths each year1 and 90% of deaths attributed to outdoor air
-        pollution are in low- and middle-income countries.
+        <span class="hero-first-subtitle">
+          <span class="highlight">Air pollution</span> is a “silent killer” that
+          accounts <span class="highlight"
+            >for more than 8 million premature deaths</span
+          > each year1 and 90% of deaths attributed to outdoor air pollution are
+          in <span class="highlight"></span>low- and middle-income countries.
+        </span>
         <br />
-        OpenAQ's Community Ambassador Program empowers the next generation of changemakers
-        to tackle this global air quality epidemic locally in the planet's most polluted
-        regions through the use of open data.
+        <span>
+          <span class="highlight"
+            >OpenAQ's Community Ambassador Program empowers</span
+          > the next generation of
+          <span class="highlight">changemakers</span> to tackle this global air quality
+          epidemic locally in the planet's most polluted regions through the use
+          of open data.
+        </span>
       </p>
       <a
         href={`${baseUrl}/apply/`}
