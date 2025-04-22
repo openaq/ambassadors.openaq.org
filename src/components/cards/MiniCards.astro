@@ -1,5 +1,10 @@
 ---
+import type { CollectionEntry } from "astro:content";
+interface Props {
+  miniCard: CollectionEntry<"miniCards">;
+}
 
+const { miniCard } = Astro.props;
 ---
 
 <style lang="scss">
@@ -30,21 +35,6 @@
 </style>
 <article class="mini-card">
   <div class="mini-card__p">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  </div>
-</article>
-<article class="mini-card">
-  <div class="mini-card__p">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-  </div>
-</article>
-<article class="mini-card">
-  <div class="mini-card__p">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-  </div>
-</article>
-<article class="mini-card">
-  <div class="mini-card__p">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+    <p>{miniCard.body}</p>
   </div>
 </article>
