@@ -396,27 +396,6 @@ const isoCodes = ambassadors.map((ambassador) => {
       />
     </div>
   </section>
-  <section class="cards-section">
-    <div class="mini-cards">
-      {miniCards.map((miniCard) => <MiniCards miniCard={miniCard} />)}
-    </div>
-  </section>
-  <section class="projects-section">
-    <h1>Featured projects</h1>
-    <div class="project-container">
-      {projects.map((project) => <ProjectCard project={project} />)}
-    </div>
-  </section>
-  <section class="testimonials-section">
-    <h1>Testimonials</h1>
-    <div class="testimonial-cards-container">
-      {
-        testimonials.map((testimonial) => (
-          <TestimonialCard testimonial={testimonial} />
-        ))
-      }
-    </div>
-  </section>
 
   <section class="global-section">
     <h1>The global reach of OpenAQ ambassadors</h1>
@@ -448,6 +427,23 @@ const isoCodes = ambassadors.map((ambassador) => {
   <section class="impacts-section">
     <div class="impacts-container">
       {impacts.map((impact) => <Impacts impact={impact} />)}
+    </div>
+  </section>
+
+  <section class="projects-section">
+    <h1>Featured projects</h1>
+    <div class="project-container">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </section>
+  <section class="testimonials-section">
+    <h1>Testimonials</h1>
+    <div class="testimonial-cards-container">
+      {
+        testimonials.map((testimonial) => (
+          <TestimonialCard testimonial={testimonial} />
+        ))
+      }
     </div>
   </section>
 
