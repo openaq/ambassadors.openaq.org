@@ -160,6 +160,44 @@ const isoCodes = ambassadors.map((ambassador) => {
       }
     }
   }
+
+  .global-section {
+    margin-top: 60px;
+    position: relative;
+    h1 {
+      text-align: center;
+    }
+    h2 {
+      text-align: center;
+    }
+    .global-image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+
+      div {
+        width: 1200px;
+      }
+    }
+  }
+
+  .impacts-section {
+    margin-top: 60px;
+    .impacts-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 20px;
+
+      .impact-card {
+        flex: 0 0 250px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
   .partner-section {
     margin-top: 60px;
     h1 {
@@ -179,85 +217,6 @@ const isoCodes = ambassadors.map((ambassador) => {
       }
       @media (max-width: 600px) {
         gap: 20px;
-      }
-    }
-  }
-
-  .global-section {
-    margin-top: 60px;
-    position: relative;
-    h1 {
-      text-align: center;
-    }
-    h2 {
-      text-align: center;
-    }
-    .global-image {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
-
-      div {
-        width: 1200px;
-      }
-    }
-  }
-  .arrow {
-    position: absolute;
-    bottom: -70px;
-    left: 52%;
-    transform: translateX(-50%);
-    pointer-events: none;
-
-    path {
-      stroke: black;
-      stroke-width: 2;
-      fill: none;
-      stroke-dasharray: 1000;
-      stroke-dashoffset: 1000;
-      transition: stroke-dashoffset 1.2s ease-in-out;
-    }
-
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-  }
-
-  .global-image:hover + .arrow,
-  .global-image:hover .arrow {
-    opacity: 1;
-
-    path {
-      stroke-dashoffset: 0;
-    }
-  }
-
-  @media (max-width: 750px) {
-    .arrow svg {
-      width: 80px;
-      height: auto;
-    }
-  }
-
-  @media (max-width: 550px) {
-    .arrow svg {
-      width: 55px;
-    }
-  }
-
-  .impacts-section {
-    margin-top: 60px;
-    .impacts-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 20px;
-
-      .impact-card {
-        flex: 0 0 250px;
-        margin-bottom: 20px;
       }
     }
   }
@@ -408,19 +367,6 @@ const isoCodes = ambassadors.map((ambassador) => {
         height="588"
         width="1200"
       />
-    </div>
-    <div class="arrow">
-      <svg
-        width="110"
-        height="369"
-        viewBox="0 0 110 369"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M109.997 2.07239C110.037 1.52156 109.623 1.04261 109.072 1.00262L100.096 0.351089C99.5452 0.311108 99.0662 0.725237 99.0262 1.27607C98.9863 1.82691 99.4004 2.30586 99.9512 2.34584L107.93 2.92498L107.351 10.904C107.311 11.4548 107.725 11.9338 108.276 11.9738C108.827 12.0137 109.306 11.5996 109.346 11.0488L109.997 2.07239ZM2.20485 368.709C41.6909 329.474 59.8981 294.058 67.0163 261.172C74.1297 228.309 70.1447 198.068 65.4241 169.276C60.6945 140.429 55.2513 113.126 59.2314 85.8396C63.2001 58.6319 76.5603 31.3712 109.654 2.75644L108.346 1.24356C74.9393 30.1288 61.2994 57.8056 57.2524 85.551C53.2169 113.217 58.7424 140.884 63.4504 169.599C68.1674 198.369 72.0887 228.285 65.0616 260.749C58.0393 293.192 40.0591 328.276 0.795149 367.291L2.20485 368.709Z"
-          fill="black"></path>
-      </svg>
     </div>
   </section>
 
