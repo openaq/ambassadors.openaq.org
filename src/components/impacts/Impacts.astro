@@ -13,11 +13,23 @@ const { impact } = Astro.props;
   @use "openaq-design-system/scss/mixins/index.scss" as mixins;
 
   .impact-card {
+    background-color: white;
+    display: flex;
+    height: 160px;
+    width: 250px;
+    box-shadow: 0 8px 5px 5px rgb(83, 83, 83, 0.25);
+    border-radius: 2px;
+    padding: 20px 25px;
+
     .impact-content {
-      padding: 5px;
-      text-align: center;
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 10px;
+
       p {
-        font-size: 1rem;
+        text-align: center;
       }
     }
   }
