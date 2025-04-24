@@ -169,32 +169,90 @@ const isoCodes = ambassadors.map((ambassador) => {
     }
     h2 {
       text-align: center;
+      font-weight: 500;
     }
-    .global-image {
+    .global-impact-container {
       display: flex;
+      flex-direction: row;
       align-items: center;
       justify-content: center;
-      text-align: center;
+      margin-top: 40px;
+      flex-wrap: wrap;
 
-      div {
-        width: 1200px;
+      .global-image {
+        flex: 1 1 50%;
+        max-width: 600px;
+        min-width: 300px;
+        display: flex;
+        justify-content: center;
+
+        .map-image {
+          width: 100%;
+          height: auto;
+        }
+
+        div {
+          width: 1200px;
+        }
       }
     }
   }
 
-  .impacts-section {
-    margin-top: 60px;
-    .impacts-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-      margin-top: 20px;
+  .impacts-container {
+    flex: 1 1 50%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
 
-      .impact-card {
-        flex: 0 0 250px;
-        margin-bottom: 20px;
-      }
+    .impact-card {
+      flex: 0 1 180px;
+      max-width: 180px;
+    }
+  }
+  @media (max-width: 940px) {
+    .global-image {
+      flex: 1 1 65%;
+      max-width: 700px;
+      min-width: 400px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .impacts-container {
+      flex: 1 1 35%;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .impact-card {
+      flex: 0 1 100%;
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 650px) {
+    .global-impact-container {
+    }
+
+    .global-image {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+
+    .impacts-container {
+      margin-top: 20px;
+      flex: 1 1 100%;
+      gap: 10px;
+      flex-direction: row;
+    }
+
+    .impact-card {
+      flex: 0 1 100%;
+      max-width: 100%;
     }
   }
 
@@ -357,22 +415,23 @@ const isoCodes = ambassadors.map((ambassador) => {
   </section>
 
   <section class="global-section">
-    <h1>The global reach of OpenAQ ambassadors</h1>
-    <h2>Representing {new Set(isoCodes).size} countries</h2>
-    <div class="global-image">
-      <img
-        class="map-image"
-        src=`${baseUrl}/imgs/map/all.png`
-        alt=""
-        height="588"
-        width="1200"
-      />
-    </div>
-  </section>
+    <h1>The OpenAQ Community Ambassador Program:</h1>
+    <h2>meaningful impact in the world’s most polluted regions.</h2>
+    <!-- <h2>Representing {new Set(isoCodes).size} countries</h2> -->
+    <div class="global-impact-container">
+      <div class="global-image">
+        <img
+          class="map-image"
+          src=`${baseUrl}/imgs/map/all.png`
+          alt=""
+          height="588"
+          width="1200"
+        />
+      </div>
 
-  <section class="impacts-section">
-    <div class="impacts-container">
-      {impacts.map((impact) => <Impacts impact={impact} />)}
+      <div class="impacts-container">
+        {impacts.map((impact) => <Impacts impact={impact} />)}
+      </div>
     </div>
   </section>
 

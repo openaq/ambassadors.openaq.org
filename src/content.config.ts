@@ -116,6 +116,7 @@ const impacts = defineCollection({
   schema: () =>
     z.object({
       title: z.string(),
+      number: z.string(),
     }),
 });
 
