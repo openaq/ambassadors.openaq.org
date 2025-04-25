@@ -108,6 +108,8 @@ const miniCards = defineCollection({
   schema: () =>
     z.object({
       title: z.string(),
+      text1: z.string(),
+      text2: z.string(),
     }),
 });
 

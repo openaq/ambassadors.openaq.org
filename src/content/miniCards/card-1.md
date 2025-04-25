@@ -1,5 +1,7 @@
 ---
-title: "Card 1"
+title: "Fighting Air Pollution"
+text1: "The program enables an "
+text2: "annual cohort of advocates to fight air pollution "
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+by utilizing air quality monitoring data in support of community action or scientific research.

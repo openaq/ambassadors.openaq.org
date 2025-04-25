@@ -1,5 +1,7 @@
 ---
-title: "Card 2"
+title: "A Leadership Training Program"
+text1: "The program includes a "
+text2: "comprehensive curriculum "
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+on ambient air pollution, air quality monitoring, data transparency, data access, data analysis, participatory research, and community engagement.
