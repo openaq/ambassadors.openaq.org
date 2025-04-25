@@ -1,14 +1,13 @@
 @use "openaq-design-system/scss/resets";
 @use "openaq-design-system/scss/mixins/index.scss" as mixins;
 @use "openaq-design-system/scss/mixins/typography" as *;
-@use "openaq-design-system/scss/utilities/types.scss";
-
+@use "openaq-design-system/scss/utilities/types";
 @use "openaq-design-system/scss/variables";
 
 .gradient-title {
   @include mixins.display1;
-  margin: 40px 0;
 
+  margin: 40px 0;
   background-color: variables.$lavender100;
   background-image: linear-gradient(
     92deg,
@@ -17,8 +16,6 @@
   );
   background-size: 100%;
   background-clip: text;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
   -webkit-text-fill-color: transparent;
   -moz-text-fill-color: transparent;
 }

@@ -31,6 +31,8 @@
     "postcss": "^8.5.3",
     "postcss-csso": "^6.0.1",
     "sass-embedded": "^1.86.3",
+    "stylelint": "^16.19.0",
+    "stylelint-config-standard-scss": "^14.0.0",
     "typescript": "^5.8.3"
   }
 }
