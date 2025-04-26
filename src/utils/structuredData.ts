@@ -1,4 +1,4 @@
-import type { ImageObject, Person, WithContext } from 'schema-dts';
+import type { Person, WithContext } from 'schema-dts';
 import type { CollectionEntry } from 'astro:content';
 
 export interface SocialsDefinition {
