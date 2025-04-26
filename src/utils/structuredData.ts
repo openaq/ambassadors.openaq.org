@@ -25,7 +25,7 @@ export function personStructuredData(
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: ambassador.data.name,
-    image: ambassador.data.image as unknown as ImageObject,
+    image: ambassador.data.image.src
   };
   if (socialsLinks.length) {
     data["sameAs"] = [...socialsLinks]
