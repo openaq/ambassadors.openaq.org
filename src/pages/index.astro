@@ -414,6 +414,12 @@ const isoCodes = ambassadors.map((ambassador) => {
     </div>
   </section>
 
+  <section class="cards-section">
+    <div class="mini-cards">
+      {miniCards.map((miniCard) => <MiniCards miniCard={miniCard} />)}
+    </div>
+  </section>
+
   <section class="global-section">
     <h1>The OpenAQ Community Ambassador Program:</h1>
     <h2>meaningful impact in the world’s most polluted regions.</h2>
@@ -432,15 +438,6 @@ const isoCodes = ambassadors.map((ambassador) => {
       <div class="impacts-container">
         {impacts.map((impact) => <Impacts impact={impact} />)}
       </div>
-    </div>
-  </section>
-
-  <section class="cards-section">
-    <h1>
-      A 10 month program to accelerate your career and drive clean air action
-    </h1>
-    <div class="mini-cards">
-      {miniCards.map((miniCard) => <MiniCards miniCard={miniCard} />)}
     </div>
   </section>
 
