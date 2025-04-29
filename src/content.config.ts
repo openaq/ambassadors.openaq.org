@@ -105,11 +105,12 @@ const homepage = defineCollection({
 
 const miniCards = defineCollection({
   loader: glob({ pattern: ['*.md'], base: 'src/content/miniCards' }),
-  schema: () =>
+  schema: ({ image }) =>
     z.object({
       title: z.string(),
       text1: z.string(),
       text2: z.string(),
+      image: image(),
     }),
 });
 

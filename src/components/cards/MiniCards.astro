@@ -1,4 +1,5 @@
 ---
+import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 interface Props {
   miniCard: CollectionEntry<"miniCards">;
@@ -15,13 +16,28 @@ const { miniCard } = Astro.props;
     background-color: white;
     display: flex;
     flex-direction: column;
-    height: 210px;
+    height: 260px;
     width: 100%;
     max-width: 330px;
     min-width: 200px;
     box-shadow: 0 8px 5px 5px rgb(83, 83, 83, 0.25);
     border-radius: 2px;
     padding: 20px 25px;
+
+    .mini-card__icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+
+      img {
+        display: block;
+        height: 40px;
+        width: 40px;
+        filter: brightness(0) saturate(100%) invert(50%) sepia(33%)
+          saturate(749%) hue-rotate(47deg) brightness(98%) contrast(86%);
+      }
+    }
 
     h3 {
       font-size: 1.1rem;
@@ -45,7 +61,7 @@ const { miniCard } = Astro.props;
   }
   @media (max-width: 1050px) {
     .mini-card {
-      height: 250px;
+      height: 280px;
       width: 100%;
       max-width: 330px;
       min-width: 200px;
@@ -57,7 +73,7 @@ const { miniCard } = Astro.props;
   }
   @media (max-width: 900px) {
     .mini-card {
-      height: 250px;
+      height: 280px;
       width: 100%;
       max-width: 330px;
       min-width: 200px;
@@ -75,6 +91,15 @@ const { miniCard } = Astro.props;
   }
 </style>
 <article class="mini-card">
+  <div class="mini-card__icon">
+    <Image
+      src={miniCard.data.image}
+      height={30}
+      width={30}
+      loading="eager"
+      alt={miniCard.data.title}
+    />
+  </div>
   <h3>{miniCard.data.title}</h3>
   <div class="mini-card__p">
     <p>
