@@ -199,7 +199,7 @@ const isoCodes = ambassadors.map((ambassador) => {
   }
 
   .impacts-container {
-    flex: 1 1 50%;
+    padding-right: 20px;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
@@ -221,6 +221,7 @@ const isoCodes = ambassadors.map((ambassador) => {
     }
 
     .impacts-container {
+      padding-right: 0;
       flex: 1 1 35%;
       justify-content: center;
       align-items: center;
@@ -235,15 +236,13 @@ const isoCodes = ambassadors.map((ambassador) => {
   }
 
   @media (max-width: 650px) {
-    .global-impact-container {
-    }
-
     .global-image {
       flex: 1 1 100%;
       max-width: 100%;
     }
 
     .impacts-container {
+      padding-right: 0;
       margin-top: 20px;
       flex: 1 1 100%;
       gap: 10px;
