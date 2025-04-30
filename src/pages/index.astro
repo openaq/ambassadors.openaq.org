@@ -6,7 +6,7 @@ import BaseLayout from "@layouts/BaseLayout.astro";
 import { getCollection } from "astro:content";
 import TestimonialCard from "@components/cards/TestimonialCard.astro";
 import { Image } from "astro:assets";
-import AmbassadorsWorkshopImg from "/src/assets/images/ambassadors_workshops_monthly_sessions.webp";
+import HeroImg from "/src/assets/images/Antonio_Mozambique2.jpg";
 import { getEntry } from "astro:content";
 import Impacts from "@components/impacts/Impacts.astro";
 import InvolvedCards from "@components/cards/InvolvedCards.astro";
@@ -430,7 +430,7 @@ const isoCodes = ambassadors.map((ambassador) => {
     </div>
     <div class="hero-image">
       <Image
-        src={AmbassadorsWorkshopImg}
+        src={HeroImg}
         height={800}
         alt="Ambassadors Workshops"
       />
