@@ -1,0 +1,108 @@
+---
+import type { CollectionEntry } from "astro:content";
+interface Props {
+  involvedCard: CollectionEntry<"involvedCards">;
+}
+
+const { involvedCard } = Astro.props;
+---
+
+<style lang="scss">
+  @use "openaq-design-system/scss/variables";
+  @use "openaq-design-system/scss/mixins/index.scss" as mixins;
+
+  .involved-card {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 290px;
+    width: 100%;
+    max-width: 330px;
+    min-width: 200px;
+    border: 1px solid black;
+    padding: 20px 25px;
+    margin: 0;
+
+    h3 {
+      font-size: 1.1rem;
+      margin: 0;
+      text-align: center;
+    }
+
+    &__p {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+
+      p {
+        text-align: center;
+        font-size: 0.9rem;
+        min-width: 280px;
+        padding: 0 12px;
+      }
+    }
+  }
+  .button {
+    font-size: 0.8rem;
+    font-weight: bold;
+    background: #3fc2c0;
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+    align-self: center;
+    max-width: fit-content;
+
+    &--disabled {
+      background: #ccc;
+      color: #666;
+      pointer-events: none;
+      cursor: not-allowed;
+    }
+  }
+  @media (max-width: 1050px) {
+    .involved-card {
+      height: 280px;
+      width: 100%;
+      max-width: 330px;
+      min-width: 200px;
+
+      p {
+        min-width: 230px;
+      }
+    }
+  }
+  @media (max-width: 900px) {
+    .involved-card {
+      height: 320px;
+      width: 100%;
+      max-width: 330px;
+      min-width: 200px;
+
+      p {
+        min-width: 210px;
+      }
+    }
+  }
+</style>
+<article class="involved-card">
+  <h3>{involvedCard.data.title}</h3>
+  <div class="involved-card__p">
+    <p>
+      {involvedCard.body}
+    </p>
+  </div>
+  <a
+    target={involvedCard.data.openInNewTab ? "_blank" : undefined}
+    rel={involvedCard.data.openInNewTab ? "noopener noreferrer" : undefined}
+    href={involvedCard.data.buttonLink}
+    class={`button${!involvedCard.data.buttonLink ? " button--disabled" : ""}`}
+    aria-disabled={involvedCard.data.buttonLink === ""}
+  >
+    {involvedCard.data.buttonText}
+  </a>
+</article>
