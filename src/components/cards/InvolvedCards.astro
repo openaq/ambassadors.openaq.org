@@ -5,6 +5,8 @@ interface Props {
 }
 
 const { involvedCard } = Astro.props;
+
+const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <style lang="scss">
@@ -99,7 +101,7 @@ const { involvedCard } = Astro.props;
   <a
     target={involvedCard.data.openInNewTab ? "_blank" : undefined}
     rel={involvedCard.data.openInNewTab ? "noopener noreferrer" : undefined}
-    href={involvedCard.data.buttonLink}
+    href={`${baseUrl}/${involvedCard.data.buttonLink}`}
     class={`button${!involvedCard.data.buttonLink ? " button--disabled" : ""}`}
     aria-disabled={involvedCard.data.buttonLink === ""}
   >

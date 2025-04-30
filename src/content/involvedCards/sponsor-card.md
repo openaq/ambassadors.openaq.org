@@ -1,7 +1,7 @@
 ---
 title: "Sponsor the Ambassadors"
 buttonText: "Donate"
-buttonLink: "ambassadors.openaq.org/support"
+buttonLink: "support"
 openInNewTab: false
 ---
 

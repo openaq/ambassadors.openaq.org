@@ -1,7 +1,7 @@
 ---
 title: "Apply to be a 2026 Ambassador"
 buttonText: "Apply"
-buttonLink: "ambassadors.openaq.org/apply"
+buttonLink: "apply"
 openInNewTab: false
 ---
 
