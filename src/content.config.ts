@@ -130,7 +130,7 @@ const involvedCards = defineCollection({
       title: z.string(),
       buttonText: z.string().optional(),
       buttonLink: z.string().optional(),
-      openInNewTab: z.boolean().optional(),
+      link: z.string().optional(),
     }),
 });
 
