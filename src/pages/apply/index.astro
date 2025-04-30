@@ -1,6 +1,13 @@
 ---
 import PageLayout from "@layouts/PageLayout.astro";
 import { Content, frontmatter } from "@content/apply/about.md";
+import CohortLinks from "@components/CohortLinks.astro";
+import { getEntry } from "astro:content";
+
+const baseUrl = import.meta.env.BASE_URL; // TODO remove for production build
+const applicationsData = await getEntry("forms", "application");
+
+const applicationActive = applicationsData?.data.active ?? false;
 ---
 
 <style lang="scss">
@@ -30,6 +37,22 @@ import { Content, frontmatter } from "@content/apply/about.md";
       margin-bottom: 50px;
     }
   }
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    .button {
+      font-size: 0.8rem;
+      font-weight: bold;
+      background: #3fc2c0;
+      color: white;
+      padding: 0.75rem 1rem;
+      border-radius: 50px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+  }
 </style>
 
 <PageLayout>
@@ -43,10 +66,17 @@ import { Content, frontmatter } from "@content/apply/about.md";
       <Content />
     </section>
 
-    <p>
-      <strong
-        >Applications will close by {frontmatter.application_deadline}.</strong
-      >
-    </p>
+    <p>* To see the countries of origin of previous ambassadors, see:</p>
+    <CohortLinks />
+
+    {
+      applicationActive && (
+        <div class="button-container">
+          <a class="button" href={`${baseUrl}/apply/application`}>
+            Apply Now
+          </a>
+        </div>
+      )
+    }
   </div>
 </PageLayout>
