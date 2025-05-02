@@ -54,8 +54,16 @@ const projects = defineCollection({
   loader: glob({ pattern: ['*.md'], base: 'src/content/projects' }),
   schema: ({ image }) =>
     z.object({
+      title: z.string(),
       name: z.string(),
+      ambassadorSlug: z.string(),
+      location: z.string(),
+      year: z.number().refine((x) => x > 2020 && x < 2030, {
+        message: 'Must be a valid year',
+      }),
       image: image(),
+      youtubeLink: z.string().url().optional(),
+      shortDescription: z.string().optional(),
     }),
 });
 
@@ -125,12 +133,24 @@ const impacts = defineCollection({
 
 const involvedCards = defineCollection({
   loader: glob({ pattern: ['*.md'], base: 'src/content/involvedCards' }),
-  schema: () =>
+  schema: ({ image }) =>
     z.object({
       title: z.string(),
       buttonText: z.string().optional(),
       buttonLink: z.string().optional(),
       link: z.string().optional(),
+      image: image(),
+    }),
+});
+
+const engagements = defineCollection({
+  loader: glob({ pattern: ['*.md'], base: 'src/content/engagements' }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      buttonText: z.string().optional(),
+      buttonLink: z.string().optional(),
+      image: image(),
     }),
 });
 
@@ -147,4 +167,5 @@ export const collections = {
   miniCards,
   impacts,
   involvedCards,
+  engagements,
 };
