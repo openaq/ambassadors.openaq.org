@@ -4,7 +4,7 @@ name: "Abid Omar"
 ambassadorSlug: abid-omar
 location: "Karachi, Pakistan"
 year: 2023
-image: "@assets/images/ambassadors_workshops_monthly_sessions.webp"
+image: "@assets/images/Abid_Pakistan.png"
 youtubeLink: "https://www.youtube.com/watch?v=Ar4OabsdWdI&t=234s"
 shortDescription: "In this project, Abid built the first comprehensive survey of available air quality data for Pakistan, analyzing seven years of low-cost sensor data collected by a community network for the four largest cities in Pakistan, namely Karachi, Lahore, Islamabad, and Peshawar."
 ---

@@ -4,7 +4,7 @@ name: "Rebeca Monroy-Torres"
 ambassadorSlug: rebeca-monroy-torres
 location: "Guanajuato, Mexico"
 year: 2023
-image: "@assets/images/ambassadors_workshops_monthly_sessions.webp"
+image: "@assets/images/Rebeca_Mexico.png"
 youtubeLink: "https://www.youtube.com/watch?v=Ar4OabsdWdI&t=3215s"
 shortDescription: "In this project, Rebeca used an air sensor to perform an analytical and longitudinal design in the rural brick industry community of Guanajuato, Mexico."
 ---

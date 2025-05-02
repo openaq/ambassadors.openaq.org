@@ -4,7 +4,7 @@ name: "António Hermano Banze"
 ambassadorSlug: antonio-hermano-banze
 location: "Maputo, Mozambique"
 year: 2024
-image: "@assets/images/ambassadors_workshops_monthly_sessions.webp"
+image: "@assets/images/Antonio_Mozambique3.jpg"
 youtubeLink: "https://www.youtube.com/watch?v=CbkX8EoRaPo&t=767s"
 shortDescription: "In this project, António carried activities that empower communities in Maputo, Mozambique to monitor air quality, understand its health impacts, and advocate for cleaner air policies through education, technology, and community engagement."
 ---

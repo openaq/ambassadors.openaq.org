@@ -4,7 +4,7 @@ name: "Kostadin Kostadinov"
 ambassadorSlug: kostadin-kostadinov
 location: "Plovdiv, Bulgaria"
 year: 2024
-image: "@assets/images/ambassadors_workshops_monthly_sessions.webp"
+image: "@assets/images/Kostadin plot final project.png"
 youtubeLink: "https://www.youtube.com/watch?v=CbkX8EoRaPo&t=1148s"
 shortDescription: "In this project, Kostadin explored two case studies in Bulgaria: one examining the health impacts of a Plovdiv air pollution episode and the other exploring public perceptions in Ruse."
 ---

@@ -4,7 +4,7 @@ name: "Alexandru Luchiian"
 ambassadorSlug: alexandru-luchiian
 location: "Cluj-Napoca, Romania"
 year: 2023
-image: "@assets/images/ambassadors_workshops_monthly_sessions.webp"
+image: "@assets/images/Alex_Mobile Lab.jpg"
 youtubeLink: "https://www.youtube.com/watch?v=Ar4OabsdWdI&t=719s"
 shortDescription: "In this project, Alex identified sources of pollution in Bucharest, Cluj-Napoca and Iasi, by looking at industrial emissions, traffic patterns, and waste disposal methods to understand their contributions to pollution levels."
 ---

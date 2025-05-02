@@ -4,7 +4,7 @@ name: "Ravkat Mukhtarov"
 ambassadorSlug: ravkat-mukhtarov
 location: "Almaty, Kazakhstan"
 year: 2024
-image: "@assets/images/ambassadors_workshops_monthly_sessions.webp"
+image: "@assets/images/Additional-Almaty-Atmotubes.png"
 youtubeLink: "https://www.youtube.com/watch?v=CbkX8EoRaPo&t=2354s"
 shortDescription: "In this project, Ravkat assessed the short-term health effects of air pollution in Almaty, Kazakhstan, using data analysis and air sensors, and translated these findings into public awareness and practical policy solutions."
 ---
