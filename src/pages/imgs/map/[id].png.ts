@@ -36,11 +36,15 @@ export async function GET({ params, request }) {
 
   const paths = world.features.map((o) => {
     return `<path d="${path(o.geometry)}" fill="${
-      isoCodes.includes(o.properties.ISO_A2) ? '#6a5cd8' : '#d4d8dc'
-    }" stroke="#fff" stroke-width="0.1"></path>`;
+      isoCodes.includes(o.properties.ISO_A2) ? '#6a5cd8' : '#fff'
+    }" stroke="${isoCodes.includes(o.properties.ISO_A2) ? '#fff' : '#d4d8dd'
+}" stroke-width="0.1"></path>`;
   });
 
+  const globe = `<path d="${path(({type: "Sphere"}))}" fill="#b0e8e6" stroke="none"></path>`;
+
   const svg = `<svg viewBox="0 0 200 ${height}">
+    ${globe}
     ${paths}
    </svg>`;
   const buffer = Buffer.from(svg);
@@ -52,9 +56,7 @@ export async function GET({ params, request }) {
 }
 
 export function getStaticPaths() {
-  return [
-    ...Array.from(cohortLookups.keys()).map((o) => {
+  return Array.from(cohortLookups.keys()).map((o) => {
       return { params: { id: o } };
-    }),
-  ];
+    });
 }
