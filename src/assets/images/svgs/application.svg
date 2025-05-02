@@ -1,7 +1,1 @@
-<svg width="368" height="452" viewBox="0 0 368 452" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M350.667 319.75V413.5C350.667 425.006 341.34 434.333 329.833 434.333H262.125" stroke="#212121" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M350.667 142.666V38.4998C350.667 26.9939 341.34 17.6665 329.834 17.6665H38.1673C26.6614 17.6665 17.334 26.9939 17.334 38.4998V413.5C17.334 425.006 26.6614 434.333 38.1673 434.333H100.667" stroke="#212121" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M100.668 142.667H246.501" stroke="#212121" stroke-width="34" stroke-linecap="round"/>
-<path d="M173.584 434.333L350.667 215.583" stroke="#212121" stroke-width="34" stroke-linecap="round"/>
-<path d="M100.668 226H184.001" stroke="#212121" stroke-width="34" stroke-linecap="round"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" height="48px" viewBox="0 -960 960 960" width="48px" fill="#e3e3e3"><path d="M237-363h335l60-60H237v60Zm0-178h231v-60H237v60Zm-97-159v439h330l-61 61H80v-560h800v149h-60v-89H140Zm775 220q5 5 5 12.5t-5 12.5l-37 37-50-50 39-39q5-5 10.5-5t10.5 5l27 27ZM530-120v-50l272-272 50 50-272 272h-50ZM140-700v439-439Z"/></svg>
