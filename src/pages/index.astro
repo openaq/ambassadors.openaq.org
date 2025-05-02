@@ -54,12 +54,20 @@ const isoCodes = ambassadors.map((ambassador) => {
       width: 1100px;
       z-index: 1;
       border-radius: 0 100% 100% 0;
-      transform: translateY(-250px) translateX(-350px);
+      transform: translateY(-150px) translateX(-290px);
     }
 
     .hero-image {
       position: absolute;
       right: 0;
+      bottom: 0;
+      height: 100%;
+      max-width: 50%;
+      img {
+        height: 100%;
+        width: auto;
+        object-fit: cover;
+      }
     }
 
     .hero-content {
