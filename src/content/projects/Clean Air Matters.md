@@ -4,7 +4,7 @@ name: "Tatiana Melissa Kwenkeu Tondji"
 ambassadorSlug: tatiana-melissa-kwenkeu-tondji
 location: "Douala, Cameroon"
 year: 2024
-image: "@assets/images/ambassadors_workshops_monthly_sessions.webp"
+image: "@assets/images/Melissa_Cameroon-2.jpeg"
 youtubeLink: "https://www.youtube.com/watch?v=CbkX8EoRaPo&t=3570s"
 shortDescription: "In this project, Melissa focused on field data collection of air pollution with spice grinders in markets and supporting environmental clubs to raise awareness about air quality in Douala, Cameroon."
 ---
