@@ -1,7 +1,8 @@
 ---
 title: "Sponsor the Ambassadors"
-buttonText: "Donate"
+buttonText: "Help Fund"
 buttonLink: "support"
+image: "@assets/images/svgs/fund.svg"
 ---
 
-Donations directly support scholarships for our remarkable group of ambassadors.
+Funding and donations support our remarkable group of ambassadors.

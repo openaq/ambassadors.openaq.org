@@ -10,6 +10,7 @@ import HeroImg from "/src/assets/images/Antonio_Mozambique2.jpg";
 import { getEntry } from "astro:content";
 import Impacts from "@components/impacts/Impacts.astro";
 import InvolvedCards from "@components/cards/InvolvedCards.astro";
+import EngageCards from "@components/cards/EngageCards.astro";
 
 const baseUrl = import.meta.env.BASE_URL;
 const index = await getEntry("homepage", "index");
@@ -21,6 +22,7 @@ const ambassadors = await getCollection("ambassadors");
 const miniCards = await getCollection("miniCards");
 const impacts = await getCollection("impacts");
 const involvedCards = await getCollection("involvedCards");
+const engageCards = await getCollection("engagements");
 
 const isoCodes = ambassadors.map((ambassador) => {
   return ambassador.data.countryIso;
@@ -259,7 +261,7 @@ const isoCodes = ambassadors.map((ambassador) => {
   }
 
   .partner-section {
-    margin-top: 60px;
+    padding: 80px 60px;
     h1 {
       margin: 0 auto;
       text-align: center;
@@ -271,6 +273,7 @@ const isoCodes = ambassadors.map((ambassador) => {
       gap: 100px;
       align-items: center;
       justify-content: center;
+      margin-bottom: 40px;
       @media (max-width: 1000px) {
         gap: 70px;
         padding: 10px;
@@ -279,11 +282,18 @@ const isoCodes = ambassadors.map((ambassador) => {
         gap: 20px;
       }
     }
+    p {
+      text-align: center;
+      width: 80%;
+      margin: 0 auto;
+      @media (max-width: 900px) {
+        width: 100%;
+      }
+    }
   }
 
   .cards-section {
     background-color: #f8f8f8;
-    // margin-top: 60px;
     overflow: hidden;
     padding: 80px 60px;
     @media (max-width: 1100px) {
@@ -325,23 +335,17 @@ const isoCodes = ambassadors.map((ambassador) => {
       padding-top: 20px;
     }
     .project-container {
-      margin-top: 20px;
-      display: flex;
-      flex-direction: row;
-      gap: 70px;
-      align-items: center;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 30px;
+      justify-items: center;
 
-      @media (max-width: 1100px) {
-        gap: 20px;
+      @media (max-width: 1000px) {
+        grid-template-columns: repeat(2, 1fr);
       }
-      @media (max-width: 850px) {
-        display: flex;
-        flex-wrap: wrap;
-      }
-      @media (max-width: 580px) {
-        display: flex;
-        flex-direction: column;
+      @media (max-width: 700px) {
+        grid-template-columns: repeat(1, 1fr);
       }
     }
   }
@@ -369,6 +373,7 @@ const isoCodes = ambassadors.map((ambassador) => {
     width: 80%;
     height: auto;
     aspect-ratio: attr(width) / attr(height);
+    margin-right: 10px;
   }
 
   .involved-section {
@@ -376,6 +381,7 @@ const isoCodes = ambassadors.map((ambassador) => {
     padding: 80px 20px;
     h1 {
       text-align: center;
+      font-size: 1.5rem;
     }
 
     p {
@@ -384,11 +390,50 @@ const isoCodes = ambassadors.map((ambassador) => {
     }
   }
   .involved-cards {
-    padding: 60px 25px;
+    margin-top: 20px;
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
     justify-content: center;
-    margin: 0;
+    @media (max-width: 800px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .engage-section {
+    overflow: hidden;
+    margin-top: 20px;
+    h1 {
+      width: 50%;
+      text-align: center;
+      margin: 0 auto;
+      padding-bottom: 30px;
+      @media (max-width: 1000px) {
+        width: 70%;
+      }
+      @media (max-width: 600px) {
+        width: 100%;
+      }
+    }
+    .engage-cards {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      @media (max-width: 800px) {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
   }
 </style>
 
@@ -424,16 +469,12 @@ const isoCodes = ambassadors.map((ambassador) => {
         <a
           href={`${baseUrl}/support/`}
           class="btn btn-primary learn-more-btn"
-          role="button">Donate</a
+          role="button">Help Fund</a
         >
       </div>
     </div>
     <div class="hero-image">
-      <Image
-        src={HeroImg}
-        height={800}
-        alt="Ambassadors Workshops"
-      />
+      <Image src={HeroImg} height={800} alt="Ambassadors Workshops" />
     </div>
   </section>
 
@@ -465,11 +506,12 @@ const isoCodes = ambassadors.map((ambassador) => {
   </section>
 
   <section class="projects-section">
-    <h1>Featured projects</h1>
+    <h1>Catalyzing Community Air Quality Action</h1>
     <div class="project-container">
       {projects.map((project) => <ProjectCard project={project} />)}
     </div>
   </section>
+
   <section class="testimonials-section">
     <h1>Testimonials</h1>
     <div class="testimonial-cards-container">
@@ -482,7 +524,7 @@ const isoCodes = ambassadors.map((ambassador) => {
   </section>
 
   <section class="involved-section">
-    <h1>Get involved</h1>
+    <h1>Get Involved</h1>
     <p>
       The OpenAQ’s Community Ambassador Program needs your help empowering the
       next generation of changemakers to tackle the global air quality epidemic.
@@ -495,6 +537,16 @@ const isoCodes = ambassadors.map((ambassador) => {
         ))
       }
     </div>
+    <section class="engage-section">
+      <h1>Engage with OpenAQ</h1>
+      <div class="engage-cards">
+        {
+          engageCards.map((engageCard) => (
+            <EngageCards engageCard={engageCard} />
+          ))
+        }
+      </div>
+    </section>
   </section>
 
   <section class="partner-section">
@@ -502,5 +554,17 @@ const isoCodes = ambassadors.map((ambassador) => {
     <div class="partner-logos">
       {partners.map((partner) => <PartnerCard partner={partner} />)}
     </div>
+    <p>
+      The following partners provide generous funding, equipment, or in-kind
+      support to help make The OpenAQ Community Ambassador Program a reality
+    </p>
   </section>
+
+  <div class="button-container">
+    <a
+      href={`${baseUrl}/support/`}
+      class="btn btn-primary learn-more-btn"
+      role="button">Help Fund</a
+    >
+  </div>
 </BaseLayout>
