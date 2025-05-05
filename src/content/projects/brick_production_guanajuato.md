@@ -6,7 +6,7 @@ location: "Guanajuato, Mexico"
 year: 2023
 image: "@assets/images/Rebeca_Mexico.png"
 youtubeLink: "https://www.youtube.com/watch?v=Ar4OabsdWdI&t=3215s"
-shortDescription: "In this project, Rebeca used an air sensor to perform an analytical and longitudinal design in the rural brick industry community of Guanajuato, Mexico."
+shortDescription: "Rebeca used an air sensor to perform an analytical and longitudinal design in the rural brick industry community of Guanajuato, Mexico."
 ---
 
 In Guanajuato, Mexico, the brick industry is the main economic source of polluting emissions, with the greatest health impacts. This sector has initiated government regulatory changes, but there is currently no monitoring of its impact on health. As a first pilot phase, this project’s objective was to measure the main air pollutants in a rural community in Guanajuato, Mexico, using a low-cost ATMOTUBE® sensor and to describe the area and population group at the greatest risk of exposure.

@@ -6,7 +6,7 @@ location: "Karachi, Pakistan"
 year: 2023
 image: "@assets/images/Abid_Pakistan.png"
 youtubeLink: "https://www.youtube.com/watch?v=Ar4OabsdWdI&t=234s"
-shortDescription: "In this project, Abid built the first comprehensive survey of available air quality data for Pakistan, analyzing seven years of low-cost sensor data collected by a community network for the four largest cities in Pakistan, namely Karachi, Lahore, Islamabad, and Peshawar."
+shortDescription: "Abid built the first comprehensive survey of available air quality data for Pakistan, analyzing seven years of low-cost sensor data collected by a community network for the four largest cities in Pakistan, namely Karachi, Lahore, Islamabad, and Peshawar."
 ---
 
 Since 2016, as a citizen scientist, Abid has worked on air quality data and advocacy in Pakistan through the

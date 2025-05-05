@@ -6,7 +6,7 @@ location: "Maputo, Mozambique"
 year: 2024
 image: "@assets/images/Antonio_Mozambique3.jpg"
 youtubeLink: "https://www.youtube.com/watch?v=CbkX8EoRaPo&t=767s"
-shortDescription: "In this project, António carried activities that empower communities in Maputo, Mozambique to monitor air quality, understand its health impacts, and advocate for cleaner air policies through education, technology, and community engagement."
+shortDescription: "António carried activities that empower communities in Maputo, Mozambique to monitor air quality, understand its health impacts, and advocate for cleaner air policies through education, technology, and community engagement."
 ---
 
 Mozambique faces significant air pollution challenges that threaten both public health and environmental sustainability. In urban areas, unregulated industrial activity, vehicular emissions, and urbanization contribute to rising levels of particulate matter (PM2.5) and other pollutants. For example, high levels of PM2.5 in Maputo, the capital, are largely attributed to vehicular emissions and industrial expansion (WHO, 2021). Meanwhile, in rural areas, many households rely on biomass fuels, such as wood and charcoal, for cooking, resulting in high levels of indoor air pollution. The reliance on biomass fuels contributes to health problems such as respiratory diseases and is a leading cause of premature death in rural populations (WHO, 2021). This combination has created a silent crisis, disproportionately affecting vulnerable populations, including women, children, and the elderly (UNEP, 2020).
