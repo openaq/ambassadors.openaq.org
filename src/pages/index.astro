@@ -281,7 +281,6 @@ const isoCodes = ambassadors.map((ambassador) => {
       gap: 100px;
       align-items: center;
       justify-content: center;
-      margin-bottom: 40px;
       @media (max-width: 1000px) {
         gap: 70px;
         padding: 10px;
@@ -291,6 +290,7 @@ const isoCodes = ambassadors.map((ambassador) => {
       }
     }
     p {
+      padding-bottom: 20px;
       text-align: center;
       width: 80%;
       margin: 0 auto;
@@ -559,13 +559,13 @@ const isoCodes = ambassadors.map((ambassador) => {
 
   <section class="partner-section">
     <h1>Partners</h1>
-    <div class="partner-logos">
-      {partners.map((partner) => <PartnerCard partner={partner} />)}
-    </div>
     <p>
       The following partners provide generous funding, equipment, or in-kind
       support to help make The OpenAQ Community Ambassador Program a reality
     </p>
+    <div class="partner-logos">
+      {partners.map((partner) => <PartnerCard partner={partner} />)}
+    </div>
   </section>
 
   <div class="button-container">
