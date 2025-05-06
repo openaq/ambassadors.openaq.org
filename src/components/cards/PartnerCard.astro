@@ -1,17 +1,18 @@
 ---
-import type { CollectionEntry } from "astro:content";
-import { Image } from "astro:assets";
+
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
 
 interface Props {
-  partner: CollectionEntry<"partners">;
+  partner: CollectionEntry<'partners'>;
 }
 
 const { partner } = Astro.props;
 ---
 
 <style lang="scss">
-  @use "openaq-design-system/scss/variables";
-  @use "openaq-design-system/scss/mixins/index.scss" as mixins;
+  @use 'openaq-design-system/scss/variables';
+  @use 'openaq-design-system/scss/mixins/index.scss' as mixins;
 
   .partner-card {
     background-color: white;
