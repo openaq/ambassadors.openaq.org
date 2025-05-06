@@ -1,7 +1,578 @@
 ---
+import MiniCards from "@components/cards/MiniCards.astro";
+import PartnerCard from "@components/cards/PartnerCard.astro";
+import ProjectCard from "@components/cards/ProjectCard.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import TestimonialCard from "@components/cards/TestimonialCard.astro";
+import { Image } from "astro:assets";
+import HeroImg from "/src/assets/images/Antonio_Mozambique2.jpg";
+import { getEntry } from "astro:content";
+import Impacts from "@components/impacts/Impacts.astro";
+import InvolvedCards from "@components/cards/InvolvedCards.astro";
+import EngageCards from "@components/cards/EngageCards.astro";
 
+const baseUrl = import.meta.env.BASE_URL;
+const index = await getEntry("homepage", "index");
+
+const partners = await getCollection("partners");
+const projects = await getCollection("projects");
+const testimonials = await getCollection("testimonials");
+const ambassadors = await getCollection("ambassadors");
+const miniCards = await getCollection("miniCards");
+const impacts = await getCollection("impacts");
+const involvedCards = await getCollection("involvedCards");
+const engageCards = await getCollection("engagements");
+
+const isoCodes = ambassadors.map((ambassador) => {
+  return ambassador.data.countryIso;
+});
 ---
 
+<style lang="scss">
+  @use "openaq-design-system/scss/variables" as variables;
+
+  @use "openaq-design-system/scss/mixins/index.scss" as mixins;
+  @use "openaq-design-system/scss/utilities/types.scss";
+  @use "openaq-design-system/scss/utilities/colors.scss";
+  @use "openaq-design-system/scss/inputs";
+
+  @use "openaq-design-system/scss/buttons";
+
+  .hero-section {
+    position: relative;
+    height: 650px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+
+    .hero-curve {
+      position: absolute;
+      left: 0;
+      background-color: #e2ebe1;
+      height: 1000px;
+      width: 1100px;
+      z-index: 1;
+      border-radius: 0 100% 100% 0;
+      transform: translateY(-150px) translateX(-290px);
+    }
+
+    .hero-image {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      height: 100%;
+      max-width: 50%;
+      img {
+        height: 100%;
+        width: auto;
+        object-fit: cover;
+      }
+    }
+
+    .hero-content {
+      position: absolute;
+      max-width: 450px;
+      width: 90%;
+      padding-top: 80px;
+      background-color: #e2ebe1;
+      padding-left: 40px;
+      z-index: 2;
+
+      h1 {
+        font-size: 2.9rem;
+        margin-top: 20px;
+        margin-bottom: 10px;
+        text-align: left;
+        font-weight: bold;
+        width: 600px;
+        background: linear-gradient(
+          125deg,
+          rgb(39, 66, 56),
+          rgb(100, 162, 137)
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .hero-subtitle {
+        text-align: center;
+        font-size: 1.2rem;
+        max-width: 480px;
+        width: 120%;
+        margin-top: 20px;
+        .hero-first-subtitle {
+          display: block;
+          padding-bottom: 25px;
+          border-bottom: 2px solid #555;
+        }
+        .highlight {
+          color: variables.$mantis120;
+          font-size: 1.3rem;
+          font-weight: bold;
+        }
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .learn-more-btn {
+          width: fit-content;
+          margin-top: 30px;
+          margin: 0 auto;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 650px) {
+    .hero-section {
+      height: 880px;
+      .hero-curve {
+        height: 1400px;
+      }
+    }
+    .hero-content {
+      padding-top: 20px;
+      padding-bottom: 150px;
+      h1 {
+        width: 500px !important;
+        width: 100% !important;
+        text-align: center !important;
+      }
+      .hero-subtitle {
+        width: 100% !important;
+        max-width: 600px !important;
+        margin: 0 auto;
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+      }
+    }
+  }
+  @media (max-width: 400px) {
+    .hero-section {
+      height: 880px;
+      .hero-curve {
+        height: 1200px;
+      }
+
+      .hero-content {
+        h1 {
+          width: 90%;
+          max-width: 260px;
+        }
+
+        .hero-subtitle {
+          width: 100%;
+          max-width: 360px;
+          margin: 0 auto;
+          font-size: 1rem;
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+
+  .global-section {
+    margin-top: 60px;
+    position: relative;
+    h1 {
+      text-align: center;
+    }
+    h2 {
+      text-align: center;
+      font-weight: 500;
+    }
+    .global-impact-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      margin-top: 40px;
+      flex-wrap: wrap;
+
+      .global-image {
+        flex: 1 1 50%;
+        max-width: 600px;
+        min-width: 300px;
+        display: flex;
+        justify-content: center;
+
+        .map-image {
+          width: 100%;
+          height: auto;
+        }
+
+        div {
+          width: 1200px;
+        }
+      }
+    }
+  }
+
+  .impacts-container {
+    padding-right: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    .impact-card {
+      flex: 0 1 180px;
+      max-width: 180px;
+    }
+  }
+  @media (max-width: 940px) {
+    .global-image {
+      flex: 1 1 65%;
+      max-width: 700px;
+      min-width: 400px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .impacts-container {
+      padding-right: 0;
+      flex: 1 1 35%;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .impact-card {
+      flex: 0 1 100%;
+      max-width: 100%;
+    }
+  }
+
+  @media (max-width: 650px) {
+    .global-image {
+      flex: 1 1 100%;
+      max-width: 100%;
+    }
+
+    .impacts-container {
+      padding-right: 0;
+      margin-top: 20px;
+      flex: 1 1 100%;
+      gap: 10px;
+      flex-direction: row;
+    }
+
+    .impact-card {
+      flex: 0 1 100%;
+      max-width: 100%;
+    }
+  }
+
+  .partner-section {
+    padding: 80px 60px;
+    h1 {
+      margin: 0 auto;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .partner-logos {
+      display: flex;
+      flex-direction: row;
+      gap: 100px;
+      align-items: center;
+      justify-content: center;
+      @media (max-width: 1000px) {
+        gap: 70px;
+        padding: 10px;
+      }
+      @media (max-width: 600px) {
+        gap: 20px;
+      }
+    }
+    p {
+      padding-bottom: 20px;
+      text-align: center;
+      width: 80%;
+      margin: 0 auto;
+      @media (max-width: 900px) {
+        width: 100%;
+      }
+    }
+  }
+
+  .cards-section {
+    background-color: #f8f8f8;
+    overflow: hidden;
+    padding: 80px 60px;
+    @media (max-width: 1100px) {
+      padding: 80px 20px;
+    }
+    h1 {
+      width: 50%;
+      text-align: center;
+      margin: 0 auto;
+      padding-bottom: 30px;
+      @media (max-width: 1000px) {
+        width: 70%;
+      }
+      @media (max-width: 600px) {
+        width: 100%;
+      }
+    }
+    .mini-cards {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      @media (max-width: 800px) {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+
+  .projects-section {
+    margin-top: 60px;
+    background-color: #e2ebe1;
+    padding: 40px 100px;
+    h1 {
+      text-align: center;
+      margin: 0 auto;
+      padding-top: 20px;
+    }
+    .project-container {
+      display:grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-top: 30px;
+      justify-items: center;
+
+      @media (max-width: 1200px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: 700px) {
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+
+  .testimonials-section {
+    padding: 80px 60px;
+
+    h1 {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+
+    .testimonial-cards-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-items: center;
+      gap: 70px 20px;
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+  }
+
+  .map-image {
+    width: 80%;
+    height: auto;
+    aspect-ratio: attr(width) / attr(height);
+    margin-right: 10px;
+  }
+
+  .involved-section {
+    background-color: #f8f8f8;
+    padding: 80px 20px;
+    h1 {
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    p {
+      width: 70%;
+      margin: 0 auto;
+    }
+  }
+  .involved-cards {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 800px) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  .engage-section {
+    overflow: hidden;
+    margin-top: 20px;
+    h1 {
+      width: 50%;
+      text-align: center;
+      margin: 0 auto;
+      padding-bottom: 30px;
+      @media (max-width: 1000px) {
+        width: 70%;
+      }
+      @media (max-width: 600px) {
+        width: 100%;
+      }
+    }
+    .engage-cards {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      @media (max-width: 800px) {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+</style>
+
 <BaseLayout>
+  <section class="hero-section">
+    <div class="hero-curve"></div>
+    <div class="hero-content">
+      <h1>{index?.data.title}</h1>
+      <p class="hero-subtitle">
+        <span class="hero-first-subtitle">
+          <span class="highlight">Air pollution</span> is a “silent killer” that
+          accounts <span class="highlight"
+            >for more than 8 million premature deaths</span
+          > each year and 90% of deaths attributed to outdoor air pollution are in
+          <span class="highlight"></span>low- and middle-income countries.
+        </span>
+        <br />
+        <span>
+          <span class="highlight"
+            >OpenAQ's Community Ambassador Program empowers</span
+          > the next generation of
+          <span class="highlight">changemakers</span> to tackle this global air quality
+          epidemic locally in the planet's most polluted regions through the use
+          of open data.
+        </span>
+      </p>
+      <div class="buttons">
+        <a
+          href={`${baseUrl}/apply/`}
+          class="btn btn-primary learn-more-btn"
+          role="button">Apply</a
+        >
+        <a
+          href={`${baseUrl}/support/`}
+          class="btn btn-primary learn-more-btn"
+          role="button">Help Fund</a
+        >
+      </div>
+    </div>
+    <div class="hero-image">
+      <Image src={HeroImg} height={800} alt="Ambassadors Workshops" />
+    </div>
+  </section>
+
+  <section class="cards-section">
+    <div class="mini-cards">
+      {miniCards.map((miniCard) => <MiniCards miniCard={miniCard} />)}
+    </div>
+  </section>
+
+  <section class="global-section">
+    <h1>The OpenAQ Community Ambassador Program:</h1>
+    <h2>meaningful impact in the world’s most polluted regions.</h2>
+    <!-- <h2>Representing {new Set(isoCodes).size} countries</h2> -->
+    <div class="global-impact-container">
+      <div class="global-image">
+        <img
+          class="map-image"
+          src=`${baseUrl}/imgs/map/all.png`
+          alt=""
+          height="588"
+          width="1200"
+        />
+      </div>
+
+      <div class="impacts-container">
+        {impacts.map((impact) => <Impacts impact={impact} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="projects-section">
+    <h1>Catalyzing Community Air Quality Action</h1>
+    <div class="project-container">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </section>
+
+  <section class="testimonials-section">
+    <h1>Testimonials</h1>
+    <div class="testimonial-cards-container">
+      {
+        testimonials.map((testimonial) => (
+          <TestimonialCard testimonial={testimonial} />
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="involved-section">
+    <h1>Get Involved</h1>
+    <p>
+      The OpenAQ’s Community Ambassador Program needs your help empowering the
+      next generation of changemakers to tackle the global air quality epidemic.
+      There are many different ways to support the program.
+    </p>
+    <div class="involved-cards">
+      {
+        involvedCards.map((involvedCard) => (
+          <InvolvedCards involvedCard={involvedCard} />
+        ))
+      }
+    </div>
+    <section class="engage-section">
+      <h1>Engage with OpenAQ</h1>
+      <div class="engage-cards">
+        {
+          engageCards.map((engageCard) => (
+            <EngageCards engageCard={engageCard} />
+          ))
+        }
+      </div>
+    </section>
+  </section>
+
+  <section class="partner-section">
+    <h1>Partners</h1>
+    <p>
+      The following partners provide generous funding, equipment, or in-kind
+      support to help make The OpenAQ Community Ambassador Program a reality
+    </p>
+    <div class="partner-logos">
+      {partners.map((partner) => <PartnerCard partner={partner} />)}
+    </div>
+  </section>
+
+  <div class="button-container">
+    <a
+      href={`${baseUrl}/support/`}
+      class="btn btn-primary learn-more-btn"
+      role="button">Help Fund</a
+    >
+  </div>
 </BaseLayout>

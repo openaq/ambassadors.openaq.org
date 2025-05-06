@@ -1,0 +1,81 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
+const baseUrl = import.meta.env.BASE_URL;
+const ambassadors = await getCollection("ambassadors");
+---
+
+<style lang="scss">
+  .ambassador-section {
+    padding-bottom: 100px;
+  }
+
+  .ambassador-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .ambassador-card {
+    background: #ffffff;
+    padding: 8px 20px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+    width: 230px;
+    height: 230px;
+    text-decoration: none;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    .ambassador-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 15px;
+      object-fit: cover;
+      border: 1px solid #ddd;
+    }
+
+    .ambassador-name {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .ambassador-title {
+      font-size: 1rem;
+      color: #777;
+      margin-top: 5px;
+    }
+  }
+</style>
+
+<PageLayout>
+  <section class="ambassador-section">
+    <h1 class="gradient-title">Meet Our Ambassadors</h1>
+
+    <div class="ambassador-list">
+      {
+        ambassadors.map((ambassador) => (
+          <a
+            href={`${baseUrl}/people/${ambassador.id}`}
+            class="ambassador-card"
+          >
+            <Image
+              src={ambassador.data.image}
+              alt={`Image of ${ambassador.data.name}`}
+              class="ambassador-image"
+            />
+            <div class="ambassador-name">{ambassador.data.name}</div>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</PageLayout>

@@ -1,0 +1,48 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  impact: CollectionEntry<"impacts">;
+}
+
+const { impact } = Astro.props;
+---
+
+<style lang="scss">
+  @use "openaq-design-system/scss/variables";
+  @use "openaq-design-system/scss/mixins/index.scss" as mixins;
+
+  .impact-card {
+    background-color: white;
+    display: flex;
+    height: 150px;
+    width: 220px;
+    box-shadow: 0 8px 5px 5px rgb(83, 83, 83, 0.25);
+    border-radius: 2px;
+    padding: 15px 15px;
+
+    .impact-content {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      padding: 10px 10px;
+
+      p {
+        text-align: center;
+        font-size: 0.9rem;
+      }
+    }
+  }
+  .highlight {
+    color: variables.$mantis120;
+    font-size: 1.4rem;
+    font-weight: bold;
+  }
+</style>
+
+<article class="impact-card">
+  <div class="impact-content">
+    <p><span class="highlight">{impact.data.number}</span> {impact.body}</p>
+  </div>
+</article>

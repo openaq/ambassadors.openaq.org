@@ -1,0 +1,23 @@
+---
+import { getCollection } from "astro:content";
+
+const cohorts = await getCollection("cohorts");
+
+const sortedCohorts = cohorts.sort((a, b) => b.id.localeCompare(a.id));
+---
+
+<ul>
+  {
+    sortedCohorts.map((cohort) => (
+      <li>
+        <a
+          href={`https://openaq.github.io/ambassadors.openaq.org/cohorts/${cohort.id}/`}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {cohort.id}
+        </a>
+      </li>
+    ))
+  }
+</ul>

@@ -1,0 +1,82 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import { Content, frontmatter } from "@content/apply/about.md";
+import CohortLinks from "@components/CohortLinks.astro";
+import { getEntry } from "astro:content";
+
+const baseUrl = import.meta.env.BASE_URL; // TODO remove for production build
+const applicationsData = await getEntry("forms", "application");
+
+const applicationActive = applicationsData?.data.active ?? false;
+---
+
+<style lang="scss">
+  @use "openaq-design-system/scss/variables" as variables;
+  @use "openaq-design-system/scss/mixins/index" as mixins;
+
+  h2 {
+    @include mixins.heading1;
+    color: variables.$sky120;
+  }
+  .apply-page {
+    padding-bottom: 100px;
+    .title-section {
+      border-bottom: 2px solid variables.$sky120;
+
+      h1 {
+        margin-bottom: 0;
+      }
+
+      .subtitle {
+        font-weight: bold;
+        margin-bottom: 50px;
+      }
+    }
+    .description-section {
+      padding-top: 50px;
+      margin-bottom: 50px;
+    }
+  }
+  .button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    .button {
+      font-size: 0.8rem;
+      font-weight: bold;
+      background: #3fc2c0;
+      color: white;
+      padding: 0.75rem 1rem;
+      border-radius: 50px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+  }
+</style>
+
+<PageLayout>
+  <div class="apply-page">
+    <section class="title-section">
+      <h1 class="gradient-title">{frontmatter.title}</h1>
+      <p class="subtitle">{frontmatter.subtitle}</p>
+    </section>
+
+    <section class="description-section">
+      <Content />
+    </section>
+
+    <p>* To see the countries of origin of previous ambassadors, see:</p>
+    <CohortLinks />
+
+    {
+      applicationActive && (
+        <div class="button-container">
+          <a class="button" href={`${baseUrl}/apply/application`}>
+            Apply Now
+          </a>
+        </div>
+      )
+    }
+  </div>
+</PageLayout>

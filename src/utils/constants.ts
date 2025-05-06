@@ -1,4 +1,8 @@
-export const ISO_A2 = {
+type IsoMap = {
+  [key: string]: string;
+};
+
+export const ISO_A2: IsoMap  = {
   AF: 'Afghanistan',
   AX: 'Aland Islands',
   AL: 'Albania',

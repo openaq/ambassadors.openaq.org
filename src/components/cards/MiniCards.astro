@@ -1,0 +1,111 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+interface Props {
+  miniCard: CollectionEntry<"miniCards">;
+}
+
+const { miniCard } = Astro.props;
+---
+
+<style lang="scss">
+  @use "openaq-design-system/scss/variables";
+  @use "openaq-design-system/scss/mixins/index.scss" as mixins;
+
+  .mini-card {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 260px;
+    width: 100%;
+    max-width: 330px;
+    min-width: 200px;
+    box-shadow: 0 8px 5px 5px rgb(83, 83, 83, 0.25);
+    border-radius: 2px;
+    padding: 20px 25px;
+
+    .mini-card__icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+
+      img {
+        display: block;
+        height: 40px;
+        width: 40px;
+        filter: brightness(0) saturate(100%) invert(50%) sepia(33%)
+          saturate(749%) hue-rotate(47deg) brightness(98%) contrast(86%);
+      }
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin: 0;
+      text-align: center;
+    }
+
+    &__p {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+
+      p {
+        text-align: center;
+        font-size: 0.9rem;
+        min-width: 280px;
+      }
+    }
+  }
+  @media (max-width: 1050px) {
+    .mini-card {
+      height: 280px;
+      width: 100%;
+      max-width: 330px;
+      min-width: 200px;
+
+      p {
+        min-width: 230px;
+      }
+    }
+  }
+  @media (max-width: 900px) {
+    .mini-card {
+      height: 280px;
+      width: 100%;
+      max-width: 330px;
+      min-width: 200px;
+
+      p {
+        min-width: 210px;
+      }
+    }
+  }
+  .highlight {
+    font-weight: 600;
+    background-color: rgba(variables.$mantis100, 0.3);
+    padding: 0 3px;
+    border-radius: 2px;
+  }
+</style>
+<article class="mini-card">
+  <div class="mini-card__icon">
+    <Image
+      src={miniCard.data.image}
+      height={30}
+      width={30}
+      loading="eager"
+      alt={miniCard.data.title}
+    />
+  </div>
+  <h3>{miniCard.data.title}</h3>
+  <div class="mini-card__p">
+    <p>
+      {miniCard.data.text1}<span class="highlight">{miniCard.data.text2}</span>{
+        miniCard.body
+      }
+    </p>
+  </div>
+</article>

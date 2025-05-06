@@ -1,34 +1,127 @@
 ---
+import AmbassadorsCard from "@components/people/AmbassadorsCard.astro";
+import PageLayout from "@layouts/PageLayout.astro";
+import type { CollectionEntry } from "astro:content";
 import { getCollection, render } from "astro:content";
+import Youtube from "@components/Youtube.astro";
+import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
 
+const baseUrl = import.meta.env.BASE_URL;
 
-export async function getStaticPaths() {
+export const getStaticPaths = (async () => {
   const cohorts = await getCollection("cohorts");
 
   return [...cohorts].map((cohort) => ({
     params: { slug: cohort.id },
     props: { cohort },
   }));
-}
+}) satisfies GetStaticPaths;
+
+type Props = InferGetStaticPropsType<typeof getStaticPaths>;
 
 const { cohort } = Astro.props;
 
 const { Content } = await render(cohort);
 
 const ambassadors = await getCollection("ambassadors");
+type CollectionName = "ambassadors";
 
-const people = ambassadors.filter(o => o.data.year === cohort.data.year)
+const people = ambassadors.filter((o) => o.data.year === cohort.data.year);
 
+const isoCodes = people.map((ambassador) => {
+  return ambassador.data.countryIso;
+});
 
+const socials = (entry: CollectionEntry<CollectionName>) => {
+  return {
+    email: entry.data.email,
+    x: entry.data.x,
+    mastadon: entry.data.mastadon,
+    linkedin: entry.data.linkedin,
+    github: entry.data.github,
+    orcid: entry.data.orcid,
+    researchGate: entry.data.researchGate,
+    googleScholar: entry.data.googleScholar,
+    bluesky: entry.data.bluesky,
+  };
+};
+
+const sortByName = (
+  a: CollectionEntry<CollectionName>,
+  b: CollectionEntry<CollectionName>
+) => a.data.name.localeCompare(b.data.name);
 ---
 
+<style lang="scss">
+  .cohort-page {
+    padding-bottom: 100px;
+  }
+  .person-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 22px;
+    row-gap: 22px;
+    overflow: visible;
+    margin: 0 auto;
 
-<h1>{cohort.data.year}</h1>
+    @media (max-width: 800px) {
+      grid-template-columns: repeat(2, 1fr);
+      width: 530px;
+    }
 
-<ul>
-{people.map(o => (
-  <li>{o.data.name}</li>
-)
-)}
-</ul>
+    @media (max-width: 600px) {
+      grid-template-columns: repeat(1, 1fr);
+      width: 250px;
+    }
+  }
 
+  .map-image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: attr(width) / attr(height);
+  }
+</style>
+
+<PageLayout>
+  <div class="cohort-page">
+    <h1 class="gradient-title">{cohort.data.year} Cohort</h1>
+    <div class="cohort-description">
+      <Content />
+    </div>
+    <section class="person-grid">
+      {
+        people
+          .sort(sortByName)
+          .map((ambassador) => (
+            <AmbassadorsCard
+              name={ambassador.data.name}
+              country={ambassador.data.countryIso}
+              url={`${baseUrl}/people/${ambassador.id}/`}
+              bio={String(ambassador.body)}
+              socials={socials(ambassador)}
+              portrait={ambassador.data.image}
+            />
+          ))
+      }
+    </section>
+    <section>
+      <h2>Representing {new Set(isoCodes).size} countries</h2>
+      <img
+        class="map-image"
+        src=`${baseUrl}/imgs/map/${cohort.data.year}.png`
+        alt=""
+        height="392"
+        width="800"
+      />
+    </section>
+    {
+      cohort.data.youtubeId ? (
+        <section>
+          <Youtube youtubeId={cohort.data.youtubeId} />
+        </section>
+      ) : (
+        ""
+      )
+    }
+  </div>
+</PageLayout>

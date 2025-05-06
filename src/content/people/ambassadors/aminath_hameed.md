@@ -2,9 +2,9 @@
 name: "Aminath Maiha Hameed"
 image: "@assets/images/maiha.png"
 linkedin: "https://www.linkedin.com/in/aminathmaiha/"
-country_iso: "ML"
+countryIso: "ML"
 year: 2024
-timestamp: "00:02:22"
+timestamp: 370
 presentation: "public/foobar.pdf"
 ---
 

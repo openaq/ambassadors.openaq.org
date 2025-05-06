@@ -1,0 +1,123 @@
+---
+import SocialIcons from "./SocialIcons.astro";
+import removeMarkdown from "remove-markdown";
+import type { SocialsDefinition } from "src/utils/structuredData";
+
+interface ImageDefinition {
+  
+  src: string;
+  width: number;
+  height: number;
+  format: "png" | "jpg" | "jpeg" | "tiff" | "webp" | "gif" | "svg" | "avif";
+  
+}
+
+interface Props {
+  name: string;
+  url?: string;
+  bio: string;
+  socials?: SocialsDefinition;
+  portrait: ImageDefinition;
+  country: string;
+}
+
+
+
+const { name, url, bio, socials, portrait, country } = Astro.props;
+
+import { Image } from "astro:assets";
+
+import { ISO_A2 } from "../../utils/constants";
+
+const summary = (bio: string, length = 300): string => {
+  const cleanText = removeMarkdown(bio, {
+    useImgAltText: false,
+  });
+  if (cleanText.length <= length) return cleanText;
+  return cleanText.substring(0, cleanText.lastIndexOf(" ", length)) + "...";
+};
+---
+
+<style lang="scss">
+  @use "openaq-design-system/scss/variables" as var;
+  @use "openaq-design-system/scss/mixins/index.scss" as mixins;
+  @use "openaq-design-system/scss/utilities/types.scss";
+  @use "openaq-design-system/scss/mixins/typography" as *;
+
+
+@mixin person-card($name, $color) {
+  .#{$name}-card {
+    border-radius: 22px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    &__img {
+      width: 100%;
+      height: auto;
+    }
+
+    & > a {
+      display: flex;
+      flex-direction: column;
+
+      &__img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__description {
+      border-top: 6px solid $color;
+      padding: 0 12px 12px 12px;
+
+      .person-name {
+        @include mixins.subtitle2;
+        margin: 14px 0 6px 0;
+      }
+
+      .person-title {
+        @include mixins.subtitle3;
+        color: $color;
+        margin: 6px 0;
+      }
+
+      .person-bio {
+        @include mixins.body4;
+        text-decoration: none;
+        margin: 12px 0;
+      }
+    }
+  }
+}
+  @include person-card("team", var.$sky100);
+
+  .team-card:hover {
+    @include mixins.box-shadow;
+  }
+  a {
+    text-decoration: none;
+    color: var.$smoke120;
+    font-family: "Space Grotesk";
+  }
+</style>
+
+<article class="team-card">
+  <a href={url}>
+    <Image
+      class="person-image"
+      src={portrait}
+      height={252}
+      width={252}
+      alt={name}
+    />
+
+    <div class="team-card__description">
+      <h2 class="person-name">{name}</h2>
+      <p class="person-country">{ISO_A2[country]}</p>
+      <p class="person-bio">{summary(bio)}</p>
+      <SocialIcons {...socials} />
+    </div>
+  </a>
+</article>

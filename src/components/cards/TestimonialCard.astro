@@ -1,0 +1,84 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  testimonial: CollectionEntry<"testimonials">;
+}
+
+const { testimonial } = Astro.props;
+---
+
+<style lang="scss">
+  @use "openaq-design-system/scss/variables";
+  @use "openaq-design-system/scss/mixins/index.scss" as mixins;
+
+  .testimonial-card {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+
+    &__img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 1px solid #ddd;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .testimonial-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 15px;
+      text-align: left;
+      max-width: 280px;
+      flex-grow: 1;
+
+      q {
+        font-size: 0.85rem;
+      }
+      p {
+        font-size: 0.8rem;
+      }
+    }
+  }
+  @media (max-width: 650px) {
+    .testimonial-card {
+      &__img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          border-radius: 50%;
+        }
+      }
+    }
+  }
+  @media (max-width: 600px) {
+    .testimonial-card {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+</style>
+
+<article class="testimonial-card">
+  <div class="testimonial-card__img">
+    <Image src={testimonial.data.image} alt={testimonial.data.name} />
+  </div>
+  <div class="testimonial-content">
+    <q class="quote">{testimonial.body}</q>
+    <p>— {testimonial.data.name} '24 Cohort</p>
+  </div>
+</article>

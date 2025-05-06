@@ -1,17 +1,27 @@
 ---
 const pathname = new URL(Astro.request.url).pathname;
-const currentPath = pathname.split('/')[1];
-import Logo from '@assets/logo.svg';
+const currentPath = pathname.split("/")[1];
+import Logo from "@assets/logo.svg";
+import { getCollection } from "astro:content";
+import { getEntry } from "astro:content";
+const cohorts = await getCollection("cohorts");
+const referencesData = await getEntry("forms", "references");
+const applicationsData = await getEntry("forms", "application");
+
+const baseUrl = import.meta.env.BASE_URL; // TODO remove for production build
+
+const referencesActive = referencesData?.data.active ?? false;
+const applicationActive = applicationsData?.data.active ?? false;
 ---
 
 <style lang="scss">
-  @use 'openaq-design-system/scss/variables' as variables;
-  @use 'openaq-design-system/scss/mixins/index.scss' as mixins;
-  @use 'openaq-design-system/scss/header';
-  @use 'openaq-design-system/scss/buttons';
+  @use "openaq-design-system/scss/variables" as variables;
+  @use "openaq-design-system/scss/mixins/index.scss" as mixins;
+  @use "openaq-design-system/scss/header";
+  @use "openaq-design-system/scss/buttons";
 
   .header {
-    padding: 0 40px;
+    padding: 10px 40px;
     z-index: 1000;
   }
 
@@ -29,8 +39,9 @@ import Logo from '@assets/logo.svg';
   .nav {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 12px;
-    justify-content: space-between;
+    width: 100%;
 
     &__item {
       @include mixins.navigation1;
@@ -50,8 +61,252 @@ import Logo from '@assets/logo.svg';
     list-style-type: none;
     margin: 0;
     padding: 0;
+    justify-content: center;
+    width: 100%;
   }
 
+  .menu-button-container {
+    display: none;
+    height: 100%;
+    width: 30px;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+
+  .menu-button {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+  }
+
+  .submenu {
+    list-style: none;
+    margin: 0;
+    padding-left: 0;
+    width: 220px;
+    background-color: white;
+    visibility: hidden;
+    opacity: 0;
+    min-width: 5rem;
+    position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+    top: 10px;
+    left: 0;
+    display: none;
+    height: auto;
+
+    &:hover {
+      visibility: visible;
+      opacity: 1;
+      display: block;
+    }
+
+    &__item {
+      height: 24px;
+      margin: 12px;
+    }
+  }
+
+  .dropdown {
+    position: relative;
+    background-color: white;
+
+    &:hover {
+      .submenu {
+        background-color: white;
+        visibility: visible;
+        opacity: 1;
+        z-index: 1000;
+        display: block;
+        border: 1px solid #eaecf0;
+        border-radius: 12px;
+      }
+    }
+  }
+
+  @media (max-width: 1000px) {
+    $header-height: 60px;
+
+    .header {
+      height: $header-height;
+      padding: 5px 40px;
+    }
+
+    .header-contents {
+      flex-wrap: nowrap;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .menu-button-container {
+      input {
+        display: none;
+      }
+    }
+
+    .spacer {
+      display: block;
+      order: 3;
+      width: 30px;
+    }
+
+    .header-logo {
+      order: 1;
+      justify-content: flex-start;
+    }
+
+    .nav {
+      order: 2;
+      flex: 1;
+      justify-content: center;
+    }
+
+    .learn-more-btn {
+      order: 3;
+      display: block;
+      margin-left: auto;
+      display: flex;
+      align-items: center;
+    }
+
+    .donate-btn {
+      display: none;
+    }
+
+    .menu-button-container {
+      display: flex;
+    }
+    .nav-list {
+      display: none;
+      position: absolute;
+      top: -15px;
+      margin-top: $header-height;
+      left: 0;
+      flex-direction: column;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+
+      &--visible {
+        display: flex;
+      }
+
+      & > li {
+        overflow: hidden;
+      }
+    }
+
+    .dropdown {
+      position: relative;
+      background-color: white;
+
+      &:hover {
+        .submenu {
+          z-index: 1000;
+          display: flex;
+          border: none;
+          border-radius: 0;
+        }
+      }
+
+      & > a {
+        display: none;
+      }
+
+      & {
+        .submenu {
+          background-color: white;
+          visibility: visible;
+          position: static;
+          margin: 0;
+          opacity: 1;
+          width: 100%;
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+
+          &:hover {
+            display: flex;
+          }
+
+          &__item {
+            display: flex;
+            height: auto;
+            width: 100%;
+            margin: 0;
+            justify-content: center;
+            border: 1px solid #eaecf0;
+          }
+        }
+      }
+    }
+    #menu-toggle:checked ~ .nav-list {
+      display: flex;
+    }
+
+    #menu-toggle ~ .nav-list > li {
+      height: 0;
+      margin: 0;
+      padding: 0;
+      border: 0;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    #menu-toggle:checked ~ .nav-list > li {
+      border: 1px solid variables.$smoke10;
+      display: flex;
+      height: auto;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .nav-list > li {
+      z-index: 1000;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      width: 100%;
+      background-color: white;
+    }
+    .nav-list > li:not(:last-child) {
+      border-bottom: 1px solid #444;
+    }
+  }
+
+  .list-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .logout-form {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .logout-btn {
+    @include mixins.body3;
+    background: none;
+    color: variables.$smoke120;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: inherit;
+  }
+
+  .settings-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
 </style>
 
 <header class="header">
@@ -60,6 +315,96 @@ import Logo from '@assets/logo.svg';
       <Logo width="72" height="40" aria-label="OpenAQ logo" />
     </a>
     <div class="spacer"></div>
-    <nav class="nav"></nav>
+    <nav class="nav">
+      <input id="menu-toggle" type="checkbox" />
+      <label class="menu-button-container" for="menu-toggle">
+        <div class="menu-button">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="24px"
+            viewBox="0 -960 960 960"
+            width="24px"
+            fill="#000000"
+            ><path
+              d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+            ></path></svg
+          >
+        </div>
+      </label>
+      <ul class="nav-list">
+        <li>
+          <a class="nav__item explore-data-tab" href={baseUrl}>About</a>
+        </li>
+        <li class="dropdown">
+          <a class="nav__item">Ambassadors</a>
+          <ul class="submenu" aria-label="submenu">
+            {
+              cohorts
+                .sort((a, b) => b.data.year - a.data.year)
+                .map((o) => {
+                  return (
+                    <li class="submenu__item">
+                      <a
+                        class="nav__item"
+                        href={`${baseUrl}/cohorts/${o.data.year}/`}
+                      >
+                        {o.data.year}
+                      </a>
+                    </li>
+                  );
+                })
+            }
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a
+            href={`${baseUrl}/apply`}
+            class=`nav__item open-data-tab ${currentPath === "why-open-data" ? "nav__item--active" : ""}`
+            >How to Apply</a
+          >
+          <ul class="submenu">
+            <li class="submenu__item">
+              <a class="nav__item" href={`${baseUrl}/apply`}>About applying</a>
+            </li>
+            {
+              applicationActive && (
+                <li class="submenu__item">
+                  <a class="nav__item" href={`${baseUrl}/apply/application`}>
+                    {" "}
+                    Application{" "}
+                  </a>
+                </li>
+              )
+            }
+            {
+              referencesActive && (
+                <li class="submenu__item">
+                  <a class="nav__item" href={`${baseUrl}/apply/references`}>
+                    {" "}
+                    References{" "}
+                  </a>
+                </li>
+              )
+            }
+
+            <li class="submenu__item">
+              <a class="nav__item" href={`${baseUrl}/apply/faq`}>FAQ</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a
+            href={`${baseUrl}/support`}
+            class=`nav__item partners-tab ${currentPath === "partners" ? "nav__item--active" : ""}`
+            >Support us</a
+          >
+        </li>
+      </ul>
+    </nav>
+    <a
+      href={`${baseUrl}/apply`}
+      class="btn btn-primary learn-more-btn"
+      role="button">Apply</a
+    >
   </div>
 </header>

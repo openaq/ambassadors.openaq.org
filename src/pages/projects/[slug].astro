@@ -1,0 +1,92 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import { getCollection, render, type CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+import SocialIcons from "@components/people/SocialIcons.astro";
+const ambassadors = await getCollection("ambassadors");
+const baseUrl = import.meta.env.BASE_URL;
+export async function getStaticPaths() {
+  const projects = await getCollection("projects");
+
+  return [...projects].map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+
+const { Content } = await render(project);
+const matchingAmbassador = ambassadors.find(
+  (ambassador) => ambassador.id === project.data.ambassadorSlug
+);
+---
+
+<style lang="scss">
+  @use "openaq-design-system/scss/variables" as variables;
+  @use "openaq-design-system/scss/mixins/index" as mixins;
+
+  .project-content {
+    h2 {
+      a {
+        color: variables.$smoke180;
+      }
+    }
+
+    .img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      margin-bottom: 2rem;
+    }
+
+    .link {
+      span {
+        font-weight: bold;
+      }
+    }
+    p {
+      @include mixins.body2;
+      margin: 15px 0;
+    }
+  }
+</style>
+
+<PageLayout frontmatter={project.data}>
+  <div class="project-content">
+    <h1 class="gradient-title">{project.data.title}</h1>
+    {
+      matchingAmbassador && (
+        <h2>
+          <a
+            href={`${baseUrl}/people/${matchingAmbassador.id}`}
+            class="person-link"
+          >
+            {matchingAmbassador.data.name}
+          </a>
+        </h2>
+      )
+    }
+
+    <h3>{project.data.location}</h3>
+    <h3>{project.data.year} Cohort</h3>
+
+    <Image
+      src={project.data.image}
+      loading="eager"
+      alt=`${project.data.name} portrait`
+      class="img"
+    />
+    <div class="project-bio"><Content /></div>
+    <p class="link">
+      <span>Link to Presentation: </span>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href={project.data.youtubeLink}
+      >
+        {project.data.youtubeLink}</a
+      >
+    </p>
+  </div>
+</PageLayout>

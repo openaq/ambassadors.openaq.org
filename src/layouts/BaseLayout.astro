@@ -7,15 +7,15 @@ import "@assets/styles/main.scss";
 ---
 
 
-
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/ambassadors.openaq.org/favicon.svg" />
     <link rel="sitemap" href="/sitemap.xml" /> 
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
+    <slot name="structured-data" />
     {import.meta.env.PROD && (
       <>
         <script

@@ -1,0 +1,161 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+interface Props {
+  involvedCard: CollectionEntry<"involvedCards">;
+}
+
+const { involvedCard } = Astro.props;
+
+const baseUrl = import.meta.env.BASE_URL;
+---
+
+<style lang="scss">
+  @use "openaq-design-system/scss/variables";
+  @use "openaq-design-system/scss/mixins/index.scss" as mixins;
+
+  .involved-card {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    width: 100%;
+    max-width: 330px;
+    min-width: 200px;
+    box-shadow: 0 8px 5px 5px rgb(83, 83, 83, 0.25);
+    border-radius: 2px;
+    padding: 20px 25px;
+    margin-bottom: 40px;
+
+    .involved-card__icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 10px;
+
+      img {
+        display: block;
+        height: 40px;
+        width: 40px;
+        filter: brightness(0) saturate(100%) invert(50%) sepia(33%)
+          saturate(749%) hue-rotate(47deg) brightness(98%) contrast(86%);
+      }
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin: 0;
+      text-align: center;
+    }
+
+    &__p {
+      display: flex;
+      flex: 1;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+
+      p {
+        text-align: center;
+        font-size: 0.9rem;
+        min-width: 280px;
+        padding: 0 12px;
+      }
+    }
+  }
+  .button {
+    font-size: 0.8rem;
+    font-weight: bold;
+    background: #3fc2c0;
+    color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 50px;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+    align-self: center;
+    max-width: fit-content;
+
+    &--disabled {
+      //   background: #ccc;
+      cursor: not-allowed;
+    }
+  }
+  .link {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #3fc2c0;
+    text-align: center;
+    text-decoration: underline;
+    margin-top: 1rem;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #2fa89f;
+    }
+  }
+  @media (max-width: 1050px) {
+    .involved-card {
+      height: 370px;
+      width: 100%;
+      max-width: 330px;
+      min-width: 200px;
+
+      p {
+        min-width: 230px;
+      }
+    }
+  }
+  @media (max-width: 900px) {
+    .involved-card {
+      height: 390px;
+      width: 100%;
+      max-width: 330px;
+      min-width: 200px;
+
+      p {
+        min-width: 210px;
+      }
+    }
+  }
+</style>
+<article class="involved-card">
+  <div class="involved-card__icon">
+    <Image
+      src={involvedCard.data.image}
+      height={30}
+      width={30}
+      loading="eager"
+      alt={involvedCard.data.title}
+    />
+  </div>
+  <h3>{involvedCard.data.title}</h3>
+  <div class="involved-card__p">
+    <p>
+      {involvedCard.body}
+    </p>
+  </div>
+  {
+    involvedCard.data.hasOwnProperty("buttonLink") && (
+      <a
+        href={`${baseUrl}/${involvedCard.data.buttonLink}`}
+        class={`button${!involvedCard.data.buttonLink ? " button--disabled" : ""}`}
+        aria-disabled={involvedCard.data.buttonLink === ""}
+      >
+        {involvedCard.data.buttonText}
+      </a>
+    )
+  }
+  {
+    involvedCard.data.link && (
+      <a
+        class="link"
+        target="_blank"
+        rel="noopener noreferrer"
+        href={involvedCard.data.link}
+      >
+        {involvedCard.data.buttonText}
+      </a>
+    )
+  }
+</article>

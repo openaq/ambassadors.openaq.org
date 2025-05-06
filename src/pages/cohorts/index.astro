@@ -1,0 +1,82 @@
+---
+import PageLayout from "@layouts/PageLayout.astro";
+import { getCollection } from "astro:content";
+const baseUrl = import.meta.env.BASE_URL;
+const ambassadors = await getCollection("ambassadors");
+
+const cohortYears = [...new Set(ambassadors.map((amb) => amb.data.year))].sort(
+  (a, b) => b - a
+);
+---
+
+<style lang="scss">
+  .cohort-section {
+    padding-bottom: 100px;
+  }
+
+  .cohort-list {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 40px;
+  }
+
+  .cohort-button {
+    padding: 8px 100px;
+    border-radius: 50px;
+    border: 1px solid rgb(224, 224, 224);
+    overflow: hidden;
+    text-align: center;
+    transition: all 0.3s ease;
+    text-decoration: none;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    &:hover .cohort-description {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .cohort-year {
+      font-size: 1rem;
+      font-weight: bold;
+      color: black;
+    }
+
+    .cohort-description {
+      position: absolute;
+      bottom: 10px;
+      left: 0;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      padding: 15px;
+      font-size: 1rem;
+      border-radius: 8px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s ease;
+    }
+  }
+</style>
+
+<PageLayout>
+  <section class="cohort-section">
+    <h1 class="gradient-title">OpenAQ Ambassadors</h1>
+    <p>Discover our ambassadors throughout the years</p>
+
+    <div class="cohort-list">
+      {
+        cohortYears.map((year) => (
+          <a href={`${baseUrl}/cohorts/${year}`} class="cohort-button">
+            <div class="cohort-year">{year}</div>
+          </a>
+        ))
+      }
+    </div>
+  </section>
+</PageLayout>

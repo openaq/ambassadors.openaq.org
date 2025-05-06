@@ -6,14 +6,33 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "check": "astro check",
+    "astro": "astro",
+    "knip": "knip"
   },
   "dependencies": {
-    "astro": "^5.3.0",
+    "@astrojs/check": "^0.9.4",
+    "astro": "^5.7.1",
+    "astro-purgecss": "^5.2.2",
+    "astro-seo-schema": "^5.0.0",
+    "d3": "^7.9.0",
     "openaq-design-system": "github:openaq/openaq-design-system#v-4.0.0",
-    "vite-plugin-solid-svg": "^0.8.1"
+    "purgecss": "^7.0.2",
+    "remove-markdown": "^0.6.0",
+    "schema-dts": "^1.1.5",
+    "sharp": "^0.34.1"
   },
   "devDependencies": {
-    "sass": "^1.86.0"
+    "@astrojs/ts-plugin": "^1.10.4",
+    "@types/d3": "^7.4.3",
+    "@types/node": "^22.14.0",
+    "autoprefixer": "^10.4.21",
+    "knip": "^5.50.1",
+    "postcss": "^8.5.3",
+    "postcss-csso": "^6.0.1",
+    "sass-embedded": "^1.86.3",
+    "stylelint": "^16.19.0",
+    "stylelint-config-standard-scss": "^14.0.0",
+    "typescript": "^5.8.3"
   }
 }
