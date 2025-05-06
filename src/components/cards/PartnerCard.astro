@@ -1,17 +1,17 @@
 ---
-import type { CollectionEntry } from 'astro:content';
-import { Image } from 'astro:assets';
+import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
 
 interface Props {
-  partner: CollectionEntry<'partners'>;
+  partner: CollectionEntry<"partners">;
 }
 
 const { partner } = Astro.props;
 ---
 
 <style lang="scss">
-  @use 'openaq-design-system/scss/variables';
-  @use 'openaq-design-system/scss/mixins/index.scss' as mixins;
+  @use "openaq-design-system/scss/variables";
+  @use "openaq-design-system/scss/mixins/index.scss" as mixins;
 
   .partner-card {
     background-color: white;
@@ -21,7 +21,7 @@ const { partner } = Astro.props;
     aspect-ratio: 1;
     box-shadow: 0 8px 5px 5px rgb(83, 83, 83, 0.25);
     border-radius: 10px;
-    padding: 20px 25px;
+    padding: 20px 15px;
     object-fit: cover;
 
     &__img {
@@ -29,7 +29,7 @@ const { partner } = Astro.props;
       flex: 1;
       justify-content: center;
       align-items: center;
-      padding: 0 16px;
+      padding: 0 10px;
 
       img {
         width: 100%;
