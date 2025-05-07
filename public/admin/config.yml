@@ -1,0 +1,280 @@
+backend:
+  name: github
+  repo: openaq/ambassadors.openaq.org
+  branch: main
+  base_url: https://oauth.openaq.org
+publish_mode: editorial_workflow
+media_folder: "src/assets/images"
+public_folder: "src/assets/images"
+media_folder_relative: true
+public_folder_relative: true
+collections:
+  - name: "cohorts"
+    label: "Cohorts"
+    folder: "src/content/cohorts"
+    format: "yaml-frontmatter"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Year", name: "year", widget: "number", min: 2021, max: 2029 }
+      - {
+          label: "Youtube",
+          name: "youtubeId",
+          widget: "string",
+          required: false,
+        }
+
+  - name: "partners"
+    label: "Partners"
+    folder: "src/content/partners"
+    format: "yaml-frontmatter"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "URL", name: "url", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "projects"
+    label: "Projects"
+    folder: "src/content/projects"
+    format: "yaml-frontmatter"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Ambassador slug", name: "ambassadorSlug", widget: "string" }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Year", name: "year", widget: "number" }
+      - {
+          label: "Youtube",
+          name: "youtubeLink",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Image", name: "image", widget: "image" }
+      - {
+          label: "Short description",
+          name: "shortDescription",
+          widget: "string",
+          required: false,
+        }
+
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "src/content/testimonials"
+    format: "yaml-frontmatter"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "forms"
+    label: "Forms"
+    folder: "src/content/apply/forms"
+    format: "yaml-frontmatter"
+    create: false
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Active", name: "active", widget: "boolean" }
+      - {
+          label: "Jotform ID",
+          name: "jotformId",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "apply"
+    label: "Apply"
+    folder: "src/content/apply"
+    format: "yaml-frontmatter"
+    create: false
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Subtitle",
+          name: "subtitle",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Application deadline",
+          name: "application_deadline",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "faq"
+    label: "FAQ"
+    folder: "src/content/apply"
+    format: "yaml-frontmatter"
+    create: false
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "miniCards"
+    label: "Mini Cards"
+    folder: "src/content/miniCards"
+    format: "yaml-frontmatter"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Text 1", name: "text1", widget: "string" }
+      - { label: "Text 2", name: "text2", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "impacts"
+    label: "Impacts"
+    folder: "src/content/impacts"
+    format: "yaml-frontmatter"
+    create: false
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Number", name: "number", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "involvedCards"
+    label: "Involved Cards"
+    folder: "src/content/involvedCards"
+    format: "yaml-frontmatter"
+    create: false
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Button Text",
+          name: "buttonText",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Button Link",
+          name: "buttonLink",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Link", name: "link", widget: "string", required: false }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "engagements"
+    label: "Engagements"
+    folder: "src/content/engagements"
+    format: "yaml-frontmatter"
+    create: false
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Button Text",
+          name: "buttonText",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Button Link",
+          name: "buttonLink",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "ambassadors"
+    label: "Ambassadors"
+    folder: "src/content/people/ambassadors"
+    format: "yaml-frontmatter"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Country ISO", name: "countryIso", widget: "string" }
+      - { label: "Year", name: "year", widget: "number", min: 2021, max: 2029 }
+      - {
+          label: "Timestamp",
+          name: "timestamp",
+          widget: "number",
+          required: false,
+        }
+      - { label: "Presentation", name: "presentation", widget: "string" }
+      - { label: "Email", name: "email", widget: "string", required: false }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Bluesky", name: "bluesky", widget: "string", required: false }
+      - {
+          label: "LinkedIn",
+          name: "linkedin",
+          widget: "string",
+          required: false,
+        }
+      - { label: "GitHub", name: "github", widget: "string", required: false }
+      - { label: "X", name: "x", widget: "string", required: false }
+      - {
+          label: "Mastodon",
+          name: "mastadon",
+          widget: "string",
+          required: false,
+        }
+      - { label: "ORCID", name: "orcid", widget: "string", required: false }
+      - {
+          label: "ResearchGate",
+          name: "researchGate",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Google Scholar",
+          name: "googleScholar",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "homepage"
+    label: "Homepage"
+    folder: "src/content/"
+    format: "yaml-frontmatter"
+    create: false
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }

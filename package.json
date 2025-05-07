@@ -16,6 +16,7 @@
     "astro-purgecss": "^5.2.2",
     "astro-seo-schema": "^5.0.0",
     "d3": "^7.9.0",
+    "decap-cms-app": "^3.6.2",
     "openaq-design-system": "github:openaq/openaq-design-system#v-4.0.0",
     "purgecss": "^7.0.2",
     "remove-markdown": "^0.6.0",
