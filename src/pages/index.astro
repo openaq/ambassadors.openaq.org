@@ -27,6 +27,24 @@ const engageCards = await getCollection("engagements");
 const isoCodes = ambassadors.map((ambassador) => {
   return ambassador.data.countryIso;
 });
+
+const desiredOrderInvolved = [
+  "Apply to be a 2026 Ambassador",
+  "Sponsor the Ambassadors",
+  "Collaborate",
+];
+const desiredOrderEngage = ["Use OpenAQ", "Join the Community", "Subscribe"];
+
+const orderedInvolvedCards = involvedCards.sort(
+  (a, b) =>
+    desiredOrderInvolved.indexOf(a.data.title) -
+    desiredOrderInvolved.indexOf(b.data.title)
+);
+const orderedEngageCards = engageCards.sort(
+  (a, b) =>
+    desiredOrderEngage.indexOf(a.data.title) -
+    desiredOrderEngage.indexOf(b.data.title)
+);
 ---
 
 <style lang="scss">
@@ -540,7 +558,7 @@ const isoCodes = ambassadors.map((ambassador) => {
     </p>
     <div class="involved-cards">
       {
-        involvedCards.map((involvedCard) => (
+        orderedInvolvedCards.map((involvedCard) => (
           <InvolvedCards involvedCard={involvedCard} />
         ))
       }
@@ -549,7 +567,7 @@ const isoCodes = ambassadors.map((ambassador) => {
       <h1>Engage with OpenAQ</h1>
       <div class="engage-cards">
         {
-          engageCards.map((engageCard) => (
+          orderedEngageCards.map((engageCard) => (
             <EngageCards engageCard={engageCard} />
           ))
         }
