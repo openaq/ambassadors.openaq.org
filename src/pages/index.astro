@@ -269,7 +269,13 @@ const isoCodes = ambassadors.map((ambassador) => {
   }
 
   .partner-section {
-    padding: 80px 60px;
+    padding: 80px 120px;
+    @media (max-width: 1000px) {
+      padding: 80px 80px;
+    }
+    @media (max-width: 600px) {
+      padding: 80px 10px;
+    }
     h1 {
       margin: 0 auto;
       text-align: center;
@@ -278,11 +284,11 @@ const isoCodes = ambassadors.map((ambassador) => {
     .partner-logos {
       display: flex;
       flex-direction: row;
-      gap: 100px;
+      gap: 50px;
       align-items: center;
       justify-content: center;
       @media (max-width: 1000px) {
-        gap: 70px;
+        gap: 20px;
         padding: 10px;
       }
       @media (max-width: 600px) {
@@ -343,7 +349,7 @@ const isoCodes = ambassadors.map((ambassador) => {
       padding-top: 20px;
     }
     .project-container {
-      display:grid;
+      display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
       margin-top: 30px;
