@@ -117,6 +117,8 @@ const { engageCard } = Astro.props;
   <h3>{engageCard.data.title}</h3>
   <div class="engage-card__p">
     <p>
+      {engageCard.data.standardText}
+      <span class="highlight">{engageCard.data.highlightedText}</span>
       {engageCard.body}
     </p>
   </div>

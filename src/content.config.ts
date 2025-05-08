@@ -152,6 +152,8 @@ const engagements = defineCollection({
       title: z.string(),
       buttonText: z.string().optional(),
       buttonLink: z.string().optional(),
+      standardText: z.string().optional(),
+      highlightedText: z.string().optional(),
       image: image(),
     }),
 });
