@@ -103,9 +103,9 @@ const { miniCard } = Astro.props;
   <h3>{miniCard.data.title}</h3>
   <div class="mini-card__p">
     <p>
-      {miniCard.data.text1}<span class="highlight">{miniCard.data.text2}</span>{
-        miniCard.body
-      }
+      {miniCard.data.standardText}<span class="highlight"
+        >{miniCard.data.highlightedText}</span
+      >{miniCard.body}
     </p>
   </div>
 </article>

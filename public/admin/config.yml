@@ -38,7 +38,12 @@ collections:
     fields:
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Image", name: "image", widget: "image" }
-      - { label: "URL", name: "url", widget: "string" }
+      - {
+          label: "URL",
+          name: "url",
+          widget: "string",
+          pattern: ['https\:\/\/[a-z]*\.[a-z]{2,3}', "Must be valid URL"],
+        }
       - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "projects"
@@ -55,11 +60,12 @@ collections:
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Ambassador slug", name: "ambassadorSlug", widget: "string" }
       - { label: "Location", name: "location", widget: "string" }
-      - { label: "Year", name: "year", widget: "number" }
+      - { label: "Year", name: "year", widget: "number", min: 2021, max: 2029 }
       - {
           label: "Youtube",
           name: "youtubeLink",
           widget: "string",
+          pattern: ['https\:\/\/[a-z]*\.[a-z]{2,3}', "Must be valid URL"],
           required: false,
         }
       - { label: "Image", name: "image", widget: "image" }
@@ -147,8 +153,8 @@ collections:
       preview: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Text 1", name: "text1", widget: "string" }
-      - { label: "Text 2", name: "text2", widget: "string" }
+      - { label: "Standard text", name: "standardText", widget: "string" }
+      - { label: "Highlighted text", name: "highlightedText", widget: "string" }
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
 
@@ -162,7 +168,7 @@ collections:
       preview: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Number", name: "number", widget: "string" }
+      - { label: "Highlighted text", name: "highlightedText", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "involvedCards"
@@ -186,8 +192,8 @@ collections:
           name: "buttonLink",
           widget: "string",
           required: false,
+          pattern: ['https\:\/\/[a-z]*\.[a-z]{2,3}', "Must be valid URL"],
         }
-      - { label: "Link", name: "link", widget: "string", required: false }
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
 
@@ -212,6 +218,7 @@ collections:
           name: "buttonLink",
           widget: "string",
           required: false,
+          pattern: ['https\:\/\/[a-z]*\.[a-z]{2,3}', "Must be valid URL"],
         }
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
@@ -226,7 +233,223 @@ collections:
       preview: true
     fields:
       - { label: "Name", name: "name", widget: "string" }
-      - { label: "Country ISO", name: "countryIso", widget: "string" }
+      - {
+          label: "Country ISO",
+          name: "countryIso",
+          widget: "select",
+          options:
+            [
+              "AF",
+              "AX",
+              "AL",
+              "DZ",
+              "AS",
+              "AD",
+              "AO",
+              "AI",
+              "AQ",
+              "AG",
+              "AR",
+              "AM",
+              "AW",
+              "AT",
+              "AZ",
+              "BS",
+              "BH",
+              "BD",
+              "BB",
+              "BY",
+              "BE",
+              "BZ",
+              "BJ",
+              "BT",
+              "BO",
+              "BA",
+              "BW",
+              "BV",
+              "BR",
+              "IO",
+              "BN",
+              "BG",
+              "BF",
+              "BI",
+              "KH",
+              "CM",
+              "CA",
+              "CV",
+              "KY",
+              "CF",
+              "TD",
+              "CC",
+              "CO",
+              "KM",
+              "CG",
+              "CK",
+              "CR",
+              "CI",
+              "HR",
+              "CU",
+              "CZ",
+              "DK",
+              "DJ",
+              "DM",
+              "DO",
+              "EC",
+              "EG",
+              "GQ",
+              "ER",
+              "EE",
+              "ET",
+              "FK",
+              "FO",
+              "FJ",
+              "FR",
+              "GF",
+              "PF",
+              "TF",
+              "GA",
+              "GE",
+              "DE",
+              "GH",
+              "GR",
+              "GL",
+              "GD",
+              "GP",
+              "GU",
+              "GG",
+              "GN",
+              "GW",
+              "GY",
+              "HT",
+              "VA",
+              "HN",
+              "HK",
+              "HU",
+              "IS",
+              "IN",
+              "IR",
+              "IQ",
+              "IM",
+              "IL",
+              "IT",
+              "JP",
+              "JO",
+              "KZ",
+              "KE",
+              "KR",
+              "KG",
+              "LA",
+              "LV",
+              "LB",
+              "LS",
+              "LR",
+              "LY",
+              "LI",
+              "LT",
+              "LU",
+              "MO",
+              "MG",
+              "MW",
+              "MY",
+              "MV",
+              "ML",
+              "MQ",
+              "MR",
+              "MU",
+              "YT",
+              "MX",
+              "FM",
+              "MD",
+              "MC",
+              "MN",
+              "ME",
+              "MS",
+              "MA",
+              "MZ",
+              "MM",
+              "NA",
+              "NR",
+              "AN",
+              "NC",
+              "NZ",
+              "NI",
+              "NE",
+              "NU",
+              "MP",
+              "NO",
+              "OM",
+              "PW",
+              "PA",
+              "PG",
+              "PY",
+              "PE",
+              "PN",
+              "PL",
+              "PT",
+              "PR",
+              "QA",
+              "RO",
+              "RU",
+              "RW",
+              "BL",
+              "SH",
+              "KN",
+              "LC",
+              "MF",
+              "PM",
+              "VC",
+              "WS",
+              "ST",
+              "SA",
+              "SN",
+              "RS",
+              "SC",
+              "SL",
+              "SG",
+              "SK",
+              "SI",
+              "SB",
+              "SO",
+              "ZA",
+              "GS",
+              "ES",
+              "SD",
+              "SJ",
+              "SZ",
+              "SE",
+              "CH",
+              "SY",
+              "TW",
+              "TJ",
+              "TZ",
+              "TH",
+              "TL",
+              "TG",
+              "TO",
+              "TN",
+              "TR",
+              "TM",
+              "TC",
+              "TV",
+              "UG",
+              "UA",
+              "AE",
+              "GB",
+              "US",
+              "UM",
+              "UY",
+              "UZ",
+              "VU",
+              "VE",
+              "VN",
+              "VG",
+              "VI",
+              "WF",
+              "EH",
+              "YE",
+              "ZW",
+            ],
+        }
       - { label: "Year", name: "year", widget: "number", min: 2021, max: 2029 }
       - {
           label: "Timestamp",
@@ -237,33 +460,61 @@ collections:
       - { label: "Presentation", name: "presentation", widget: "string" }
       - { label: "Email", name: "email", widget: "string", required: false }
       - { label: "Image", name: "image", widget: "image" }
-      - { label: "Bluesky", name: "bluesky", widget: "string", required: false }
+      - {
+          label: "Bluesky",
+          name: "bluesky",
+          widget: "string",
+          required: false,
+          pattern: ['https\:\/\/[a-z]*\.[a-z]{2,3}', "Must be valid URL"],
+        }
       - {
           label: "LinkedIn",
           name: "linkedin",
           widget: "string",
           required: false,
+          pattern: ['https\:\/\/[a-z]*\.[a-z]{2,3}', "Must be valid URL"],
         }
-      - { label: "GitHub", name: "github", widget: "string", required: false }
-      - { label: "X", name: "x", widget: "string", required: false }
+      - {
+          label: "GitHub",
+          name: "github",
+          widget: "string",
+          required: false,
+          pattern: ['https\:\/\/[a-z]*\.[a-z]{2,3}', "Must be valid URL"],
+        }
+      - {
+          label: "X",
+          name: "x",
+          widget: "string",
+          required: false,
+          pattern: ['https\:\/\/[a-z]*\.[a-z]{2,3}', "Must be valid URL"],
+        }
       - {
           label: "Mastodon",
           name: "mastadon",
           widget: "string",
           required: false,
+          pattern: ['https\:\/\/[a-z]*\.[a-z]{2,3}', "Must be valid URL"],
         }
-      - { label: "ORCID", name: "orcid", widget: "string", required: false }
+      - {
+          label: "ORCID",
+          name: "orcid",
+          widget: "string",
+          required: false,
+          pattern: ['https\:\/\/[a-z]*\.[a-z]{2,3}', "Must be valid URL"],
+        }
       - {
           label: "ResearchGate",
           name: "researchGate",
           widget: "string",
           required: false,
+          pattern: ['https\:\/\/[a-z]*\.[a-z]{2,3}', "Must be valid URL"],
         }
       - {
           label: "Google Scholar",
           name: "googleScholar",
           widget: "string",
           required: false,
+          pattern: ['https\:\/\/[a-z]*\.[a-z]{2,3}', "Must be valid URL"],
         }
       - { label: "Body", name: "body", widget: "markdown" }
 

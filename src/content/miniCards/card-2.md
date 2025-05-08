@@ -1,7 +1,7 @@
 ---
 title: "A Leadership Training Program"
-text1: "The program includes a "
-text2: "comprehensive curriculum "
+standardText: "The program includes a "
+highlightedText: "comprehensive curriculum "
 image: "@assets/images/svgs/book.svg"
 ---
 

@@ -43,6 +43,9 @@ const { impact } = Astro.props;
 
 <article class="impact-card">
   <div class="impact-content">
-    <p><span class="highlight">{impact.data.number}</span> {impact.body}</p>
+    <p>
+      <span class="highlight">{impact.data.highlightedText}</span>
+      {impact.body}
+    </p>
   </div>
 </article>

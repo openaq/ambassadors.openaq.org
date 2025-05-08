@@ -1,7 +1,7 @@
 ---
 title: "Fighting Air Pollution"
-text1: "The program enables an "
-text2: "annual cohort of advocates to fight air pollution "
+standardText: "The program enables an "
+highlightedText: "annual cohort of advocates to fight air pollution "
 image: "@assets/images/svgs/air.svg"
 ---
 

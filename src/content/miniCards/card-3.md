@@ -1,7 +1,7 @@
 ---
 title: "A Vibrant Community"
-text1: "The program’s success is in its "
-text2: "amazing ambassadors"
+standardText: "The program’s success is in its "
+highlightedText: "amazing ambassadors"
 image: "@assets/images/svgs/community.svg"
 ---
 
