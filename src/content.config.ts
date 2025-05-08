@@ -138,7 +138,9 @@ const involvedCards = defineCollection({
       title: z.string(),
       buttonText: z.string().optional(),
       buttonLink: z.string().optional(),
-      link: z.string().optional(),
+      standardText: z.string().optional(),
+      standardTextCollaborate: z.string().optional(),
+      highlightedText: z.string().optional(),
       image: image(),
     }),
 });
