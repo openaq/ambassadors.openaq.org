@@ -1,6 +1,7 @@
 ---
 import PageLayout from "@layouts/PageLayout.astro";
 import { Content, frontmatter } from "@content/apply/faq.md";
+import TableOfContents from "@components/TableOfContents.astro";
 ---
 
 <style lang="scss">
@@ -9,6 +10,8 @@ import { Content, frontmatter } from "@content/apply/faq.md";
 
   .faq-page {
     padding-bottom: 100px;
+    max-width: 700px;
+    width: 100%;
   }
 </style>
 
@@ -22,4 +25,5 @@ import { Content, frontmatter } from "@content/apply/faq.md";
       <Content />
     </section>
   </div>
+  <TableOfContents contentSelector="main" />
 </PageLayout>
