@@ -82,7 +82,7 @@ const sortByName = (
   }
 </style>
 
-<PageLayout>
+<PageLayout pageTitle={`${cohort.data.year} OpenAQ Ambassadors`}>
   <div class="cohort-page">
     <h1 class="gradient-title">{cohort.data.year} Cohort</h1>
     <div class="cohort-description">
@@ -109,9 +109,8 @@ const sortByName = (
       <img
         class="map-image"
         src=`${baseUrl}/imgs/map/${cohort.data.year}.webp`
-        alt=""
-        height="392"
-        width="800"
+        alt="Map"
+        width={500}
       />
     </section>
     {

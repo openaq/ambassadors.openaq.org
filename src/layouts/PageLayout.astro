@@ -37,16 +37,20 @@ const { pageTitle } = Astro.props;
       grid-template-columns: repeat(1, 1fr);
     }
   }
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+  }
 </style>
 
-<BaseLayout>
+<BaseLayout pageTitle={pageTitle}>
   <slot name="structured-data" slot="structured-data" />
   <Breadcrumb />
   <div class="bubbles-wrapper">
     <Bubbles />
   </div>
   <div class="content">
-    <h1 class="type-display-1 gradient-title">{pageTitle}</h1>
+    <h1 class="type-display-1 gradient-title visually-hidden">{pageTitle}</h1>
     <slot />
   </div>
 </BaseLayout>
