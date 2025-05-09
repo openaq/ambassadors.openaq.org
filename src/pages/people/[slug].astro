@@ -150,7 +150,7 @@ const { Content } = await render(ambassador);
 }
 </style>
 
-<PageLayout frontmatter={ambassador.data}>
+<PageLayout pageTitle={`${ambassador.data.name} - ${ambassador.data.year} Ambassador`} frontmatter={ambassador.data}>
   <Schema slot="structured-data"
   item={personStructuredData(socials(ambassador),ambassador)}
 />
