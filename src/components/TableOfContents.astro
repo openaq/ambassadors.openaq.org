@@ -11,11 +11,15 @@ const { contentSelector } = Astro.props;
     top: 66px;
     right: 0;
     overflow-y: auto;
-    width: 270px;
-    height: 100vh;
+    width: 275px;
+    height: calc(100vh - 20px);
     z-index: 10;
     border-left: 1px solid #d4d8dc;
     font-size: 0.7rem;
+
+    h1 {
+      text-align: center;
+    }
 
     .h3-indented {
       margin-left: 8px;
@@ -27,11 +31,12 @@ const { contentSelector } = Astro.props;
 
     &__list {
       list-style: none;
-      padding-left: 8px;
+      padding-left: 1px;
+      line-height: 1.18;
 
       .toc-anchor-item {
         box-sizing: border-box;
-        padding: 8px 10px;
+        padding: 7px 15px;
 
         &--active {
           border-left: 2px solid #66b3ff;
@@ -47,10 +52,20 @@ const { contentSelector } = Astro.props;
 </style>
 
 <aside class="toc">
+  <h1>Table of contents</h1>
   <ul class="toc__list"></ul>
 </aside>
 
 <script define:vars={{ contentSelector }}>
+  const toc = document.querySelector(".toc");
+  const initialTop = 66;
+
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    const newTop = Math.max(0, initialTop - scrollY);
+    toc.style.top = `${newTop}px`;
+  });
+
   const headings = document.querySelectorAll("h1[id], h2[id], h3[id]");
 
   const checkAnchorInViewport = () => {
