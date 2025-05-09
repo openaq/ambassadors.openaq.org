@@ -11,6 +11,7 @@ import { getEntry } from "astro:content";
 import Impacts from "@components/impacts/Impacts.astro";
 import InvolvedCards from "@components/cards/InvolvedCards.astro";
 import EngageCards from "@components/cards/EngageCards.astro";
+const pageTitle = "Landing page";
 
 const baseUrl = import.meta.env.BASE_URL;
 const index = await getEntry("homepage", "index");
@@ -465,7 +466,7 @@ const orderedEngageCards = engageCards.sort(
   }
 </style>
 
-<BaseLayout>
+<BaseLayout pageTitle={pageTitle}>
   <section class="hero-section">
     <div class="hero-curve"></div>
     <div class="hero-content">
