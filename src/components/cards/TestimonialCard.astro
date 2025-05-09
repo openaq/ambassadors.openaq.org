@@ -75,7 +75,11 @@ const { testimonial } = Astro.props;
 
 <article class="testimonial-card">
   <div class="testimonial-card__img">
-    <Image src={testimonial.data.image} alt={testimonial.data.name} />
+    <Image
+      src={testimonial.data.image}
+      alt={testimonial.data.name}
+      width={300}
+    />
   </div>
   <div class="testimonial-content">
     <q class="quote">{testimonial.body}</q>
