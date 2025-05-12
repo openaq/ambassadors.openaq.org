@@ -25,7 +25,7 @@ While familiarity with the OpenAQ Platform is considered a plus, it is not a pre
 ---
 
 **Q: Is this a full-time role/employment with OpenAQ?**  
-No. The average commitment is 5–8 hours per week. Able to commit at least 200 hours over the course of the program. Community Ambassadors are not considered employees of OpenAQ.
+No. The average commitment is 5–8 hours per week. You must be able to commit at least 200 hours over the course of the program. Community Ambassadors are not considered employees of OpenAQ.
 
 ---
 
@@ -53,13 +53,13 @@ Community Ambassadors are expected to commit at least 200 hours over the duratio
 
 ## Will I receive any financial support?
 
-Yes, you will receive a $2,000 USD stipend to support your participation in the program. In addition, air sensors will be provided by the
+Yes, you will receive a $2,000 USD stipend to support your participation in the program. In addition, you will be provided 1-2 air sensors.
 
 ---
 
 ## What kind of project will I work on?
 
-As an Ambassador, you will work on a project that utilizes air quality data to address a specific air quality issue within your community. This project will be a key component of your learning and contribution to the program.
+As an Ambassador, you will work on a project that utilizes air quality data to address a specific air quality issue within your community. This project will be defined by you with input from OpenAQ and will be a key component of your learning and contribution to the program.
 
 ---
 
