@@ -1,11 +1,13 @@
 ---
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
 interface Props {
   involvedCard: CollectionEntry<"involvedCards">;
 }
 
 const { involvedCard } = Astro.props;
+const { Content } = await render(involvedCard);
 
 const baseUrl = import.meta.env.BASE_URL;
 ---
@@ -26,6 +28,7 @@ const baseUrl = import.meta.env.BASE_URL;
     border-radius: 2px;
     padding: 20px 25px;
     margin-bottom: 40px;
+    text-align: center;
 
     .involved-card__icon {
       display: flex;
@@ -118,6 +121,12 @@ const baseUrl = import.meta.env.BASE_URL;
       }
     }
   }
+  .involved-card__p :global(strong) {
+    font-weight: 600;
+    background-color: rgba(variables.$mantis100, 0.3);
+    padding: 0 3px;
+    border-radius: 2px;
+  }
 </style>
 <article class="involved-card">
   <div class="involved-card__icon">
@@ -131,9 +140,7 @@ const baseUrl = import.meta.env.BASE_URL;
   </div>
   <h3>{involvedCard.data.title}</h3>
   <div class="involved-card__p">
-    <p>
-      {involvedCard.body}
-    </p>
+    <Content />
   </div>
   {
     involvedCard.data.hasOwnProperty("buttonLink") && (

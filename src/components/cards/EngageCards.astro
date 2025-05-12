@@ -1,11 +1,13 @@
 ---
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
 interface Props {
   engageCard: CollectionEntry<"engagements">;
 }
 
 const { engageCard } = Astro.props;
+const { Content } = await render(engageCard);
 ---
 
 <style lang="scss">
@@ -24,6 +26,7 @@ const { engageCard } = Astro.props;
     border-radius: 2px;
     padding: 20px 25px;
     margin-bottom: 30px;
+    text-align: center;
 
     .engage-card__icon {
       display: flex;
@@ -97,7 +100,7 @@ const { engageCard } = Astro.props;
       }
     }
   }
-  .highlight {
+  .engage-card__p :global(strong) {
     font-weight: 600;
     background-color: rgba(variables.$mantis100, 0.3);
     padding: 0 3px;
@@ -116,9 +119,7 @@ const { engageCard } = Astro.props;
   </div>
   <h3>{engageCard.data.title}</h3>
   <div class="engage-card__p">
-    <p>
-      {engageCard.body}
-    </p>
+    <Content />
   </div>
   <a
     class="button"

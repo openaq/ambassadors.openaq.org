@@ -1,11 +1,13 @@
 ---
 import type { CollectionEntry } from "astro:content";
+import { render } from "astro:content";
 
 interface Props {
   impact: CollectionEntry<"impacts">;
 }
 
 const { impact } = Astro.props;
+const { Content } = await render(impact);
 ---
 
 <style lang="scss">
@@ -34,7 +36,7 @@ const { impact } = Astro.props;
       }
     }
   }
-  .highlight {
+  .impact-content :global(strong) {
     color: variables.$mantis120;
     font-size: 1.4rem;
     font-weight: bold;
@@ -43,9 +45,6 @@ const { impact } = Astro.props;
 
 <article class="impact-card">
   <div class="impact-content">
-    <p>
-      <span class="highlight">{impact.data.highlightedText}</span>
-      {impact.body}
-    </p>
+    <Content />
   </div>
 </article>

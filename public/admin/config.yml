@@ -153,8 +153,6 @@ collections:
       preview: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Standard text", name: "standardText", widget: "string" }
-      - { label: "Highlighted text", name: "highlightedText", widget: "string" }
       - { label: "Image", name: "image", widget: "image" }
       - { label: "Body", name: "body", widget: "markdown" }
 
@@ -168,7 +166,6 @@ collections:
       preview: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
-      - { label: "Highlighted text", name: "highlightedText", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
 
   - name: "involvedCards"

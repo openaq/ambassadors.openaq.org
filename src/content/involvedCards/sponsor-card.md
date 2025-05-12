@@ -5,4 +5,4 @@ buttonLink: "support"
 image: "@assets/images/svgs/fund.svg"
 ---
 
-Funding and donations support our remarkable group of ambassadors.
+**Funding and donations support** our remarkable group of **ambassadors.**

@@ -116,8 +116,6 @@ const miniCards = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
-      standardText: z.string(),
-      highlightedText: z.string(),
       image: image(),
     }),
 });
@@ -127,7 +125,6 @@ const impacts = defineCollection({
   schema: () =>
     z.object({
       title: z.string(),
-      highlightedText: z.string(),
     }),
 });
 
