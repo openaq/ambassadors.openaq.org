@@ -43,7 +43,7 @@ OpenAQ Community Ambassadors are individuals who are committed to using air qual
 Please note that we will give higher priority to countries where we have NOT selected community ambassadors before.\*
 
 We will also give higher priority to countries that are identified as “high opportunity” in
-<a href="https://aqfund.epic.uchicago.edu/opportunity-map/" target="_blank" rel="noopener noreferrer">
+<a href="https://aqfund.epic.uchicago.edu/opportunity-map/" target="_blank" rel="noopener noreferrer" aria-label="Go to the University of Chicago’s Opportunity Map highlighting countries with high air quality data needs">
 this map.
 </a>
 
