@@ -55,6 +55,7 @@ const projects = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
+      cardTitle: z.string(),
       name: z.string(),
       ambassadorSlug: z.string(),
       location: z.string(),

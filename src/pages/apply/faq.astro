@@ -1,6 +1,7 @@
 ---
 import PageLayout from "@layouts/PageLayout.astro";
 import { Content, frontmatter } from "@content/apply/faq.md";
+import TableOfContents from "@components/TableOfContents.astro";
 ---
 
 <style lang="scss">
@@ -8,7 +9,12 @@ import { Content, frontmatter } from "@content/apply/faq.md";
   @use "openaq-design-system/scss/mixins/index" as mixins;
 
   .faq-page {
-    padding-bottom: 100px;
+    padding-bottom: 150px;
+    max-width: 700px;
+    width: 100%;
+    @media (max-width: 1199px) {
+      max-width: 100%;
+    }
   }
 </style>
 
@@ -22,4 +28,5 @@ import { Content, frontmatter } from "@content/apply/faq.md";
       <Content />
     </section>
   </div>
+  <TableOfContents contentSelector="main" />
 </PageLayout>

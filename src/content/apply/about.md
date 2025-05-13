@@ -22,9 +22,7 @@ OpenAQ aggregates and harmonizes open air quality data from across the globe ont
 
 ## Qualifications:
 
-OpenAQ Community Ambassadors are individuals who are committed to using air quality data to create positive change in the fight against air inequality over the course of the fellowship and beyond. Ambassadors must be located in a low- or middle-income country and can come from diverse cultural and socioeconomic backgrounds and work in any sector (nonprofit, public or private). Ambassadors will receive a $2,000 USD stipend to participate in the program.
-
-OpenAQ Community Ambassadors are individuals who are committed to using air quality data to create positive change in the fight against air inequality over the course of the fellowship and beyond. Ambassadors must be located in a low- or middle-income country and can come from diverse cultural and socioeconomic backgrounds and work in any sector (nonprofit, public, or private).
+OpenAQ Community Ambassadors are individuals who are committed to using air quality data to create positive change in the fight against air inequality over the course of the fellowship and beyond. Ambassadors must be located in a low- or middle-income country and can come from diverse cultural and socioeconomic backgrounds and work in any sector (nonprofit, public or private).
 
 ### To apply, you must be:
 

@@ -1,12 +1,13 @@
 ---
 title: "Clean Air Matters: Mobilizing Students and Market Workers for Air Quality Awareness in Douala"
+cardTitle: "Innovative Field Pollution Study in Douala, Cameroon"
 name: "Tatiana Melissa Kwenkeu Tondji"
 ambassadorSlug: tatiana-melissa-kwenkeu-tondji
 location: "Douala, Cameroon"
 year: 2024
 image: "@assets/images/Melissa_Cameroon-2.jpeg"
 youtubeLink: "https://www.youtube.com/watch?v=CbkX8EoRaPo&t=3570s"
-shortDescription: "Melissa focused on field data collection of air pollution with spice grinders in markets and supporting environmental clubs to raise awareness about air quality in Douala, Cameroon."
+shortDescription: "To raise awareness about the significant air quality issues in Douala, Cameroon, Melissa Kwenkeu Tondji drove an innovative field pollution study which included collecting data from marketplace spice grinders using wearable sensors. She has since further amplified her efforts by launching a podcast, Voice of The Air: Decoding the Invisible with Air Quality Stories."
 ---
 
 Air pollution is a daily reality for many in Cameroon, yet it remains largely unmeasured and inadequately addressed at the policy level. According to <a href="https://www.unep.org/interactives/air-pollution-note" target="_blank" rel="noreferrer noopener" aria-label="UNEP air pollution data">UNEP</a>, fine particulate pollution caused approximately 5,900 deaths in the country in 2021. The cities of Douala and Yaoundé are particularly affected due to rapid urbanization and demographic growth driven by rural-to-urban migration. This expansion has led to severe traffic congestion, the proliferation of motorbike taxis, and the widespread use of imported vehicles with emissions that often fail to meet air quality standards. Industrial activities and inefficient waste management further exacerbate air pollution. Beyond major urban centers, peripheral cities and rural areas also face significant air pollution challenges. Dust and the reliance on polluting fuels for cooking expose populations to severe health risks linked to poor air quality.
