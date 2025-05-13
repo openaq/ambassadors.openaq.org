@@ -1,0 +1,528 @@
+backend:
+  name: github
+  repo: openaq/ambassadors.openaq.org
+  branch: main
+  base_url: https://oauth.openaq.org
+publish_mode: editorial_workflow
+media_folder: "src/assets/images"
+public_folder: "src/assets/images"
+media_folder_relative: true
+public_folder_relative: true
+collections:
+  - name: "cohorts"
+    label: "Cohorts"
+    folder: "src/content/cohorts"
+    format: "yaml-frontmatter"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Year", name: "year", widget: "number", min: 2021, max: 2029 }
+      - {
+          label: "Youtube",
+          name: "youtubeId",
+          widget: "string",
+          required: false,
+        }
+
+  - name: "partners"
+    label: "Partners"
+    folder: "src/content/partners"
+    format: "yaml-frontmatter"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - {
+          label: "URL",
+          name: "url",
+          widget: "string",
+          pattern: ['https\:\/\/[a-z]*\.[a-z]{2,3}', "Must be valid URL"],
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "projects"
+    label: "Projects"
+    folder: "src/content/projects"
+    format: "yaml-frontmatter"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Ambassador slug", name: "ambassadorSlug", widget: "string" }
+      - { label: "Location", name: "location", widget: "string" }
+      - { label: "Year", name: "year", widget: "number", min: 2021, max: 2029 }
+      - {
+          label: "Youtube",
+          name: "youtubeLink",
+          widget: "string",
+          pattern: ['https\:\/\/[a-z]*\.[a-z]{2,3}', "Must be valid URL"],
+          required: false,
+        }
+      - { label: "Image", name: "image", widget: "image" }
+      - {
+          label: "Short description",
+          name: "shortDescription",
+          widget: "string",
+          required: false,
+        }
+
+  - name: "testimonials"
+    label: "Testimonials"
+    folder: "src/content/testimonials"
+    format: "yaml-frontmatter"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "forms"
+    label: "Forms"
+    folder: "src/content/apply/forms"
+    format: "yaml-frontmatter"
+    create: false
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Active", name: "active", widget: "boolean" }
+      - {
+          label: "Jotform ID",
+          name: "jotformId",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "apply"
+    label: "Apply"
+    folder: "src/content/apply"
+    format: "yaml-frontmatter"
+    create: false
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Subtitle",
+          name: "subtitle",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Application deadline",
+          name: "application_deadline",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "faq"
+    label: "FAQ"
+    folder: "src/content/apply"
+    format: "yaml-frontmatter"
+    create: false
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "miniCards"
+    label: "Mini Cards"
+    folder: "src/content/miniCards"
+    format: "yaml-frontmatter"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "impacts"
+    label: "Impacts"
+    folder: "src/content/impacts"
+    format: "yaml-frontmatter"
+    create: false
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "involvedCards"
+    label: "Involved Cards"
+    folder: "src/content/involvedCards"
+    format: "yaml-frontmatter"
+    create: false
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Button Text",
+          name: "buttonText",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Button Link",
+          name: "buttonLink",
+          widget: "string",
+          required: false,
+          pattern: ['https\:\/\/[a-z]*\.[a-z]{2,3}', "Must be valid URL"],
+        }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "engagements"
+    label: "Engagements"
+    folder: "src/content/engagements"
+    format: "yaml-frontmatter"
+    create: false
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - {
+          label: "Button Text",
+          name: "buttonText",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Button Link",
+          name: "buttonLink",
+          widget: "string",
+          required: false,
+          pattern: ['https\:\/\/[a-z]*\.[a-z]{2,3}', "Must be valid URL"],
+        }
+      - { label: "Image", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "ambassadors"
+    label: "Ambassadors"
+    folder: "src/content/people/ambassadors"
+    format: "yaml-frontmatter"
+    create: true
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - {
+          label: "Country ISO",
+          name: "countryIso",
+          widget: "select",
+          options:
+            [
+              "AF",
+              "AX",
+              "AL",
+              "DZ",
+              "AS",
+              "AD",
+              "AO",
+              "AI",
+              "AQ",
+              "AG",
+              "AR",
+              "AM",
+              "AW",
+              "AT",
+              "AZ",
+              "BS",
+              "BH",
+              "BD",
+              "BB",
+              "BY",
+              "BE",
+              "BZ",
+              "BJ",
+              "BT",
+              "BO",
+              "BA",
+              "BW",
+              "BV",
+              "BR",
+              "IO",
+              "BN",
+              "BG",
+              "BF",
+              "BI",
+              "KH",
+              "CM",
+              "CA",
+              "CV",
+              "KY",
+              "CF",
+              "TD",
+              "CC",
+              "CO",
+              "KM",
+              "CG",
+              "CK",
+              "CR",
+              "CI",
+              "HR",
+              "CU",
+              "CZ",
+              "DK",
+              "DJ",
+              "DM",
+              "DO",
+              "EC",
+              "EG",
+              "GQ",
+              "ER",
+              "EE",
+              "ET",
+              "FK",
+              "FO",
+              "FJ",
+              "FR",
+              "GF",
+              "PF",
+              "TF",
+              "GA",
+              "GE",
+              "DE",
+              "GH",
+              "GR",
+              "GL",
+              "GD",
+              "GP",
+              "GU",
+              "GG",
+              "GN",
+              "GW",
+              "GY",
+              "HT",
+              "VA",
+              "HN",
+              "HK",
+              "HU",
+              "IS",
+              "IN",
+              "IR",
+              "IQ",
+              "IM",
+              "IL",
+              "IT",
+              "JP",
+              "JO",
+              "KZ",
+              "KE",
+              "KR",
+              "KG",
+              "LA",
+              "LV",
+              "LB",
+              "LS",
+              "LR",
+              "LY",
+              "LI",
+              "LT",
+              "LU",
+              "MO",
+              "MG",
+              "MW",
+              "MY",
+              "MV",
+              "ML",
+              "MQ",
+              "MR",
+              "MU",
+              "YT",
+              "MX",
+              "FM",
+              "MD",
+              "MC",
+              "MN",
+              "ME",
+              "MS",
+              "MA",
+              "MZ",
+              "MM",
+              "NA",
+              "NR",
+              "AN",
+              "NC",
+              "NZ",
+              "NI",
+              "NE",
+              "NU",
+              "MP",
+              "NO",
+              "OM",
+              "PW",
+              "PA",
+              "PG",
+              "PY",
+              "PE",
+              "PN",
+              "PL",
+              "PT",
+              "PR",
+              "QA",
+              "RO",
+              "RU",
+              "RW",
+              "BL",
+              "SH",
+              "KN",
+              "LC",
+              "MF",
+              "PM",
+              "VC",
+              "WS",
+              "ST",
+              "SA",
+              "SN",
+              "RS",
+              "SC",
+              "SL",
+              "SG",
+              "SK",
+              "SI",
+              "SB",
+              "SO",
+              "ZA",
+              "GS",
+              "ES",
+              "SD",
+              "SJ",
+              "SZ",
+              "SE",
+              "CH",
+              "SY",
+              "TW",
+              "TJ",
+              "TZ",
+              "TH",
+              "TL",
+              "TG",
+              "TO",
+              "TN",
+              "TR",
+              "TM",
+              "TC",
+              "TV",
+              "UG",
+              "UA",
+              "AE",
+              "GB",
+              "US",
+              "UM",
+              "UY",
+              "UZ",
+              "VU",
+              "VE",
+              "VN",
+              "VG",
+              "VI",
+              "WF",
+              "EH",
+              "YE",
+              "ZW",
+            ],
+        }
+      - { label: "Year", name: "year", widget: "number", min: 2021, max: 2029 }
+      - {
+          label: "Timestamp",
+          name: "timestamp",
+          widget: "number",
+          required: false,
+        }
+      - { label: "Presentation", name: "presentation", widget: "string" }
+      - { label: "Email", name: "email", widget: "string", required: false }
+      - { label: "Image", name: "image", widget: "image" }
+      - {
+          label: "Bluesky",
+          name: "bluesky",
+          widget: "string",
+          required: false,
+          pattern: ['https\:\/\/[a-z]*\.[a-z]{2,3}', "Must be valid URL"],
+        }
+      - {
+          label: "LinkedIn",
+          name: "linkedin",
+          widget: "string",
+          required: false,
+          pattern: ['https\:\/\/[a-z]*\.[a-z]{2,3}', "Must be valid URL"],
+        }
+      - {
+          label: "GitHub",
+          name: "github",
+          widget: "string",
+          required: false,
+          pattern: ['https\:\/\/[a-z]*\.[a-z]{2,3}', "Must be valid URL"],
+        }
+      - {
+          label: "X",
+          name: "x",
+          widget: "string",
+          required: false,
+          pattern: ['https\:\/\/[a-z]*\.[a-z]{2,3}', "Must be valid URL"],
+        }
+      - {
+          label: "Mastodon",
+          name: "mastadon",
+          widget: "string",
+          required: false,
+          pattern: ['https\:\/\/[a-z]*\.[a-z]{2,3}', "Must be valid URL"],
+        }
+      - {
+          label: "ORCID",
+          name: "orcid",
+          widget: "string",
+          required: false,
+          pattern: ['https\:\/\/[a-z]*\.[a-z]{2,3}', "Must be valid URL"],
+        }
+      - {
+          label: "ResearchGate",
+          name: "researchGate",
+          widget: "string",
+          required: false,
+          pattern: ['https\:\/\/[a-z]*\.[a-z]{2,3}', "Must be valid URL"],
+        }
+      - {
+          label: "Google Scholar",
+          name: "googleScholar",
+          widget: "string",
+          required: false,
+          pattern: ['https\:\/\/[a-z]*\.[a-z]{2,3}', "Must be valid URL"],
+        }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "homepage"
+    label: "Homepage"
+    folder: "src/content/"
+    format: "yaml-frontmatter"
+    create: false
+    slug: "{{slug}}"
+    editor:
+      preview: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }

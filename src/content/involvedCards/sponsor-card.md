@@ -2,9 +2,7 @@
 title: "Sponsor the Ambassadors"
 buttonText: "Help Fund"
 buttonLink: "support"
-highlightedText: "Funding and donations support "
-standardText: "our remarkable group of "
 image: "@assets/images/svgs/fund.svg"
 ---
 
-ambassadors.
+**Sponsorships and donations support** OpenAQ to deliver the leadership training and stipends for the ambassadors to participate.

@@ -1,11 +1,12 @@
 ---
 import { Image } from "astro:assets";
-import type { CollectionEntry } from "astro:content";
+import { render, type CollectionEntry } from "astro:content";
 interface Props {
   miniCard: CollectionEntry<"miniCards">;
 }
 
 const { miniCard } = Astro.props;
+const { Content } = await render(miniCard);
 ---
 
 <style lang="scss">
@@ -16,13 +17,14 @@ const { miniCard } = Astro.props;
     background-color: white;
     display: flex;
     flex-direction: column;
-    height: 260px;
+    height: 270px;
     width: 100%;
     max-width: 330px;
     min-width: 200px;
     box-shadow: 0 8px 5px 5px rgb(83, 83, 83, 0.25);
     border-radius: 2px;
     padding: 20px 25px;
+    text-align: center;
 
     .mini-card__icon {
       display: flex;
@@ -61,7 +63,7 @@ const { miniCard } = Astro.props;
   }
   @media (max-width: 1050px) {
     .mini-card {
-      height: 280px;
+      height: 300px;
       width: 100%;
       max-width: 330px;
       min-width: 200px;
@@ -73,7 +75,7 @@ const { miniCard } = Astro.props;
   }
   @media (max-width: 900px) {
     .mini-card {
-      height: 280px;
+      height: 350px;
       width: 100%;
       max-width: 330px;
       min-width: 200px;
@@ -83,7 +85,8 @@ const { miniCard } = Astro.props;
       }
     }
   }
-  .highlight {
+
+  .mini-card__p :global(strong) {
     font-weight: 600;
     background-color: rgba(variables.$mantis100, 0.3);
     padding: 0 3px;
@@ -102,10 +105,6 @@ const { miniCard } = Astro.props;
   </div>
   <h3>{miniCard.data.title}</h3>
   <div class="mini-card__p">
-    <p>
-      {miniCard.data.text1}<span class="highlight">{miniCard.data.text2}</span>{
-        miniCard.body
-      }
-    </p>
+    <Content />
   </div>
 </article>
