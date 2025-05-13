@@ -5,4 +5,4 @@ buttonLink: "apply"
 image: "@assets/images/svgs/application.svg"
 ---
 
-**Applications are open** until November, 2025 for the 2026 OpenAQ Community Ambassador Program! This annual program empowers ten emerging air quality leaders in low- and middle-income countries to fight air inequality.
+**The application period** for the 2026 OpenAQ Ambassador Program will open November 2025.

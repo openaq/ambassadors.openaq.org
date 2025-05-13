@@ -5,4 +5,4 @@ buttonLink: "support"
 image: "@assets/images/svgs/fund.svg"
 ---
 
-**Funding and donations support** our remarkable group of **ambassadors.**
+**Sponsorships and donations support** OpenAQ to deliver the leadership training and stipends for the ambassadors to participate.
