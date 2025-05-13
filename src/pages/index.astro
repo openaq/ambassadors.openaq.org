@@ -27,6 +27,24 @@ const engageCards = await getCollection("engagements");
 const isoCodes = ambassadors.map((ambassador) => {
   return ambassador.data.countryIso;
 });
+
+const desiredOrderInvolved = [
+  "Apply to be a 2026 Ambassador",
+  "Sponsor the Ambassadors",
+  "Collaborate",
+];
+const desiredOrderEngage = ["Use OpenAQ", "Join the Community", "Subscribe"];
+
+const orderedInvolvedCards = involvedCards.sort(
+  (a, b) =>
+    desiredOrderInvolved.indexOf(a.data.title) -
+    desiredOrderInvolved.indexOf(b.data.title)
+);
+const orderedEngageCards = engageCards.sort(
+  (a, b) =>
+    desiredOrderEngage.indexOf(a.data.title) -
+    desiredOrderEngage.indexOf(b.data.title)
+);
 ---
 
 <style lang="scss">
@@ -269,7 +287,13 @@ const isoCodes = ambassadors.map((ambassador) => {
   }
 
   .partner-section {
-    padding: 80px 60px;
+    padding: 80px 120px;
+    @media (max-width: 1000px) {
+      padding: 80px 80px;
+    }
+    @media (max-width: 600px) {
+      padding: 80px 10px;
+    }
     h1 {
       margin: 0 auto;
       text-align: center;
@@ -278,11 +302,11 @@ const isoCodes = ambassadors.map((ambassador) => {
     .partner-logos {
       display: flex;
       flex-direction: row;
-      gap: 100px;
+      gap: 50px;
       align-items: center;
       justify-content: center;
       @media (max-width: 1000px) {
-        gap: 70px;
+        gap: 20px;
         padding: 10px;
       }
       @media (max-width: 600px) {
@@ -343,7 +367,7 @@ const isoCodes = ambassadors.map((ambassador) => {
       padding-top: 20px;
     }
     .project-container {
-      display:grid;
+      display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 20px;
       margin-top: 30px;
@@ -455,7 +479,7 @@ const isoCodes = ambassadors.map((ambassador) => {
           <span class="highlight">Air pollution</span> is a “silent killer” that
           accounts <span class="highlight"
             >for more than 8 million premature deaths</span
-          > each year and 90% of deaths attributed to outdoor air pollution are in
+          > each year. 90% of deaths attributed to outdoor air pollution are in
           <span class="highlight"></span>low- and middle-income countries.
         </span>
         <br />
@@ -463,16 +487,15 @@ const isoCodes = ambassadors.map((ambassador) => {
           <span class="highlight"
             >OpenAQ's Community Ambassador Program empowers</span
           > the next generation of
-          <span class="highlight">changemakers</span> to tackle this global air quality
-          epidemic locally in the planet's most polluted regions through the use
-          of open data.
+          <span class="highlight">changemakers</span> to tackle this global epidemic locally in the planet's most polluted regions through the use
+          of data.
         </span>
       </p>
       <div class="buttons">
         <a
           href={`${baseUrl}/apply/`}
           class="btn btn-primary learn-more-btn"
-          role="button">Apply</a
+          role="button">Apply Now</a
         >
         <a
           href={`${baseUrl}/support/`}
@@ -495,12 +518,12 @@ const isoCodes = ambassadors.map((ambassador) => {
   <section class="global-section">
     <h1>The OpenAQ Community Ambassador Program:</h1>
     <h2>meaningful impact in the world’s most polluted regions.</h2>
-    <!-- <h2>Representing {new Set(isoCodes).size} countries</h2> -->
+
     <div class="global-impact-container">
       <div class="global-image">
         <img
           class="map-image"
-          src=`${baseUrl}/imgs/map/all.png`
+          src=`${baseUrl}/imgs/map/all.webp`
           alt=""
           height="588"
           width="1200"
@@ -521,7 +544,7 @@ const isoCodes = ambassadors.map((ambassador) => {
   </section>
 
   <section class="testimonials-section">
-    <h1>Testimonials</h1>
+    <h1>Jumpstarting and Empowering Air Quality Leaders</h1>
     <div class="testimonial-cards-container">
       {
         testimonials.map((testimonial) => (
@@ -540,7 +563,7 @@ const isoCodes = ambassadors.map((ambassador) => {
     </p>
     <div class="involved-cards">
       {
-        involvedCards.map((involvedCard) => (
+        orderedInvolvedCards.map((involvedCard) => (
           <InvolvedCards involvedCard={involvedCard} />
         ))
       }
@@ -549,7 +572,7 @@ const isoCodes = ambassadors.map((ambassador) => {
       <h1>Engage with OpenAQ</h1>
       <div class="engage-cards">
         {
-          engageCards.map((engageCard) => (
+          orderedEngageCards.map((engageCard) => (
             <EngageCards engageCard={engageCard} />
           ))
         }
@@ -561,7 +584,7 @@ const isoCodes = ambassadors.map((ambassador) => {
     <h1>Partners</h1>
     <p>
       The following partners provide generous funding, equipment, or in-kind
-      support to help make The OpenAQ Community Ambassador Program a reality
+      support to help make the OpenAQ Community Ambassador Program a reality.
     </p>
     <div class="partner-logos">
       {partners.map((partner) => <PartnerCard partner={partner} />)}

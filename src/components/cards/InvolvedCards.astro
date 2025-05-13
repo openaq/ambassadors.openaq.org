@@ -121,6 +121,7 @@ const baseUrl = import.meta.env.BASE_URL;
       }
     }
   }
+
   .involved-card__p :global(strong) {
     font-weight: 600;
     background-color: rgba(variables.$mantis100, 0.3);
@@ -148,18 +149,6 @@ const baseUrl = import.meta.env.BASE_URL;
         href={`${baseUrl}/${involvedCard.data.buttonLink}`}
         class={`button${!involvedCard.data.buttonLink ? " button--disabled" : ""}`}
         aria-disabled={involvedCard.data.buttonLink === ""}
-      >
-        {involvedCard.data.buttonText}
-      </a>
-    )
-  }
-  {
-    involvedCard.data.link && (
-      <a
-        class="link"
-        target="_blank"
-        rel="noopener noreferrer"
-        href={involvedCard.data.link}
       >
         {involvedCard.data.buttonText}
       </a>

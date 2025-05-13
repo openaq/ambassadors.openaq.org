@@ -35,7 +35,6 @@ const baseUrl = import.meta.env.BASE_URL;
       transform: translateY(-5px);
     }
 
-
     &__img {
       display: flex;
       align-items: center;
@@ -69,10 +68,10 @@ const baseUrl = import.meta.env.BASE_URL;
 <article class="project-card">
   <a href={`${baseUrl}/projects/${project.id}`}>
     <div class="project-card__img">
-      <Image src={project.data.image} alt={project.data.title} />
+      <Image src={project.data.image} alt={project.data.title} width={300} />
     </div>
     <div class="project-content">
-      <h3>{project.data.title}</h3>
+      <h3>{project.data.cardTitle}</h3>
       <p>{project.data.shortDescription}</p>
     </div>
   </a>
