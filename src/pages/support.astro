@@ -150,6 +150,12 @@ import FutureImg from "src/assets/images/josue-michel-xCU7nCMNfI8-unsplash.jpg";
     text-align: center;
     padding: 4rem 1rem;
 
+    .support-subtitle {
+      width: 80%;
+      text-align: center;
+      margin: 0 auto;
+    }
+
     h2 {
       font-size: 2rem;
       font-weight: bold;
@@ -196,6 +202,64 @@ import FutureImg from "src/assets/images/josue-michel-xCU7nCMNfI8-unsplash.jpg";
     .support-card p {
       font-size: 0.9rem;
       color: #444;
+    }
+
+    .highlight {
+      font-weight: 600;
+      background-color: rgba(variables.$mantis100, 0.3);
+      padding: 0 3px;
+      border-radius: 2px;
+    }
+  }
+
+  .contribution-section {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: center;
+    padding-bottom: 8rem;
+    flex-direction: column;
+    align-items: center;
+
+    .contribution-table {
+      border-collapse: collapse;
+      width: 90%;
+      max-width: 800px;
+      border-radius: 5px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+
+      th,
+      td {
+        padding: 1rem;
+        text-align: left;
+        font-size: 0.95rem;
+      }
+
+      th {
+        background-color: rgba(variables.$mantis100, 0.1);
+        font-weight: bold;
+      }
+
+      tr:nth-child(even) {
+        background-color: #f8f8f8;
+      }
+
+      td:first-child {
+        font-weight: bold;
+        width: 120px;
+        white-space: nowrap;
+      }
+    }
+
+    p {
+      width: 90%;
+      max-width: 800px;
+      margin: 0 auto;
+      padding-top: 2rem;
+
+      a {
+        color: variables.$sky100;
+      }
     }
   }
 
@@ -474,7 +538,13 @@ import FutureImg from "src/assets/images/josue-michel-xCU7nCMNfI8-unsplash.jpg";
     </section>
 
     <section class="support-section">
-      <h2>YOUR DONATION WILL SUPPORT:</h2>
+      <h2>WHAT YOUR CONTRIBUTION WILL SUPPORT</h2>
+      <p class="support-subtitle">
+        We invite you to support the Community Ambassador Program with a
+        financial contribution. OpenAQ is a nonprofit organization and can
+        provide this one-of-a-kind learning experience only through the
+        generosity of foundations, corporations and individuals.
+      </p>
       <div class="support-container">
         <div class="support-card">
           <div class="support-icon">
@@ -482,8 +552,9 @@ import FutureImg from "src/assets/images/josue-michel-xCU7nCMNfI8-unsplash.jpg";
           </div>
           <h3>Leadership Training</h3>
           <p>
-            Funding and donations support curriculum development and stipends
-            for our remarkable group of annual ambassadors.
+            Sponsorships and donations support OpenAQ to <span class="highlight"
+              >deliver the leadership training</span
+            > and stipends for the ambassadors to participate.
           </p>
         </div>
         <div class="support-card">
@@ -492,8 +563,10 @@ import FutureImg from "src/assets/images/josue-michel-xCU7nCMNfI8-unsplash.jpg";
           </div>
           <h3>A Vibrant Community of Changemakers</h3>
           <p>
-            The more than 30 OpenAQ ambassadors learn and grow together during
-            their time in the program and as alumni.
+            Participants from low- and middle-income nations <span
+              class="highlight">learn and grow</span
+            >
+            together during their time in the program and as alumni.
           </p>
         </div>
         <div class="support-card">
@@ -502,13 +575,61 @@ import FutureImg from "src/assets/images/josue-michel-xCU7nCMNfI8-unsplash.jpg";
           </div>
           <h3>Making a Global Impact</h3>
           <p>
-            The program increases community action, in-field research, and data
-            coverage in low- and middle-income countries that are most affected
-            by air pollution.
+            The program <span class="highlight"
+              >increases community action, in-field research, and data coverage</span
+            > in low- and middle-income countries that are most affected by air pollution.
           </p>
         </div>
       </div>
       <a href="#" class="button">Become a Funder</a>
+    </section>
+
+    <section class="contribution-section">
+      <table class="contribution-table">
+        <thead>
+          <tr>
+            <th>Amount</th>
+            <th>What it supports</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>$50</td>
+            <td
+              >Average customs fee for delivery of an air sensor to an
+              ambassador</td
+            >
+          </tr>
+          <tr>
+            <td>$220</td>
+            <td>Subscription for virtual meeting platform</td>
+          </tr>
+          <tr>
+            <td>$300</td>
+            <td>Honorarium for one guest lecturer</td>
+          </tr>
+          <tr>
+            <td>$1,000</td>
+            <td
+              >Travel, lodging, etc. for an ambassador to attend a relevant
+              conference in their geography
+            </td>
+          </tr>
+          <tr>
+            <td>$2,000</td>
+            <td>Stipend for one ambassador to participate in the program</td>
+          </tr>
+          <tr>
+            <td>$65,000</td>
+            <td>OpenAQ personnel and indirect costs to run the program</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>
+        Email chris@openaq.org to learn how you can support the program directly
+        (or OpenAQ broadly) with a grant or sponsorship.
+      </p>
+      <p>Make a personal contribution to support OpenAQ <a href="">here</a>.</p>
     </section>
 
     <section class="future-section">
