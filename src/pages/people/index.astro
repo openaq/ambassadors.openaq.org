@@ -56,7 +56,7 @@ const ambassadors = await getCollection("ambassadors");
   }
 </style>
 
-<PageLayout>
+<PageLayout pageTitle="Our Ambassadors">
   <section class="ambassador-section">
     <h1 class="gradient-title">Meet Our Ambassadors</h1>
 
@@ -71,6 +71,7 @@ const ambassadors = await getCollection("ambassadors");
               src={ambassador.data.image}
               alt={`Image of ${ambassador.data.name}`}
               class="ambassador-image"
+              width={400}
             />
             <div class="ambassador-name">{ambassador.data.name}</div>
           </a>

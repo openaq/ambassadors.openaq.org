@@ -59,7 +59,7 @@ const { partner } = Astro.props;
 <article class="partner-card">
   <div class="partner-card__img">
     <a href={partner.data.url} target="_blank" rel="noopener noreferrer">
-      <Image src={partner.data.image} alt={partner.data.name} />
+      <Image src={partner.data.image} alt={partner.data.name} width={300} />
     </a>
   </div>
 </article>

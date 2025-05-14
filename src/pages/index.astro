@@ -11,6 +11,7 @@ import { getEntry } from "astro:content";
 import Impacts from "@components/impacts/Impacts.astro";
 import InvolvedCards from "@components/cards/InvolvedCards.astro";
 import EngageCards from "@components/cards/EngageCards.astro";
+const pageTitle = "Landing page";
 
 const baseUrl = import.meta.env.BASE_URL;
 const index = await getEntry("homepage", "index");
@@ -23,10 +24,6 @@ const miniCards = await getCollection("miniCards");
 const impacts = await getCollection("impacts");
 const involvedCards = await getCollection("involvedCards");
 const engageCards = await getCollection("engagements");
-
-const isoCodes = ambassadors.map((ambassador) => {
-  return ambassador.data.countryIso;
-});
 
 const desiredOrderInvolved = [
   "Apply to be a 2026 Ambassador",
@@ -469,7 +466,7 @@ const orderedEngageCards = engageCards.sort(
   }
 </style>
 
-<BaseLayout>
+<BaseLayout pageTitle={pageTitle}>
   <section class="hero-section">
     <div class="hero-curve"></div>
     <div class="hero-content">
@@ -505,7 +502,12 @@ const orderedEngageCards = engageCards.sort(
       </div>
     </div>
     <div class="hero-image">
-      <Image src={HeroImg} height={800} alt="Ambassadors Workshops" />
+      <Image
+        loading="lazy"
+        src={HeroImg}
+        height={800}
+        alt="Ambassadors Workshops"
+      />
     </div>
   </section>
 
