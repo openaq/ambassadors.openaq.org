@@ -24,10 +24,6 @@ const impacts = await getCollection("impacts");
 const involvedCards = await getCollection("involvedCards");
 const engageCards = await getCollection("engagements");
 
-const isoCodes = ambassadors.map((ambassador) => {
-  return ambassador.data.countryIso;
-});
-
 const desiredOrderInvolved = [
   "Apply to be a 2026 Ambassador",
   "Sponsor the Ambassadors",
