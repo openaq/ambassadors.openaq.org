@@ -93,6 +93,7 @@ const apply = defineCollection({
       title: z.string(),
       subtitle: z.string().optional(),
       application_deadline: z.string().optional(),
+      application_open_date: z.string().optional(),
     }),
 });
 
@@ -153,6 +154,14 @@ const engagements = defineCollection({
     }),
 });
 
+const preparation = defineCollection({
+  loader: glob({ pattern: ['*.md'], base: 'src/content/apply' }),
+  schema: () =>
+    z.object({
+      title: z.string(),
+    }),
+});
+
 export const collections = {
   ambassadors,
   cohorts,
@@ -167,4 +176,5 @@ export const collections = {
   impacts,
   involvedCards,
   engagements,
+  preparation,
 };
