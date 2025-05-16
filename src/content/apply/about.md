@@ -1,7 +1,8 @@
 ---
 title: "OpenAQ Community Ambassador Program Details"
 subtitle: "The OpenAQ Community Ambassador Program: Fighting Air Inequality in Your Community and Beyond"
-application_deadline: "February 21, 2025"
+application_deadline: "February 21, 2026"
+application_open_date: "November 2025"
 ---
 
 This annual program supports ten emerging air quality leaders in low- and middle-income countries in developing skills to fight air inequality — the unequal access to clean air. Over nine months, Ambassadors are provided with interdisciplinary training (with a focus on using data), leadership development, and a supportive professional community to hone skills and expertise in the air quality field. Beyond the program, there are extended opportunities to collaborate and participate in OpenAQ activities.
@@ -46,16 +47,3 @@ this map.
 </a>
 
 Please note that this program is NOT for atmospheric researchers or scientists working within universities.
-
-## Preparing your application materials
-
-#### To apply, prepare the following and save them as .doc, .docx or a .pdf files:
-
-1. **A resume or CV**, no longer than two pages (one page front and back) (filename format: "Name_Country_Resume")
-
-2. **A two-page Statement of Interest** that answers the following questions (filename format: "Name_Country_Statement of Interest"):
-   - Why are you interested in becoming an OpenAQ Community Ambassador?
-   - Describe a social and/or environmental initiative in your community that you have led and what impact it has had.
-   - Describe a particular air quality challenge that your community is facing. How might participating in this program help you to tackle this challenge? If you have a specific idea or project in mind that you envision carrying out during the program, describe it here as well.
-   - What specific things do you hope to learn and achieve from participating in the program?
-   - What life skills and/or professional experiences can you share with other Community Ambassadors in the cohort? Feel free to be creative!
