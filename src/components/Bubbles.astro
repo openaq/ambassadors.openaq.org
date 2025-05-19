@@ -1,7 +1,8 @@
 <style lang="scss">
-  @use "openaq-design-system/scss/bubbles";
+  @use 'openaq-design-system/scss/mixins/bubble' as *;
+  @use 'openaq-design-system/scss/variables' as *;
 
-  @mixin bubbles($top: 150, $mobile-position: "right") {
+  @mixin bubbles($top: 150, $mobile-position: 'right') {
     .bubbles-container {
       position: absolute;
       width: 100%;
@@ -13,12 +14,14 @@
         position: relative;
 
         .bubble-lg {
+          @include bubble(230, $skys);
           position: absolute;
           top: 0;
           left: -132px;
         }
 
         .bubble-sm {
+          @include bubble(45, $skys);
           position: absolute;
           top: 250px;
           left: 53px;
@@ -28,14 +31,14 @@
       @media (max-width: 1000px) {
         & {
           z-index: -1;
-          @if $mobile-position == "left" {
+          @if $mobile-position == 'left' {
             top: -275px;
             left: -30px;
           }
           .bubbles {
             .bubble-lg {
               position: absolute;
-              @if $mobile-position == "right" {
+              @if $mobile-position == 'right' {
                 top: -200px;
                 left: auto;
                 right: -140px;
@@ -45,7 +48,7 @@
             .bubble-sm {
               position: absolute;
 
-              @if $mobile-position == "right" {
+              @if $mobile-position == 'right' {
                 top: 50px;
                 left: auto;
                 right: 15px;
