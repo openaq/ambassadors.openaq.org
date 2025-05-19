@@ -1,38 +1,39 @@
 ---
 const { pageTitle } = Astro.props;
 
-import Footer from "@components/Footer.astro";
-import Header from "@components/Header.astro";
-import "@assets/styles/main.scss";
+import Footer from '@components/Footer.astro';
+import Header from '@components/Header.astro';
+import '@assets/styles/main.scss';
 ---
-
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/ambassadors.openaq.org/favicon.svg" />
-    <link rel="sitemap" href="/sitemap.xml" /> 
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/ambassadors.openaq.org/favicon.svg"
+    />
+    <link rel="sitemap" href="/sitemap.xml" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{pageTitle}</title>
     <slot name="structured-data" />
-    {import.meta.env.PROD && (
-      <>
-        <script
-          is:inline
-          defer
-          data-domain="ambassadors.openaq.org"
-          crossorigin="anonymous"
-          src="https://plausible.io/js/script.outbound-links.js"></script>
-        <script is:inline>
-          window.plausible =
-            window.plausible ||
-            function () {
-              (window.plausible.q = window.plausible.q || []).push(arguments);
-            };
-        </script>
-      </>
-    )}
+    {
+      import.meta.env.PROD && (
+        <>
+          <script
+            defer
+            data-domain="ambassadors.openaq.org"
+            src="https://plausible.io/js/script.outbound-links.js"
+          />
+          <script>
+            window.plausible = window.plausible || function(){' '}
+            {(window.plausible.q = window.plausible.q || []).push(arguments)}
+          </script>
+        </>
+      )
+    }
   </head>
   <body>
     <Header />
