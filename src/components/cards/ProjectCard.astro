@@ -8,7 +8,6 @@ interface Props {
 
 const { project } = Astro.props;
 
-const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <style lang="scss">
@@ -66,7 +65,7 @@ const baseUrl = import.meta.env.BASE_URL;
 </style>
 
 <article class="project-card">
-  <a href={`${baseUrl}/projects/${project.id}`}>
+  <a href={`/projects/${project.id}`}>
     <div class="project-card__img">
       <Image src={project.data.image} alt={project.data.title} width={300} />
     </div>

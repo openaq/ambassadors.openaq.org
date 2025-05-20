@@ -1,7 +1,6 @@
 ---
 import PageLayout from "@layouts/PageLayout.astro";
 import { getCollection } from "astro:content";
-const baseUrl = import.meta.env.BASE_URL;
 const ambassadors = await getCollection("ambassadors");
 
 const cohortYears = [...new Set(ambassadors.map((amb) => amb.data.year))].sort(
@@ -72,7 +71,7 @@ const cohortYears = [...new Set(ambassadors.map((amb) => amb.data.year))].sort(
     <div class="cohort-list">
       {
         cohortYears.map((year) => (
-          <a href={`${baseUrl}/cohorts/${year}`} class="cohort-button">
+          <a href={`/cohorts/${year}`} class="cohort-button">
             <div class="cohort-year">{year}</div>
           </a>
         ))

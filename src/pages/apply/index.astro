@@ -8,7 +8,6 @@ import {
 import CohortLinks from "@components/CohortLinks.astro";
 import { getEntry } from "astro:content";
 
-const baseUrl = import.meta.env.BASE_URL; // TODO remove for production build
 const applicationsData = await getEntry("forms", "application");
 
 const applicationActive = applicationsData?.data.active ?? false;
@@ -87,7 +86,7 @@ const applicationOpenData = frontmatter.application_open_date;
             </p>
           )}
           <div class="button-container">
-            <a class="button" href={`${baseUrl}/apply/application`}>
+            <a class="button" href='/apply/application'>
               Apply Now
             </a>
           </div>

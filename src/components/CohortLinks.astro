@@ -11,7 +11,7 @@ const sortedCohorts = cohorts.sort((a, b) => b.id.localeCompare(a.id));
     sortedCohorts.map((cohort) => (
       <li>
         <a
-          href={`https://openaq.github.io/ambassadors.openaq.org/cohorts/${cohort.id}/`}
+          href={`${Astro.url}/cohorts/${cohort.id}/`}
           target="_blank"
           rel="noopener noreferrer"
         >

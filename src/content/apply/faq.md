@@ -4,9 +4,9 @@ title: "Frequently asked questions"
 
 ## How do I know if the country I live in is eligible for this program?
 
-We select our ambassadors from low- and middle-income countries (LMIC) as classified by the World Bank: <a rel="noopener noreferrer" target="_blank" href="https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups">https://<wbr>datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups</a>
+We select our ambassadors from low- and middle-income countries (LMIC) as classified by the World Bank: <a rel="noopener noreferrer" target="_blank" href="https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups">https://datahelpdesk.worldbank.org/knowledgebase/articles/906519-world-bank-country-and-lending-groups</a>
 
-We will give higher priority to countries where we have NOT selected community ambassadors before. Previous ambassadors may be viewed here: <a rel="noopener noreferrer" target="_blank" href="https://openaq.github.io/ambassadors.openaq.org/people/">https://<wbr>openaq.github.io/ambassadors.openaq.org/people/</a>
+We will give higher priority to countries where we have NOT selected community ambassadors before. Previous ambassadors may be viewed here: <a rel="noopener noreferrer" target="_blank" href="/people/">https://ambassadors.openaq.org/people</a>
 
 We will also give higher priority to countries that are identified as “high opportunity” <a rel="noopener noreferrer" target="_blank" href="https://aqfund.epic.uchicago.edu/opportunity-map/">in this map</a>.
 
@@ -83,4 +83,4 @@ OpenAQ is interested in fostering ongoing mutual relationships with its alumni. 
 
 ## How do I apply?
 
-<a rel="noopener noreferrer" target="_blank" href="https://ambassadors.openaq.org/apply/">https://<wbr>ambassadors.openaq.org/apply/</a>
+<a rel="noopener noreferrer" target="_blank" href="/apply/">https://ambassadors.openaq.org/apply/</a>

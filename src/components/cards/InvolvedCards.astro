@@ -8,8 +8,6 @@ interface Props {
 
 const { involvedCard } = Astro.props;
 const { Content } = await render(involvedCard);
-
-const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <style lang="scss">
@@ -145,7 +143,7 @@ const baseUrl = import.meta.env.BASE_URL;
   {
     involvedCard.data.hasOwnProperty("buttonLink") && (
       <a
-        href={`${baseUrl}/${involvedCard.data.buttonLink}`}
+        href={`/${involvedCard.data.buttonLink}`}
         class={`button${!involvedCard.data.buttonLink ? " button--disabled" : ""}`}
         aria-disabled={involvedCard.data.buttonLink === ""}
       >

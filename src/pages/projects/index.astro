@@ -5,7 +5,6 @@ import { getCollection } from "astro:content";
 
 const projects = await getCollection("projects");
 
-const baseUrl = import.meta.env.BASE_URL;
 ---
 
 <style lang="scss">
@@ -66,7 +65,7 @@ const baseUrl = import.meta.env.BASE_URL;
     <div class="project-list">
       {
         projects.map((project) => (
-          <a href={`${baseUrl}/projects/${project.id}`} class="project-card">
+          <a href={`/projects/${project.id}`} class="project-card">
             <Image
               src={project.data.image}
               alt={`Image of ${project.data.name}`}

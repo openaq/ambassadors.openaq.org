@@ -13,7 +13,6 @@ import InvolvedCards from '@components/cards/InvolvedCards.astro';
 import EngageCards from '@components/cards/EngageCards.astro';
 const pageTitle = 'Landing page';
 
-const baseUrl = import.meta.env.BASE_URL;
 const index = await getEntry('homepage', 'index');
 
 const partners = await getCollection('partners');
@@ -492,12 +491,12 @@ const orderedEngageCards = engageCards.sort(
       </p>
       <div class="buttons">
         <a
-          href={`${baseUrl}/apply/`}
+          href='/apply/'
           class="btn btn-primary learn-more-btn"
           role="button">Apply Now</a
         >
         <a
-          href={`${baseUrl}/support/`}
+          href='/support/'
           class="btn btn-primary learn-more-btn"
           role="button">Help Fund</a
         >
@@ -527,7 +526,7 @@ const orderedEngageCards = engageCards.sort(
       <div class="global-image">
         <img
           class="map-image"
-          src=`${baseUrl}/imgs/map/all.webp`
+          src='/imgs/map/all.webp'
           alt=""
           height="588"
           width="1200"
@@ -596,7 +595,7 @@ const orderedEngageCards = engageCards.sort(
 
   <div class="button-container">
     <a
-      href={`${baseUrl}/support/`}
+      href='/support/'
       class="btn btn-primary learn-more-btn"
       role="button">Help Fund</a
     >
