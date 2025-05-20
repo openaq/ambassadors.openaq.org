@@ -1,36 +1,35 @@
 ---
-import MiniCards from "@components/cards/MiniCards.astro";
-import PartnerCard from "@components/cards/PartnerCard.astro";
-import ProjectCard from "@components/cards/ProjectCard.astro";
-import BaseLayout from "@layouts/BaseLayout.astro";
-import { getCollection } from "astro:content";
-import TestimonialCard from "@components/cards/TestimonialCard.astro";
-import { Image } from "astro:assets";
-import HeroImg from "/src/assets/images/Antonio_Mozambique2.jpg";
-import { getEntry } from "astro:content";
-import Impacts from "@components/impacts/Impacts.astro";
-import InvolvedCards from "@components/cards/InvolvedCards.astro";
-import EngageCards from "@components/cards/EngageCards.astro";
-const pageTitle = "Landing page";
+import MiniCards from '@components/cards/MiniCards.astro';
+import PartnerCard from '@components/cards/PartnerCard.astro';
+import ProjectCard from '@components/cards/ProjectCard.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import TestimonialCard from '@components/cards/TestimonialCard.astro';
+import { Image } from 'astro:assets';
+import HeroImg from '/src/assets/images/Antonio_Mozambique2.jpg';
+import { getEntry } from 'astro:content';
+import Impacts from '@components/impacts/Impacts.astro';
+import InvolvedCards from '@components/cards/InvolvedCards.astro';
+import EngageCards from '@components/cards/EngageCards.astro';
+const pageTitle = 'Landing page';
 
 const baseUrl = import.meta.env.BASE_URL;
-const index = await getEntry("homepage", "index");
+const index = await getEntry('homepage', 'index');
 
-const partners = await getCollection("partners");
-const projects = await getCollection("projects");
-const testimonials = await getCollection("testimonials");
-const ambassadors = await getCollection("ambassadors");
-const miniCards = await getCollection("miniCards");
-const impacts = await getCollection("impacts");
-const involvedCards = await getCollection("involvedCards");
-const engageCards = await getCollection("engagements");
+const partners = await getCollection('partners');
+const projects = await getCollection('projects');
+const testimonials = await getCollection('testimonials');
+const miniCards = await getCollection('miniCards');
+const impacts = await getCollection('impacts');
+const involvedCards = await getCollection('involvedCards');
+const engageCards = await getCollection('engagements');
 
 const desiredOrderInvolved = [
-  "Apply to be a 2026 Ambassador",
-  "Sponsor the Ambassadors",
-  "Collaborate",
+  'Apply to be a 2026 Ambassador',
+  'Sponsor the Ambassadors',
+  'Collaborate',
 ];
-const desiredOrderEngage = ["Use OpenAQ", "Join the Community", "Subscribe"];
+const desiredOrderEngage = ['Use OpenAQ', 'Join the Community', 'Subscribe'];
 
 const orderedInvolvedCards = involvedCards.sort(
   (a, b) =>
@@ -45,14 +44,14 @@ const orderedEngageCards = engageCards.sort(
 ---
 
 <style lang="scss">
-  @use "openaq-design-system/scss/variables" as variables;
+  @use 'openaq-design-system/scss/variables' as variables;
 
-  @use "openaq-design-system/scss/mixins/index.scss" as mixins;
-  @use "openaq-design-system/scss/utilities/types.scss";
-  @use "openaq-design-system/scss/utilities/colors.scss";
-  @use "openaq-design-system/scss/inputs";
+  @use 'openaq-design-system/scss/mixins/index.scss' as mixins;
+  @use 'openaq-design-system/scss/utilities/types.scss';
+  @use 'openaq-design-system/scss/utilities/colors.scss';
+  @use 'openaq-design-system/scss/inputs';
 
-  @use "openaq-design-system/scss/buttons";
+  @use 'openaq-design-system/scss/buttons';
 
   .hero-section {
     position: relative;
@@ -522,7 +521,7 @@ const orderedEngageCards = engageCards.sort(
 
   <section class="global-section">
     <h1>The OpenAQ Community Ambassador Program:</h1>
-    <h2>meaningful impact in the world’s most polluted regions.</h2>
+    <h2>meaningful impact in the world's most polluted regions.</h2>
 
     <div class="global-impact-container">
       <div class="global-image">
