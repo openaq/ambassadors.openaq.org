@@ -49,8 +49,8 @@ export async function GET({ params, request }) {
    </svg>`;
   const buffer = Buffer.from(svg);
   const webp = await sharp(buffer)
-    .resize(800, 392)
-    .webp( {quality: 85, effort: 6, nearLossless: true} )
+    .resize(600, 294)
+    .webp( {quality: 90, effort: 6, nearLossless: true} )
     .toBuffer();
   return new Response(webp);
 }
