@@ -23,6 +23,5 @@ export default defineConfig({
       ],
     ],
   },
-  site: "https://openaq.github.io",
-  base: "ambassadors.openaq.org",
+  site: "https://ambassadors.openaq.org",
 });
