@@ -1,7 +1,7 @@
 ---
 title: "Use OpenAQ"
 buttonText: "Sign Up"
-buttonLink: ""
+buttonLink: "https://explore.openaq.org/register"
 image: "@assets/images/svgs/sign-up.svg"
 ---
 

@@ -1,7 +1,7 @@
 ---
 title: "Subscribe"
 buttonText: "Subscribe"
-buttonLink: ""
+buttonLink: "https://link.openaq.org/newsletter"
 image: "@assets/images/svgs/subscribe.svg"
 ---
 

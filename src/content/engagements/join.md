@@ -1,7 +1,7 @@
 ---
 title: "Join the Community"
 buttonText: "Join"
-buttonLink: ""
+buttonLink: "https://join.slack.com/t/openaq/shared_invite/zt-yzqlgsva-v6McumTjy2BZnegIK9XCVw"
 image: "@assets/images/svgs/join.svg"
 ---
 
