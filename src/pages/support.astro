@@ -1,13 +1,11 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
-import HeroImg from "src/assets/images/casey-horner-4rDCa5hBlCs-unsplash2.jpg";
+import HeroImg from "src/assets/images/alex_mobile_lab_crop.jpg";
 import PollutionImg from "src/assets/images/ella-ivanescu-JbfhNrpQ_dw-unsplash.jpg";
 import GlobeSvg from "src/assets/svg/globe.svg";
 import HeartSvg from "src/assets/svg/heart.svg";
 import CommunitySvg from "src/assets/svg/community.svg";
-import InfrastructureSvg from "src/assets/svg/infrastructure.svg";
-import FutureImg from "src/assets/images/josue-michel-xCU7nCMNfI8-unsplash.jpg";
 ---
 
 <style lang="scss">
@@ -64,20 +62,72 @@ import FutureImg from "src/assets/images/josue-michel-xCU7nCMNfI8-unsplash.jpg";
     }
   }
 
-  .why-section {
-    max-width: 800px;
-    margin: 0 auto;
+  .support-section {
+    text-align: center;
     padding: 4rem 1rem;
-    text-align: left;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+
+    .support-subtitle {
+      width: 80%;
+      text-align: center;
+      margin: 0 auto;
+    }
+
     h2 {
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 2rem;
+    }
+
+    .support-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: no-wrap;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .support-card {
+      padding: 1.5rem;
+      width: 250px;
       text-align: center;
     }
-    p {
-      margin-bottom: 5px;
-      line-height: 1.8;
+
+    .support-icon {
+      background: #e0f0e9;
+      border-radius: 50%;
+      width: 65px;
+      height: 65px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+      img {
+        width: 50px;
+      }
+    }
+
+    .support-card h3 {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      width: 150px;
+      margin: 0 auto;
+    }
+
+    .support-card p {
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    .highlight {
+      font-weight: 600;
+      background-color: rgba(variables.$mantis100, 0.3);
+      padding: 0 3px;
+      border-radius: 2px;
+    }
+    p a {
+      color: variables.$sky100;
     }
   }
 
@@ -87,6 +137,7 @@ import FutureImg from "src/assets/images/josue-michel-xCU7nCMNfI8-unsplash.jpg";
     position: relative;
     max-width: 1000px;
     margin: 0 auto;
+    margin-top: 50px;
 
     .left-article {
       background-color: #a1c0a261;
@@ -146,73 +197,6 @@ import FutureImg from "src/assets/images/josue-michel-xCU7nCMNfI8-unsplash.jpg";
     }
   }
 
-  .support-section {
-    text-align: center;
-    padding: 4rem 1rem;
-
-    h2 {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 2rem;
-    }
-
-    .support-container {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: no-wrap;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .support-card {
-      padding: 1.5rem;
-      width: 250px;
-      text-align: center;
-    }
-
-    .support-icon {
-      background: #e0f0e9;
-      border-radius: 50%;
-      width: 65px;
-      height: 65px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1rem;
-      img {
-        width: 50px;
-      }
-    }
-
-    .support-card h3 {
-      font-size: 1.2rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-      width: 150px;
-      margin: 0 auto;
-    }
-
-    .support-card p {
-      font-size: 0.9rem;
-      color: #444;
-    }
-  }
-
-  .card-container {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-  }
-
-  .card {
-    background: #f3f3f3;
-    padding: 1.5rem;
-    border-radius: 10px;
-    max-width: 300px;
-  }
-
   footer {
     background: #222;
     color: white;
@@ -232,138 +216,10 @@ import FutureImg from "src/assets/images/josue-michel-xCU7nCMNfI8-unsplash.jpg";
     margin-top: 1rem;
   }
 
-  .future-section {
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 40px;
-  }
-
-  .img-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-
-  .img-overlay img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-
-  .img-overlay::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(34, 34, 34, 0.6);
-  }
-
-  .future-overlay {
-    position: relative;
-    z-index: 1;
-    padding: 2rem;
-    border-radius: 10px;
-    h1 {
-      font-size: 2rem;
-    }
-  }
-
-  .last-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 60px;
-    padding: 20px 60px;
-    margin: 0 auto;
-
-    .left-article,
-    .right-article {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .left-article {
-      width: 40%;
-      p {
-        font-size: 2rem;
-        font-weight: bold;
-        width: 50%;
-        margin: 0 auto;
-      }
-    }
-    .vertical-line {
-      background-color: variables.$sky120;
-      width: 4px;
-      height: 300px;
-      z-index: 1000;
-    }
-
-    .right-article {
-      width: 60%;
-      p {
-        width: 60%;
-        margin: 0 auto;
-        line-height: 1.6;
-        span {
-          font-weight: bold;
-          font-size: 1.2rem;
-        }
-      }
-    }
-  }
-
   @media (max-width: 900px) {
-    .why-section {
-      padding: 4rem 3rem;
-    }
     .support-container {
       display: flex;
       flex-wrap: wrap;
-    }
-
-    .last-section {
-      flex-direction: column;
-      justify-content: center;
-      width: 100%;
-      max-width: 100%;
-      padding: 20px;
-
-      .left-article,
-      .right-article {
-        width: 100%;
-        text-align: center;
-      }
-
-      .left-article {
-        p {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-      }
-
-      .right-article {
-        width: 100% !important;
-        p {
-          width: 80% !important;
-        }
-      }
-
-      .vertical-line {
-        display: none;
-      }
     }
   }
   @media (max-width: 750px) {
@@ -410,7 +266,7 @@ import FutureImg from "src/assets/images/josue-michel-xCU7nCMNfI8-unsplash.jpg";
   }
 </style>
 
-<BaseLayout pageTitle="OpenAQ Support Us">
+<BaseLayout>
   <div class="support-page">
     <section class="hero">
       <div class="img-overlay">
@@ -419,33 +275,64 @@ import FutureImg from "src/assets/images/josue-michel-xCU7nCMNfI8-unsplash.jpg";
       <div class="hero-overlay">
         <h1>TOGETHER WE CAN MAKE A DIFFERENCE</h1>
         <p>
-          OpenAQ’s Community Ambassador Program empowers the next generation of
+          OpenAQ's Community Ambassador Program empowers the next generation of
           changemakers to tackle the global air quality epidemic locally in the
-          planet’s most polluted regions through the use of open data.
+          planet's most polluted regions through the use of open data.
         </p>
-        <a href="#" class="button">Become a Funder</a>
+        <a href="https://secure.givelively.org/donate/openaq-inc/" rel="noopener noreferrer" class="button">Donate now</a>
       </div>
     </section>
 
-    <section class="why-section">
-      <h2>WHY IT MATTERS</h2>
-      <p>
-        Poor air quality affects everyone. 99% of people on the planet live
-        where air quality guidelines set by the World Health Organization are
-        not being met.
+    <section class="support-section">
+      <h2>WHAT YOUR CONTRIBUTION WILL SUPPORT</h2>
+      <p class="support-subtitle">
+        We invite you to support the Community Ambassador Program with a
+        financial contribution. OpenAQ is a nonprofit organization and can
+        provide this one-of-a-kind learning experience only through the
+        generosity of foundations, corporations and individuals.
       </p>
+      <div class="support-container">
+        <div class="support-card">
+          <div class="support-icon">
+            <Image src={HeartSvg} alt="Heart Icon" />
+          </div>
+          <h3>Leadership Training</h3>
+          <p>
+            Sponsorships and donations support OpenAQ to <span class="highlight"
+              >deliver the leadership training</span
+            > and stipends for the ambassadors to participate.
+          </p>
+        </div>
+        <div class="support-card">
+          <div class="support-icon">
+            <Image src={CommunitySvg} alt="Community Icon" />
+          </div>
+          <h3>A Vibrant Community of Changemakers</h3>
+          <p>
+            Participants from low- and middle-income nations <span
+              class="highlight">learn and grow</span
+            >
+            together during their time in the program and as alumni.
+          </p>
+        </div>
+        <div class="support-card">
+          <div class="support-icon">
+            <Image src={GlobeSvg} alt="Global Coverage Icon" />
+          </div>
+          <h3>Making a Global Impact</h3>
+          <p>
+            The program <span class="highlight"
+              >increases community action, in-field research, and data coverage</span
+            > in low- and middle-income countries that are most affected by air pollution.
+          </p>
+        </div>
+      </div>
       <p>
-        The average person loses 2.3 years of life expectancy because of
-        exposure to particulate pollution, with those living in the most
-        polluted regions losing almost 7.
+        Email chris@openaq.org to learn how you can support the program directly
+        (or OpenAQ broadly) with a grant or sponsorship.
       </p>
-      <p>
-        Air pollution is, in fact, the 4th leading risk factor for early death
-        worldwide and impacts health at all stages of life.
-        <br /> We can, and must, clean up our air, especially to protect the most
-        vulnerable.
-      </p>
-      <a href="#" class="button">Become a Funder</a>
+      <p>Make a personal contribution to support OpenAQ.</p>
+      <a href="https://secure.givelively.org/donate/openaq-inc/" target="_blank" rel="noopener noreferrer" class="button">Donate now</a>
     </section>
 
     <section class="articles-section">
@@ -458,7 +345,6 @@ import FutureImg from "src/assets/images/josue-michel-xCU7nCMNfI8-unsplash.jpg";
           By providing universal access to air quality data, we empower a global
           community of changemakers to solve air inequality.
         </p>
-        <a href="#" class="button">Become a Funder</a>
       </article>
       <article class="right-article">
         <div class="right-img-overlay">
@@ -470,77 +356,6 @@ import FutureImg from "src/assets/images/josue-michel-xCU7nCMNfI8-unsplash.jpg";
             </p>
           </div>
         </div>
-      </article>
-    </section>
-
-    <section class="support-section">
-      <h2>YOUR DONATION WILL SUPPORT:</h2>
-      <div class="support-container">
-        <div class="support-card">
-          <div class="support-icon">
-            <Image src={HeartSvg} alt="Heart Icon" />
-          </div>
-          <h3>Leadership Training</h3>
-          <p>
-            Funding and donations support curriculum development and stipends
-            for our remarkable group of annual ambassadors.
-          </p>
-        </div>
-        <div class="support-card">
-          <div class="support-icon">
-            <Image src={CommunitySvg} alt="Community Icon" />
-          </div>
-          <h3>A Vibrant Community of Changemakers</h3>
-          <p>
-            The more than 30 OpenAQ ambassadors learn and grow together during
-            their time in the program and as alumni.
-          </p>
-        </div>
-        <div class="support-card">
-          <div class="support-icon">
-            <Image src={GlobeSvg} alt="Global Coverage Icon" />
-          </div>
-          <h3>Making a Global Impact</h3>
-          <p>
-            The program increases community action, in-field research, and data
-            coverage in low- and middle-income countries that are most affected
-            by air pollution.
-          </p>
-        </div>
-      </div>
-      <a href="#" class="button">Become a Funder</a>
-    </section>
-
-    <section class="future-section">
-      <div class="img-overlay">
-        <Image src={FutureImg} alt="future image" loading="lazy" />
-      </div>
-      <div class="future-overlay">
-        <h1>JOIN US IN CREATING A FUTURE WITH CLEAN AIR FOR ALL</h1>
-        <p>
-          Your donation directly supports our mission of enabling universal
-          access to air quality data — because everyone deserves to breathe
-          healthy air.
-        </p>
-        <a href="#" class="button">Become a Funder</a>
-      </div>
-    </section>
-
-    <section class="last-section">
-      <article class="left-article">
-        <p>YOU’RE SUPPORTING A TRUSTED AND TRANSPARENT ORGANIZATION</p>
-      </article>
-      <div class="vertical-line"></div>
-      <article class="right-article">
-        <p>
-          <span>OpenAQ</span> is proud to be rated 4 stars by Charity Navigator and
-          holds the Platinum Seal of Transparency from GuideStar.
-        </p>
-        <p>
-          Your donation goes directly toward programs, tools, and initiatives
-          that make a measurable difference.
-        </p>
-        <a href="#" class="button">Become a Funder</a>
       </article>
     </section>
   </div>
