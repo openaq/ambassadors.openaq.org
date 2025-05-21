@@ -6,7 +6,6 @@ import { getCollection, render } from "astro:content";
 import Youtube from "@components/Youtube.astro";
 import type { GetStaticPaths, InferGetStaticPropsType } from "astro";
 
-
 export const getStaticPaths = (async () => {
   const cohorts = await getCollection("cohorts");
 
