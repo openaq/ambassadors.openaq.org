@@ -1,33 +1,33 @@
 ---
-import MiniCards from '@components/cards/MiniCards.astro';
-import PartnerCard from '@components/cards/PartnerCard.astro';
-import ProjectCard from '@components/cards/ProjectCard.astro';
-import BaseLayout from '@layouts/BaseLayout.astro';
-import { getCollection } from 'astro:content';
-import TestimonialCard from '@components/cards/TestimonialCard.astro';
-import { Image } from 'astro:assets';
-import HeroImg from '/src/assets/images/Antonio_Mozambique2.jpg';
-import { getEntry } from 'astro:content';
-import Impacts from '@components/impacts/Impacts.astro';
-import InvolvedCards from '@components/cards/InvolvedCards.astro';
-import EngageCards from '@components/cards/EngageCards.astro';
+import MiniCards from "@components/cards/MiniCards.astro";
+import PartnerCard from "@components/cards/PartnerCard.astro";
+import ProjectCard from "@components/cards/ProjectCard.astro";
+import BaseLayout from "@layouts/BaseLayout.astro";
+import { getCollection } from "astro:content";
+import TestimonialCard from "@components/cards/TestimonialCard.astro";
+import { Image } from "astro:assets";
+import HeroImg from "/src/assets/images/Antonio_Mozambique2.jpg";
+import { getEntry } from "astro:content";
+import Impacts from "@components/impacts/Impacts.astro";
+import InvolvedCards from "@components/cards/InvolvedCards.astro";
+import EngageCards from "@components/cards/EngageCards.astro";
 
-const index = await getEntry('homepage', 'index');
+const index = await getEntry("homepage", "index");
 
-const partners = await getCollection('partners');
-const projects = await getCollection('projects');
-const testimonials = await getCollection('testimonials');
-const miniCards = await getCollection('miniCards');
-const impacts = await getCollection('impacts');
-const involvedCards = await getCollection('involvedCards');
-const engageCards = await getCollection('engagements');
+const partners = await getCollection("partners");
+const projects = await getCollection("projects");
+const testimonials = await getCollection("testimonials");
+const miniCards = await getCollection("miniCards");
+const impacts = await getCollection("impacts");
+const involvedCards = await getCollection("involvedCards");
+const engageCards = await getCollection("engagements");
 
 const desiredOrderInvolved = [
-  'Apply to be a 2026 Ambassador',
-  'Sponsor the Ambassadors',
-  'Collaborate',
+  "Apply to be a 2026 Ambassador",
+  "Sponsor the Ambassadors",
+  "Collaborate",
 ];
-const desiredOrderEngage = ['Use OpenAQ', 'Join the Community', 'Subscribe'];
+const desiredOrderEngage = ["Use OpenAQ", "Join the Community", "Subscribe"];
 
 const orderedInvolvedCards = involvedCards.sort(
   (a, b) =>
@@ -42,14 +42,14 @@ const orderedEngageCards = engageCards.sort(
 ---
 
 <style lang="scss">
-  @use 'openaq-design-system/scss/variables' as variables;
+  @use "openaq-design-system/scss/variables" as variables;
 
-  @use 'openaq-design-system/scss/mixins/index.scss' as mixins;
-  @use 'openaq-design-system/scss/utilities/types.scss';
-  @use 'openaq-design-system/scss/utilities/colors.scss';
-  @use 'openaq-design-system/scss/inputs';
+  @use "openaq-design-system/scss/mixins/index.scss" as mixins;
+  @use "openaq-design-system/scss/utilities/types.scss";
+  @use "openaq-design-system/scss/utilities/colors.scss";
+  @use "openaq-design-system/scss/inputs";
 
-  @use 'openaq-design-system/scss/buttons';
+  @use "openaq-design-system/scss/buttons";
 
   .hero-section {
     position: relative;
@@ -192,10 +192,10 @@ const orderedEngageCards = engageCards.sort(
   .global-section {
     margin-top: 60px;
     position: relative;
-    h1 {
+    h2 {
       text-align: center;
     }
-    h2 {
+    h3 {
       text-align: center;
       font-weight: 500;
     }
@@ -291,7 +291,7 @@ const orderedEngageCards = engageCards.sort(
     @media (max-width: 600px) {
       padding: 80px 10px;
     }
-    h1 {
+    h2 {
       margin: 0 auto;
       text-align: center;
       margin-bottom: 40px;
@@ -328,7 +328,7 @@ const orderedEngageCards = engageCards.sort(
     @media (max-width: 1100px) {
       padding: 80px 20px;
     }
-    h1 {
+    h2 {
       width: 50%;
       text-align: center;
       margin: 0 auto;
@@ -358,7 +358,7 @@ const orderedEngageCards = engageCards.sort(
     margin-top: 60px;
     background-color: #e2ebe1;
     padding: 40px 100px;
-    h1 {
+    h2 {
       text-align: center;
       margin: 0 auto;
       padding-top: 20px;
@@ -382,7 +382,7 @@ const orderedEngageCards = engageCards.sort(
   .testimonials-section {
     padding: 80px 60px;
 
-    h1 {
+    h2 {
       margin-bottom: 40px;
       text-align: center;
     }
@@ -408,7 +408,7 @@ const orderedEngageCards = engageCards.sort(
   .involved-section {
     background-color: #f8f8f8;
     padding: 80px 20px;
-    h1 {
+    h2 {
       text-align: center;
       font-size: 1.5rem;
     }
@@ -434,7 +434,7 @@ const orderedEngageCards = engageCards.sort(
   .engage-section {
     overflow: hidden;
     margin-top: 20px;
-    h1 {
+    h2 {
       width: 50%;
       text-align: center;
       margin: 0 auto;
@@ -489,15 +489,11 @@ const orderedEngageCards = engageCards.sort(
         </span>
       </p>
       <div class="buttons">
-        <a
-          href='/apply/'
-          class="btn btn-primary learn-more-btn"
-          role="button">Apply Now</a
+        <a href="/apply/" class="btn btn-primary learn-more-btn" role="button"
+          >Apply Now</a
         >
-        <a
-          href='/support/'
-          class="btn btn-primary learn-more-btn"
-          role="button">Help Fund</a
+        <a href="/support/" class="btn btn-primary learn-more-btn" role="button"
+          >Help Fund</a
         >
       </div>
     </div>
@@ -518,14 +514,14 @@ const orderedEngageCards = engageCards.sort(
   </section>
 
   <section class="global-section">
-    <h1>The OpenAQ Community Ambassador Program:</h1>
-    <h2>meaningful impact in the world's most polluted regions.</h2>
+    <h2>The OpenAQ Community Ambassador Program:</h2>
+    <h3>meaningful impact in the world's most polluted regions.</h3>
 
     <div class="global-impact-container">
       <div class="global-image">
         <img
           class="map-image"
-          src='/imgs/map/all.webp'
+          src="/imgs/map/all.webp"
           alt="A world map showing OpenAQ Ambassador countries of origin."
           height="294"
           width="600"
@@ -539,14 +535,14 @@ const orderedEngageCards = engageCards.sort(
   </section>
 
   <section class="projects-section">
-    <h1>Catalyzing Community Air Quality Action</h1>
+    <h2>Catalyzing Community Air Quality Action</h2>
     <div class="project-container">
       {projects.map((project) => <ProjectCard project={project} />)}
     </div>
   </section>
 
   <section class="testimonials-section">
-    <h1>Jumpstarting and Empowering Air Quality Leaders</h1>
+    <h2>Jumpstarting and Empowering Air Quality Leaders</h2>
     <div class="testimonial-cards-container">
       {
         testimonials.map((testimonial) => (
@@ -557,7 +553,7 @@ const orderedEngageCards = engageCards.sort(
   </section>
 
   <section class="involved-section">
-    <h1>Get Involved</h1>
+    <h2>Get Involved</h2>
     <p>
       You can empower the next generation of air quality changemakers by
       supporting the OpenAQ Community Ambassador Program.
@@ -570,7 +566,7 @@ const orderedEngageCards = engageCards.sort(
       }
     </div>
     <section class="engage-section">
-      <h1>Engage with OpenAQ</h1>
+      <h2>Engage with OpenAQ</h2>
       <div class="engage-cards">
         {
           orderedEngageCards.map((engageCard) => (
@@ -582,7 +578,7 @@ const orderedEngageCards = engageCards.sort(
   </section>
 
   <section class="partner-section">
-    <h1>Partners</h1>
+    <h2>Partners</h2>
     <p>
       The following partners provide generous funding, equipment, or in-kind
       support to help make the OpenAQ Community Ambassador Program a reality.
@@ -593,10 +589,8 @@ const orderedEngageCards = engageCards.sort(
   </section>
 
   <div class="button-container">
-    <a
-      href='/support/'
-      class="btn btn-primary learn-more-btn"
-      role="button">Help Fund</a
+    <a href="/support/" class="btn btn-primary learn-more-btn" role="button"
+      >Help Fund</a
     >
   </div>
 </BaseLayout>

@@ -62,10 +62,7 @@ const ambassadors = await getCollection("ambassadors");
     <div class="ambassador-list">
       {
         ambassadors.map((ambassador) => (
-          <a
-            href={`/people/${ambassador.id}`}
-            class="ambassador-card"
-          >
+          <a href={`/people/${ambassador.id}`} class="ambassador-card">
             <Image
               src={ambassador.data.image}
               alt={`Image of ${ambassador.data.name}`}
