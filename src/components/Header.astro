@@ -342,10 +342,7 @@ const applicationActive = applicationsData?.data.active ?? false;
                 .map((o) => {
                   return (
                     <li class="submenu__item">
-                      <a
-                        class="nav__item"
-                        href={`/cohorts/${o.data.year}`}
-                      >
+                      <a class="nav__item" href={`/cohorts/${o.data.year}`}>
                         {o.data.year}
                       </a>
                     </li>
@@ -356,18 +353,18 @@ const applicationActive = applicationsData?.data.active ?? false;
         </li>
         <li class="dropdown">
           <a
-            href='/apply'
+            href="/apply"
             class=`nav__item open-data-tab ${currentPath === "why-open-data" ? "nav__item--active" : ""}`
             >How to Apply</a
           >
           <ul class="submenu">
             <li class="submenu__item">
-              <a class="nav__item" href='/apply'>About applying</a>
+              <a class="nav__item" href="/apply">About applying</a>
             </li>
             {
               applicationActive && (
                 <li class="submenu__item">
-                  <a class="nav__item" href='/apply/application'>
+                  <a class="nav__item" href="/apply/application">
                     {" "}
                     Application{" "}
                   </a>
@@ -377,7 +374,7 @@ const applicationActive = applicationsData?.data.active ?? false;
             {
               referencesActive && (
                 <li class="submenu__item">
-                  <a class="nav__item" href='apply/references'>
+                  <a class="nav__item" href="apply/references">
                     {" "}
                     References{" "}
                   </a>
@@ -386,23 +383,21 @@ const applicationActive = applicationsData?.data.active ?? false;
             }
 
             <li class="submenu__item">
-              <a class="nav__item" href='/apply/faq'>FAQ</a>
+              <a class="nav__item" href="/apply/faq">FAQ</a>
             </li>
           </ul>
         </li>
         <li>
           <a
-            href='/support'
+            href="/support"
             class=`nav__item partners-tab ${currentPath === "partners" ? "nav__item--active" : ""}`
             >Support Us</a
           >
         </li>
       </ul>
     </nav>
-    <a
-      href='/apply'
-      class="btn btn-primary learn-more-btn"
-      role="button">Apply</a
+    <a href="/apply" class="btn btn-primary learn-more-btn" role="button"
+      >Apply</a
     >
   </div>
 </header>

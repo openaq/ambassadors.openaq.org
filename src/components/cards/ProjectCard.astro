@@ -7,7 +7,6 @@ interface Props {
 }
 
 const { project } = Astro.props;
-
 ---
 
 <style lang="scss">
@@ -51,7 +50,7 @@ const { project } = Astro.props;
       text-align: center;
       padding: 15px;
       text-align: left;
-      h3 {
+      h2 {
         font-size: 1rem;
         font-weight: 600;
         margin-bottom: 5px;
@@ -70,7 +69,7 @@ const { project } = Astro.props;
       <Image src={project.data.image} alt={project.data.title} width={300} />
     </div>
     <div class="project-content">
-      <h3>{project.data.cardTitle}</h3>
+      <h2>{project.data.cardTitle}</h2>
       <p>{project.data.shortDescription}</p>
     </div>
   </a>
