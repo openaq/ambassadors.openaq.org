@@ -1,12 +1,12 @@
 import { OGImageRoute } from "astro-og-canvas";
 import { getCollection } from "astro:content";
 
-  const homepage = await getCollection("homepage");
-  const ambassadors = await getCollection("ambassadors");
-  const cohorts = await getCollection("cohorts");
-  const projects = await getCollection("projects");
-  const apply = await getCollection("apply");
-  const faq = await getCollection("faq");
+const homepage = await getCollection("homepage");
+const ambassadors = await getCollection("ambassadors");
+const cohorts = await getCollection("cohorts");
+const projects = await getCollection("projects");
+const apply = await getCollection("apply");
+const faq = await getCollection("faq");
 
 const homepageContent = homepage.map((page) => {
   return {
@@ -20,8 +20,7 @@ const cohortsContent = cohorts.map((cohort) => {
   return {
     id: cohort.id,
     title: cohort.data.year,
-    description:
-      `Meet the ${cohort.data.year} cohorts.`,
+    description: `Meet the ${cohort.data.year} cohorts.`,
   };
 });
 
@@ -37,16 +36,15 @@ const ambassadorsContent = ambassadors.map((ambassador) => {
   return {
     id: ambassador.id,
     title: ambassador.data.name,
-    description: `${ambassador.data.name} - ${ambassador.data.year}`,
+    description: `${ambassador.data.name} - Ambassador Cohort ${ambassador.data.year}`,
   };
 });
-
 
 const applyContent = apply.map((apply) => {
   return {
     id: apply.id,
     title: apply.data.title,
-    description: `Explore the OpenAQ usecase: "${apply.data.title}"`,
+    description: `Explore the ${apply.data.title}`,
   };
 });
 
@@ -54,7 +52,7 @@ const faqContent = faq.map((faq) => {
   return {
     id: faq.id,
     title: faq.data.title,
-    description: `Explore OpenAQ's "${faq.data.title}"`,
+    description: `${faq.data.title}`,
   };
 });
 
@@ -79,12 +77,14 @@ export const { getStaticPaths, GET } = OGImageRoute({
   param: "slug",
   getImageOptions: (_path, page: (typeof pages)[number]) => {
     return {
-      title: `OpenAQ`,
+      title: `OpenAQ Community Ambassadors Program`,
       description: page.description,
+
       bgGradient: [
         [226, 235, 225],
         [226, 235, 225],
       ],
+
       fonts: ["src/assets/fonts/SpaceGrotesk-Medium.ttf"],
       font: {
         title: {
@@ -100,11 +100,8 @@ export const { getStaticPaths, GET } = OGImageRoute({
           lineHeight: 1.3,
         },
       },
-      logo: {
-        path: "./src/assets/logo.svg",
-      },
       border: { color: [219, 236, 203], width: 40 },
-      padding: 40,
+      padding: 60,
     };
   },
 });
