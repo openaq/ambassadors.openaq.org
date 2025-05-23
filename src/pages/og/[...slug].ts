@@ -6,7 +6,6 @@ const ambassadors = await getCollection("ambassadors");
 const cohorts = await getCollection("cohorts");
 const projects = await getCollection("projects");
 const apply = await getCollection("apply");
-// const faq = await getCollection("faq");
 
 const homepageContent = homepage.map((page) => {
   return {
@@ -58,19 +57,10 @@ const applyContent = apply.map((apply) => {
   };
 });
 
-// const faqContent = faq.map((faq) => {
-//   return {
-//     id: faq.id,
-//     title: faq.data.title,
-//     description: `${faq.data.title}`,
-//   };
-// });
-
 const allCollections = [
   ...ambassadorsContent,
   ...homepageContent,
   ...applyContent,
-  // ...faqContent,
   ...projectsContent,
   ...cohortsContent,
 ];
