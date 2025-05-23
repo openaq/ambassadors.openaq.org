@@ -1,5 +1,6 @@
 import { OGImageRoute } from "astro-og-canvas";
 import { getCollection } from "astro:content";
+import path from "path";
 
 const homepage = await getCollection("homepage");
 const ambassadors = await getCollection("ambassadors");
@@ -12,7 +13,6 @@ const homepageContent = homepage.map((page) => {
     id: page.id,
     title: page.data.title,
     filePath: page.filePath,
-    image: "",
     description: "The OpenAQ Community Ambassador Program",
   };
 });
@@ -22,7 +22,6 @@ const cohortsContent = cohorts.map((cohort) => {
     id: cohort.id,
     title: cohort.data.year,
     filePath: cohort.filePath,
-    image: "",
     description: `Meet the ${cohort.data.year} cohorts.`,
   };
 });
@@ -32,7 +31,7 @@ const projectsContent = projects.map((project) => {
     id: project.id,
     title: project.data.title,
     filePath: project.filePath,
-    image: project.data.image.src,
+    image: project.data.image,
     description: project.data.title,
   };
 });
@@ -42,7 +41,7 @@ const ambassadorsContent = ambassadors.map((ambassador) => {
     id: ambassador.id,
     title: ambassador.data.name,
     filePath: ambassador.filePath,
-    image: ambassador.data.imagePath,
+    image: ambassador.data.image,
     description: `${ambassador.data.name} - Ambassador Cohort ${ambassador.data.year}`,
   };
 });
@@ -51,13 +50,26 @@ const applyContent = apply.map((apply) => {
   return {
     id: apply.id,
     title: apply.data.title,
-    filePath: apply.filePath,
-    image: "",
     description: `Explore the ${apply.data.title}`,
   };
 });
 
-const allCollections = [
+interface Image {
+    src: string;
+    width: number;
+    height: number;
+    format: "png" | "jpg" | "jpeg" | "tiff" | "webp" | "gif" | "svg" | "avif";
+}
+
+interface Collection {
+    id: string;
+    title: string | number;
+    filePath?: string;
+    image?: Image;
+    description: string;
+}
+
+const allCollections: Collection[] = [
   ...ambassadorsContent,
   ...homepageContent,
   ...applyContent,
@@ -76,25 +88,22 @@ export const { getStaticPaths, GET } = OGImageRoute({
   pages,
   param: "slug",
   getImageOptions: (_path, page: (typeof pages)[number]) => {
-    const logo = "src/assets/images/logo.png";
-    const isPeople = page.filePath?.includes("people");
-    const imagePath =
-      isPeople && typeof page.image === "string" ? page.image : logo;
-    const imageSize: [number, number] = isPeople ? [250, 250] : [150, 100];
+    const logo = "src/assets/logo.png";
+    const filename = page.filePath?.includes("people") ? path.basename(page.image!.src).split('.')[0] : ""
+    const fileExt = page.filePath?.includes("people") ? path.extname(page.image!.src) : ""
+    const imagePath = page.filePath?.includes("people") ? `src/assets/images/${filename}${fileExt}` : logo;
+    const imageSize: [number, number] = [280, 280];
     return {
       title: `OpenAQ Community Ambassadors Program`,
       description: page.description,
 
       bgGradient: [
-        [226, 235, 225],
-        [226, 235, 225],
+        [255, 255, 255],
       ],
-
       logo: {
         path: imagePath,
         size: imageSize,
       },
-
       fonts: ["src/assets/fonts/SpaceGrotesk-Medium.ttf"],
       font: {
         title: {
@@ -110,8 +119,8 @@ export const { getStaticPaths, GET } = OGImageRoute({
           lineHeight: 1.3,
         },
       },
-      border: { color: [219, 236, 203], width: 40 },
-      padding: 60,
+      border: { color: [102, 149, 55], width: 40 },
+      padding: 40,
     };
   },
 });
