@@ -3,7 +3,7 @@ import Breadcrumb from "@components/Breadcrumb.astro";
 import BaseLayout from "@layouts/BaseLayout.astro";
 import Bubbles from "@components/Bubbles.astro";
 
-const { pageTitle } = Astro.props;
+const { id, pageTitle } = Astro.props;
 ---
 
 <style lang="scss">
@@ -43,7 +43,7 @@ const { pageTitle } = Astro.props;
   }
 </style>
 
-<BaseLayout pageTitle={pageTitle}>
+<BaseLayout id={id} pageTitle={pageTitle}>
   <slot name="structured-data" slot="structured-data" />
   <Breadcrumb />
   <div class="bubbles-wrapper">

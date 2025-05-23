@@ -12,7 +12,7 @@ export async function getStaticPaths() {
   }));
 }
 
-const { project } = Astro.props;
+const { project, id } = Astro.props;
 
 const { Content } = await render(project);
 const matchingAmbassador = ambassadors.find(
@@ -50,7 +50,7 @@ const matchingAmbassador = ambassadors.find(
   }
 </style>
 
-<PageLayout frontmatter={project.data}>
+<PageLayout id={id} frontmatter={project.data}>
   <div class="project-content">
     <h1 class="gradient-title">{project.data.title}</h1>
     {
