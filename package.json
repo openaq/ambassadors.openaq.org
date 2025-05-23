@@ -13,6 +13,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "astro": "^5.7.1",
+    "astro-og-canvas": "^0.7.0",
     "astro-purgecss": "^5.2.2",
     "astro-seo-schema": "^5.0.0",
     "d3": "^7.9.0",

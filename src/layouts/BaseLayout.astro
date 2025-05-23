@@ -1,9 +1,19 @@
 ---
-const { pageTitle } = Astro.props;
+const { id, pageTitle } = Astro.props;
 
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import "@assets/styles/main.scss";
+
+let ogImageUrl;
+if (id) {
+  ogImageUrl = new URL(
+    `/og/${id.replace(/\.\w+$/, ".png")}`,
+    Astro.site
+  );
+}
+
+
 ---
 
 <html lang="en">
@@ -13,6 +23,11 @@ import "@assets/styles/main.scss";
     <link rel="sitemap" href="/sitemap.xml" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    { ogImageUrl ? 
+        <meta property="og:image" content={ogImageUrl} />
+        <meta name="twitter:image" content={ogImageUrl} />
+    : ''
+    }
     <meta
       name="description"
       content="A global ambassador program training leaders in low- and middle-income countries to fight air pollution through data, science, and community action."
