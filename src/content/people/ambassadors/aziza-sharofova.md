@@ -6,7 +6,6 @@ countryIso: "UZ"
 year: 2025
 timestamp: 60
 presentation: "public/foobar.pdf"
-imagePath: "src/assets/images/aziza-no-bkg.png"
 ---
 
 Aziza Sharofova is an environmental engineer with many years of experience in the environmental field. Having started in the private sector developing EIA projects, she devoted more than seven years to state ecological expertise, assessing the impact of industrial facilities on nature.

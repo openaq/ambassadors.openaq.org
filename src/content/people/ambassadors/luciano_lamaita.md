@@ -8,7 +8,6 @@ year: 2023
 timestamp: 1980
 countryIso: "AR"
 presentation: "public/foobar.pdf"
-imagePath: "src/assets/images/luciano-pic.png"
 ---
 
 As a technical advisor, Luciano specializes in scientific and technological outreach and transfer in CIC-PBA, a government organization focused on training professionals and conducting research for practical solutions through R&D and Innovation. Currently, Luciano also teaches physics and chemistry at rural high schools in his hometown.

@@ -7,7 +7,6 @@ year: 2023
 timestamp: 1573
 countryIso: "ID"
 presentation: "public/foobar.pdf"
-imagePath: "src/assets/images/jihan_fauziah_hamdi.png"
 ---
 
 Jihan is a public interest lawyer at Jakarta Legal Aid Institute, where they advocate four main issues related to human rights and law by using the method of structural legal aid: 1) Minority and Vulnerable Groups, 2) Fair Trial, 3) Urban Justice and 4) Labour Rights.

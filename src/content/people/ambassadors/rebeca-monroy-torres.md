@@ -8,7 +8,6 @@ year: 2023
 timestamp: 3215
 countryIso: "MX"
 presentation: "public/foobar.pdf"
-imagePath: "src/assets/images/rebeca-monroy-torres.png"
 ---
 
 Rebeca Monroy-Torres PhD is a professor and researcher at the University of Guanajuato in the Department of Medicine and Nutrition where she promotes the Laboratory Environmental Nutrition and Food Security. She is a Member of National Researcher System Level 1, CONACYT, 2020-2023. She is also the Founder and Director of the University Observatory of Food and Nutritional Security of the State of Guanajuato (OUSANEG) and the Chief and Founder of the Scientific Journal of Environmental Nutrition and Food Security ([REDICINySA](https://www3.ugto.mx/redicinaysa/)).
