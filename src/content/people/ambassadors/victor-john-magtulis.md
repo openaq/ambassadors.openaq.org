@@ -6,6 +6,7 @@ year: 2024
 timestamp: 4007
 countryIso: "PH"
 presentation: "public/foobar.pdf"
+imagePath: "src/assets/images/victor.png"
 ---
 
 Victor Magtulis is an early-career researcher in air quality science and management. He is currently a faculty member of the Chemical Engineering Department at Central Philippine University. His interests include atmospheric chemistry, air quality monitoring, and public policy. As an advocate for clean air initiatives and sustainable development, he currently leads a local community project using low-cost air quality sensors to monitor air pollution levels and variation in Iloilo City, Philippines.

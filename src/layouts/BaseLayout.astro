@@ -1,9 +1,14 @@
 ---
 const { pageTitle } = Astro.props;
 
-import Footer from '@components/Footer.astro';
-import Header from '@components/Header.astro';
-import '@assets/styles/main.scss';
+import Footer from "@components/Footer.astro";
+import Header from "@components/Header.astro";
+import "@assets/styles/main.scss";
+
+const ogImageUrl = new URL(
+  `/og/${Astro.props.id?.replace(/\.\w+$/, ".png")}`,
+  Astro.site
+);
 ---
 
 <html lang="en">
@@ -13,6 +18,7 @@ import '@assets/styles/main.scss';
     <link rel="sitemap" href="/sitemap.xml" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
+    <meta property="og:image" content={ogImageUrl} />
     <title>{pageTitle}</title>
     <slot name="structured-data" />
     {

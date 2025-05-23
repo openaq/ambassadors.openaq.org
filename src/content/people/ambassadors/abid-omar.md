@@ -7,6 +7,7 @@ year: 2023
 timestamp: 234
 countryIso: "PK"
 presentation: "public/foobar.pdf"
+imagePath: "src/assets/images/abid-omar-pic.png"
 ---
 
 Abid Omar has a social mission: _how_ can I help improve the environment of Pakistan? He sees the air pollution emergency in Pakistan as a silver lining — an opportunity to drive environmental awareness and change that will clean up Pakistan for good. A key indicator of environmental issues is pollution that affects our daily lives, specifically air pollution. He found that there is no data for this, so he founded the Pakistan Air Quality Initiative in 2016 to monitor air quality across major urban areas of Pakistan and to provide awareness for air pollution and health issues, and therefore provide impetus for change. Abid advocates for reducing air pollution by providing open access to air quality data, through workshops and conferences, and hopes to publish his data and findings in a scientific journal.

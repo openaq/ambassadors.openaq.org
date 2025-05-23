@@ -1,18 +1,18 @@
-import { defineCollection, z } from 'astro:content';
+import { defineCollection, z } from "astro:content";
 
-import { glob } from 'astro/loaders';
-import { ISO_A2 } from './utils/constants';
+import { glob } from "astro/loaders";
+import { ISO_A2 } from "./utils/constants";
 
 const [isoCode, ...isoCodes] = Object.keys(ISO_A2);
 
 const ambassadors = defineCollection({
-  loader: glob({ pattern: ['*.md'], base: 'src/content/people/ambassadors' }),
+  loader: glob({ pattern: ["*.md"], base: "src/content/people/ambassadors" }),
   schema: ({ image }) =>
     z.object({
       name: z.string(),
       countryIso: z.enum([isoCode, ...isoCodes]),
       year: z.number().refine((x) => x > 2020 && x < 2030, {
-        message: 'Must be a valid year',
+        message: "Must be a valid year",
       }),
       timestamp: z.number().optional(),
       presentation: z.string(),
@@ -26,22 +26,23 @@ const ambassadors = defineCollection({
       orcid: z.string().url().optional(),
       researchGate: z.string().url().optional(),
       googleScholar: z.string().url().optional(),
+      imagePath: z.string().optional(),
     }),
 });
 
 const cohorts = defineCollection({
-  loader: glob({ pattern: ['*.md'], base: 'src/content/cohorts' }),
+  loader: glob({ pattern: ["*.md"], base: "src/content/cohorts" }),
   schema: () =>
     z.object({
       year: z.number().refine((x) => x > 2020 && x < 2030, {
-        message: 'Must be a valid year',
+        message: "Must be a valid year",
       }),
       youtubeId: z.string().optional(),
     }),
 });
 
 const partners = defineCollection({
-  loader: glob({ pattern: ['*.md'], base: 'src/content/partners' }),
+  loader: glob({ pattern: ["*.md"], base: "src/content/partners" }),
   schema: ({ image }) =>
     z.object({
       name: z.string(),
@@ -51,7 +52,7 @@ const partners = defineCollection({
 });
 
 const projects = defineCollection({
-  loader: glob({ pattern: ['*.md'], base: 'src/content/projects' }),
+  loader: glob({ pattern: ["*.md"], base: "src/content/projects" }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
@@ -60,7 +61,7 @@ const projects = defineCollection({
       ambassadorSlug: z.string(),
       location: z.string(),
       year: z.number().refine((x) => x > 2020 && x < 2030, {
-        message: 'Must be a valid year',
+        message: "Must be a valid year",
       }),
       image: image(),
       youtubeLink: z.string().url().optional(),
@@ -69,7 +70,7 @@ const projects = defineCollection({
 });
 
 const testimonials = defineCollection({
-  loader: glob({ pattern: ['*.md'], base: 'src/content/testimonials' }),
+  loader: glob({ pattern: ["*.md"], base: "src/content/testimonials" }),
   schema: ({ image }) =>
     z.object({
       name: z.string(),
@@ -78,7 +79,7 @@ const testimonials = defineCollection({
 });
 
 const forms = defineCollection({
-  loader: glob({ pattern: ['*.md'], base: 'src/content/apply/forms' }),
+  loader: glob({ pattern: ["*.md"], base: "src/content/apply/forms" }),
   schema: () =>
     z.object({
       active: z.boolean(),
@@ -87,7 +88,7 @@ const forms = defineCollection({
 });
 
 const apply = defineCollection({
-  loader: glob({ pattern: ['about.md'], base: 'src/content/apply' }),
+  loader: glob({ pattern: ["about.md"], base: "src/content/apply" }),
   schema: () =>
     z.object({
       title: z.string(),
@@ -98,7 +99,7 @@ const apply = defineCollection({
 });
 
 const faq = defineCollection({
-  loader: glob({ pattern: ['faq.md'], base: 'src/content/apply' }),
+  loader: glob({ pattern: ["faq.md"], base: "src/content/apply" }),
   schema: () =>
     z.object({
       title: z.string(),
@@ -106,7 +107,7 @@ const faq = defineCollection({
 });
 
 const homepage = defineCollection({
-  loader: glob({ pattern: ['index.md'], base: 'src/content/' }),
+  loader: glob({ pattern: ["index.md"], base: "src/content/" }),
   schema: () =>
     z.object({
       title: z.string(),
@@ -114,7 +115,7 @@ const homepage = defineCollection({
 });
 
 const miniCards = defineCollection({
-  loader: glob({ pattern: ['*.md'], base: 'src/content/miniCards' }),
+  loader: glob({ pattern: ["*.md"], base: "src/content/miniCards" }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
@@ -123,13 +124,12 @@ const miniCards = defineCollection({
 });
 
 const impacts = defineCollection({
-  loader: glob({ pattern: ['*.md'], base: 'src/content/impacts' }),
-  schema: () =>
-    z.object({}),
+  loader: glob({ pattern: ["*.md"], base: "src/content/impacts" }),
+  schema: () => z.object({}),
 });
 
 const involvedCards = defineCollection({
-  loader: glob({ pattern: ['*.md'], base: 'src/content/involvedCards' }),
+  loader: glob({ pattern: ["*.md"], base: "src/content/involvedCards" }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
@@ -140,7 +140,7 @@ const involvedCards = defineCollection({
 });
 
 const engagements = defineCollection({
-  loader: glob({ pattern: ['*.md'], base: 'src/content/engagements' }),
+  loader: glob({ pattern: ["*.md"], base: "src/content/engagements" }),
   schema: ({ image }) =>
     z.object({
       title: z.string(),
@@ -153,7 +153,7 @@ const engagements = defineCollection({
 });
 
 const preparation = defineCollection({
-  loader: glob({ pattern: ['*.md'], base: 'src/content/apply' }),
+  loader: glob({ pattern: ["*.md"], base: "src/content/apply" }),
   schema: () =>
     z.object({
       title: z.string(),
