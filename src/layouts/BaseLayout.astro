@@ -8,12 +8,10 @@ import "@assets/styles/main.scss";
 let ogImageUrl;
 if (id) {
   ogImageUrl = new URL(
-    `/og/${id.replace(/\.\w+$/, ".png")}`,
+    `/og/${id}.png`,
     Astro.site
   );
 }
-
-
 ---
 
 <html lang="en">
