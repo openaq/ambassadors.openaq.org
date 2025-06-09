@@ -1,7 +1,7 @@
 ---
 title: "Collaborate"
 buttonText: "Contact Us"
-buttonLink: ""
+buttonLink: "https://openaq.org/contact"
 image: "@assets/images/svgs/collaborate.svg"
 ---
 

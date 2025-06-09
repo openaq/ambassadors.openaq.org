@@ -134,7 +134,7 @@ const involvedCards = defineCollection({
     z.object({
       title: z.string(),
       buttonText: z.string().optional(),
-      buttonLink: z.string().optional(),
+      buttonLink: z.string(),
       image: image(),
     }),
 });
