@@ -105,31 +105,35 @@ collections:
           widget: "string",
           required: false,
         }
-      - { label: "Body", name: "body", widget: "markdown" }
+      - { label: "Body", name: "body", widget: "markdown", required: false, }
 
   - name: "apply"
     label: "Apply"
-    folder: "src/content/apply"
-    format: "yaml-frontmatter"
-    create: false
-    slug: "{{slug}}"
-    editor:
-      preview: true
-    fields:
-      - { label: "Title", name: "title", widget: "string" }
-      - {
-          label: "Subtitle",
-          name: "subtitle",
-          widget: "string",
-          required: false,
-        }
-      - {
-          label: "Application deadline",
-          name: "application_deadline",
-          widget: "string",
-          required: false,
-        }
-      - { label: "Body", name: "body", widget: "markdown" }
+    files: 
+      - label: "About Apply"
+        format: "yaml-frontmatter"
+        create: false
+        name: "apply"
+        file: "site/content/apply/about.md"
+        slug: "{{slug}}"
+        editor:
+          preview: true
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - {
+              label: "Subtitle",
+              name: "subtitle",
+              widget: "string",
+              required: false,
+            }
+          - {
+              label: "Application deadline",
+              name: "application_deadline",
+              widget: "string",
+              required: false,
+            }
+          - { label: "Body", name: "body", widget: "markdown" }
+
 
   - name: "faq"
     label: "FAQ"
