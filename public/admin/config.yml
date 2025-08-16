@@ -18,6 +18,7 @@ collections:
     editor:
       preview: true
     fields:
+      - { label: "Name", name: "name", widget: "markdown" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Year", name: "year", widget: "number", min: 2021, max: 2029 }
       - {
@@ -169,6 +170,7 @@ collections:
     editor:
       preview: true
     fields:
+      - { label: "Name", name: "name", widget: "markdown" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
 
