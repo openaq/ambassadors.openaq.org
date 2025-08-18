@@ -11,6 +11,7 @@ public_folder_relative: true
 collections:
   - name: "cohorts"
     label: "Cohorts"
+    identifier_field: name
     folder: "src/content/cohorts"
     format: "yaml-frontmatter"
     create: true
@@ -30,6 +31,7 @@ collections:
 
   - name: "partners"
     label: "Partners"
+    identifier_field: name
     folder: "src/content/partners"
     format: "yaml-frontmatter"
     create: true
@@ -79,6 +81,7 @@ collections:
 
   - name: "testimonials"
     label: "Testimonials"
+    identifier_field: name
     folder: "src/content/testimonials"
     format: "yaml-frontmatter"
     create: true
@@ -92,6 +95,7 @@ collections:
 
   - name: "forms"
     label: "Forms"
+    identifier_field: name
     folder: "src/content/apply/forms"
     format: "yaml-frontmatter"
     create: false
@@ -99,6 +103,7 @@ collections:
     editor:
       preview: true
     fields:
+        - { label: "Name", name: "name", widget: "boolean" }
       - { label: "Active", name: "active", widget: "boolean" }
       - {
           label: "Jotform ID",
@@ -228,6 +233,7 @@ collections:
 
   - name: "ambassadors"
     label: "Ambassadors"
+    identifier_field: name
     folder: "src/content/people/ambassadors"
     format: "yaml-frontmatter"
     create: true
