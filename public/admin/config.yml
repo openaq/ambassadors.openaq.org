@@ -11,7 +11,7 @@ public_folder_relative: true
 collections:
   - name: "cohorts"
     label: "Cohorts"
-    identifier_field: name
+    identifier_field: year
     folder: "src/content/cohorts"
     format: "yaml-frontmatter"
     create: true
