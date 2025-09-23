@@ -1,5 +1,5 @@
 ---
 name: references
-active: true
+active: false
 jotformId: ""
 ---
