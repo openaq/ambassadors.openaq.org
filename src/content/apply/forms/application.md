@@ -1,5 +1,5 @@
 ---
 name: application
-active: false
+active: true
 jotformId: ""
 ---
