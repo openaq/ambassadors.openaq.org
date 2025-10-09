@@ -93,8 +93,8 @@ const apply = defineCollection({
     z.object({
       title: z.string(),
       subtitle: z.string().optional(),
-      application_deadline: z.string().optional(),
-      application_open_date: z.string().optional(),
+      application_deadline: z.date(),
+      application_open_date: z.date()
     }),
 });
 

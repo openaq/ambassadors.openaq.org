@@ -11,8 +11,22 @@ import { getEntry } from "astro:content";
 const applicationsData = await getEntry("forms", "application");
 
 const applicationActive = applicationsData?.data.active ?? false;
-const applicationDeadline = frontmatter.application_deadline;
-const applicationOpenData = frontmatter.application_open_date;
+const applicationDeadline = new Date(frontmatter.application_deadline);
+const applicationOpenDate = new Date(frontmatter.application_open_date);
+
+
+const formatDate = (date: Date) => {
+const months = ['January', 'February', 'March', 'April', 'May', 'June', 
+                'July', 'August', 'September', 'October', 'November', 'December'];
+
+const hours = date.getUTCHours().toString().padStart(2, '0');
+const minutes = date.getUTCMinutes().toString().padStart(2, '0');
+const seconds = date.getUTCSeconds().toString().padStart(2, '0');
+
+ return `${months[date.getUTCMonth()]} ${date.getUTCDate()} ${date.getUTCFullYear()} at  ${hours}:${minutes}:${seconds} UTC`;
+}
+
+
 ---
 
 <style lang="scss">
@@ -82,7 +96,7 @@ const applicationOpenData = frontmatter.application_open_date;
           {applicationDeadline && (
             <p>
               <strong>Application deadline: </strong>
-              {applicationDeadline}
+              {formatDate(applicationDeadline)}
             </p>
           )}
           <div class="button-container">
@@ -95,13 +109,13 @@ const applicationOpenData = frontmatter.application_open_date;
     }
 
     {
-      !applicationActive && applicationOpenData && (
+      !applicationActive && applicationOpenDate && (
         <p>
           <>
             <strong>We are not currently accepting applications.</strong>
             <br />
           </>
-          Applications will open <strong>{applicationOpenData}</strong>
+          Applications will open <strong>{formatDate(applicationOpenDate)}</strong>
         </p>
       )
     }
