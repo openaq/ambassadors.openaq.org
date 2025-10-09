@@ -120,7 +120,7 @@ collections:
         format: "yaml-frontmatter"
         create: false
         name: "apply"
-        file: "site/content/apply/about.md"
+        file: "src/content/apply/about.md"
         slug: "{{slug}}"
         editor:
           preview: true
@@ -130,13 +130,14 @@ collections:
               label: "Subtitle",
               name: "subtitle",
               widget: "string",
-              required: false,
+              required: true,
             }
           - {
               label: "Application deadline",
               name: "application_deadline",
-              widget: "string",
-              required: false,
+              widget: "datetime",
+              date_format: true,
+              required: true,
             }
           - { label: "Body", name: "body", widget: "markdown" }
 
