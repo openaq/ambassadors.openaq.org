@@ -118,10 +118,8 @@ collections:
     files: 
       - label: "About Apply"
         format: "yaml-frontmatter"
-        create: false
         name: "apply"
         file: "src/content/apply/about.md"
-        slug: "{{slug}}"
         editor:
           preview: true
         fields:
@@ -130,6 +128,13 @@ collections:
               label: "Subtitle",
               name: "subtitle",
               widget: "string",
+              required: true,
+            }
+          - {
+              label: "Application open",
+              name: "application_open_date",
+              widget: "datetime",
+              date_format: true,
               required: true,
             }
           - {
