@@ -10,6 +10,6 @@ title: Preparing your application materials
 
    * Why are you interested in becoming an OpenAQ Community Ambassador?
    * Describe a social and/or environmental initiative in your community that you have led and what impact it has had.
-   * Describe a particular air quality challenge that your community is facing. How might participating in this program help you tackle this challenge? If you have a specific idea or project in mind that you envision carrying out during the program, describe it here as well.
+   * Describe a particular air quality challenge that your community is facing. How might participating in this program help you tackle this challenge? What specific idea or project are you envisioning carrying out during the program? Describe it here as well.
    * What specific things do you hope to learn and achieve from participating in the program?
    * What life skills and/or professional experiences can you share with other Community Ambassadors in the cohort? Feel free to be creative!
