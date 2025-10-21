@@ -9,6 +9,14 @@ We will give higher priority to countries where we have NOT selected community a
 
 We will also give higher priority to countries that are identified as “high opportunity” <a rel="noopener noreferrer" target="_blank" href="https://aqfund.epic.uchicago.edu/opportunity-map/">in this map</a>.
 
+We are especially interested in applications from these countries:
+
+Angola, Benin, Bhutan, Bolivia, Burkina Faso, Burundi, Cambodia, Chad, Comoros, Republic of Congo, Cote d'Ivoire, Djibouti, Egypt, Eritrea, Eswatini, Guinea, Guinea-Bissau, Haiti, Honduras, Jordan, Laos, Lesotho, Liberia, Madagascar, Malawi, Mauritania, Namibia, Niger, Papua New Guinea, Sao Tome & Principe, Senegal, Sierra Leone, Sri Lanka, Tanzania, Timor-Leste, Togo, Vietnam, Zambia, Zimbabwe
+
+
+
+
+
 - - -
 
 ## Can I still apply If I’m from an LMIC, but an ambassador has already been selected from my country in the past?
