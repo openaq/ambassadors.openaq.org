@@ -39,12 +39,11 @@ OpenAQ Community Ambassadors are individuals who are committed to using air qual
 * Interested in maintaining ongoing mutual relationships with OpenAQ and your fellow ambassadors after the close of the program
 * Able to commit at least 200 hours over the course of the program, with an average time commitment of 5–8 hours per week
 
-Please note that we will give higher priority to countries where we have NOT selected community ambassadors before.*
-
-We will also give higher priority to countries that are identified as “high opportunity” in
+Please note that we will give higher priority to countries where we have NOT selected community ambassadors before* and countries that are identified as “high opportunity” in
 <a href="https://aqfund.epic.uchicago.edu/opportunity-map/" target="_blank" rel="noopener noreferrer" aria-label="Go to the University of Chicago’s Opportunity Map highlighting countries with high air quality data needs">
-this map.
-</a>
+this map.</a> We are especially interested in applications from these countries:
+
+Angola, Benin, Bhutan, Bolivia, Burkina Faso, Burundi, Cambodia, Chad, Comoros, Republic of Congo, Cote d'Ivoire, Djibouti, Egypt, Eritrea, Eswatini, Ghana, Guinea, Guinea-Bissau, Haiti, Honduras, Jordan, Kiribati, Laos, Lesotho, Liberia, Madagascar, Malawi, Mauritania, Micronesia, Fed. Sts., Namibia, Niger, Papua New Guinea, Sao Tome & Principe, Senegal, Sierra Leone, Solomon Islands, Sri Lanka, Tanzania, Timor-Leste, Togo, Vanuatu, Vietnam, Zambia, Zimbabwe
 
 Please note that this program is NOT for atmospheric researchers or scientists working within universities.
 
