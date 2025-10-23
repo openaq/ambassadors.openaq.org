@@ -1,7 +1,7 @@
 ---
 title: "Sponsor the Ambassadors"
 buttonText: "Help Fund"
-buttonLink: "support"
+buttonLink: "https://ambassadors.openaq.org/support"
 image: "@assets/images/svgs/fund.svg"
 ---
 

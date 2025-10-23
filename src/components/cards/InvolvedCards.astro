@@ -143,7 +143,7 @@ const { Content } = await render(involvedCard);
   {
     involvedCard.data.hasOwnProperty("buttonLink") && (
       <a
-        href={`/${involvedCard.data.buttonLink}`}
+        href={`${involvedCard.data.buttonLink}`}
         class={`button${!involvedCard.data.buttonLink ? " button--disabled" : ""}`}
         aria-disabled={involvedCard.data.buttonLink === ""}
       >
