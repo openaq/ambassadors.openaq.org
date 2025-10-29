@@ -45,7 +45,7 @@ this map.</a>
 
 **For the 2026 cohort,** we are especially interested in applications from these countries:
 
-Angola, Benin, Bhutan, Bolivia, Burkina Faso, Burundi, Cambodia, Chad, Comoros, Republic of Congo, Cote d'Ivoire, Djibouti, Egypt, Eritrea, Eswatini, Guinea, Guinea-Bissau, Haiti, Honduras, Jordan, Laos, Lesotho, Liberia, Madagascar, Malawi, Mauritania, Namibia, Niger, Papua New Guinea, Sao Tome & Principe, Senegal, Sierra Leone, Sri Lanka, Tanzania, Timor-Leste, Togo, Vietnam, Zambia, Zimbabwe
+Angola, Benin, Bhutan, Bolivia, Burkina Faso, Burundi, Cambodia, Chad, Comoros, Republic of Congo, Cote d'Ivoire, Djibouti, Egypt, Eswatini, Guinea, Guinea-Bissau, Haiti, Honduras, Jordan, Laos, Lesotho, Liberia, Madagascar, Malawi, Mauritania, Namibia, Niger, Papua New Guinea, Sao Tome & Principe, Senegal, Sierra Leone, Sri Lanka, Tanzania, Timor-Leste, Togo, Vietnam, Zambia, Zimbabwe
 
 Please note that this program is NOT for atmospheric researchers or scientists working within universities.
 
