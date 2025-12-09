@@ -2,8 +2,8 @@
 title: OpenAQ Community Ambassador Program Details
 subtitle: "The OpenAQ Community Ambassador Program: Fighting Air Inequality in
   Your Community and Beyond"
-application_open_date: 2025-10-09
-application_deadline: 2025-12-05T16:59:00.000-07:00
+application_open_date: 2026-10-01T00:00:00.000-04:00
+application_deadline: 2026-12-03T00:00:00.000-05:00
 ---
 This annual program supports ten emerging air quality leaders in low- and middle-income countries in developing skills to fight air inequality — the unequal access to clean air. Over nine months, Ambassadors are provided with interdisciplinary training (with a focus on using data), leadership development, and a supportive professional community to hone skills and expertise in the air quality field. Beyond the program, there are extended opportunities to collaborate and participate in OpenAQ activities.
 
