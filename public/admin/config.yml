@@ -338,6 +338,7 @@ collections:
               "HN",
               "HK",
               "HU",
+              "ID",
               "IS",
               "IN",
               "IR",
@@ -352,6 +353,7 @@ collections:
               "KR",
               "KG",
               "LA",
+              "LK",
               "LV",
               "LB",
               "LS",
@@ -460,6 +462,7 @@ collections:
               "WF",
               "EH",
               "YE",
+              "ZM",
               "ZW",
             ],
         }
