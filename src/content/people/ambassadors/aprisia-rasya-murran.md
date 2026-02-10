@@ -1,6 +1,6 @@
 ---
 name: Aprisia Rasya Murran
-countryIso: IN
+countryIso: ID
 year: 2026
 presentation: public/foobar.pdf
 image: src/assets/images/aprisia-rasya-murran_transparent.png

@@ -1,6 +1,6 @@
 ---
 name: Chathuranga Lakmal
-countryIso: LV
+countryIso: LK
 year: 2026
 presentation: public/foobar.pdf
 image: src/assets/images/nammuni-dewage-chathuranga-lakmal_transparent.png
