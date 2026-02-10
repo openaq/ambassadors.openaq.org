@@ -1,7 +1,7 @@
 ---
 name: Tala Khrais
 countryIso: JO
-year: 2025
+year: 2026
 presentation: public/foobar.pdf
 image: src/assets/images/tala-khrais_transparent.png
 linkedin: https://www.linkedin.com/in/tala-khrais-10839117/
