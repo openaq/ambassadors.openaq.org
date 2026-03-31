@@ -12,20 +12,20 @@ const ambassadors = defineCollection({
       name: z.string(),
       countryIso: z.enum([isoCode, ...isoCodes]),
       year: z.number().refine((x) => x > 2020 && x < 2030, {
-        message: "Must be a valid year",
+        error: "Must be a valid year",
       }),
       timestamp: z.number().optional(),
       presentation: z.string(),
-      email: z.string().email().optional(),
+      email: z.email().optional(),
       image: image(),
-      bluesky: z.string().url().optional(),
-      linkedin: z.string().url().optional(),
-      github: z.string().url().optional(),
-      x: z.string().url().optional(),
-      mastadon: z.string().url().optional(),
-      orcid: z.string().url().optional(),
-      researchGate: z.string().url().optional(),
-      googleScholar: z.string().url().optional(),
+      bluesky: z.url().optional(),
+      linkedin: z.url().optional(),
+      github: z.url().optional(),
+      x: z.url().optional(),
+      mastadon: z.url().optional(),
+      orcid: z.url().optional(),
+      researchGate: z.url().optional(),
+      googleScholar: z.url().optional(),
       imagePath: z.string().optional(),
     }),
 });
@@ -35,7 +35,7 @@ const cohorts = defineCollection({
   schema: () =>
     z.object({
       year: z.number().refine((x) => x > 2020 && x < 2030, {
-        message: "Must be a valid year",
+        error: "Must be a valid year",
       }),
       youtubeId: z.string().optional(),
     }),
@@ -46,7 +46,7 @@ const partners = defineCollection({
   schema: ({ image }) =>
     z.object({
       name: z.string(),
-      url: z.string().url(),
+      url: z.url(),
       image: image(),
     }),
 });
@@ -61,10 +61,10 @@ const projects = defineCollection({
       ambassadorSlug: z.string(),
       location: z.string(),
       year: z.number().refine((x) => x > 2020 && x < 2030, {
-        message: "Must be a valid year",
+        error: "Must be a valid year",
       }),
       image: image(),
-      youtubeLink: z.string().url().optional(),
+      youtubeLink: z.url().optional(),
       shortDescription: z.string().optional(),
     }),
 });
