@@ -1,16 +1,24 @@
-import world from '@assets/data/countries_110m.json';
+import worldData from '@assets/data/countries_110m.json';
+import type { FeatureCollection, Geometry, GeoJsonProperties } from 'geojson';
+
+import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
-import { geoEqualEarth, geoPath } from 'd3';
+import { geoEqualEarth, geoPath, type GeoSphere } from 'd3';
 import { Buffer } from 'node:buffer';
 
 import sharp from 'sharp';
 
+const world = worldData as unknown as FeatureCollection<
+  Geometry,
+  GeoJsonProperties
+>;
+
 const projection = geoEqualEarth();
 const path = geoPath(projection);
 
-const outline = { type: 'Sphere' };
+const outline: GeoSphere = { type: 'Sphere' };
 const [[x0, y0], [x1, y1]] = geoPath(projection.fitWidth(200, outline)).bounds(
-  outline
+  outline,
 );
 const height = Math.ceil(y1 - y0);
 const l = Math.min(Math.ceil(x1 - x0), height);
@@ -30,18 +38,19 @@ for (const cohort of cohorts) {
   cohortLookups.set(String(cohort.data.year), isoCodes);
 }
 
-export async function GET({ params, request }) {
+export const GET: APIRoute = async ({ params }) => {
   const id = params.id;
   const isoCodes = cohortLookups.get(id);
 
   const paths = world.features.map((o) => {
     return `<path d="${path(o.geometry)}" fill="${
-      isoCodes.includes(o.properties.ISO_A2) ? '#6a5cd8' : '#fff'
-    }" stroke="${isoCodes.includes(o.properties.ISO_A2) ? '#fff' : '#d4d8dd'
-}" stroke-width="0.1"></path>`;
+      isoCodes.includes(o.properties?.ISO_A2) ? '#6a5cd8' : '#fff'
+    }" stroke="${
+      isoCodes.includes(o.properties?.ISO_A2) ? '#fff' : '#d4d8dd'
+    }" stroke-width="0.1"></path>`;
   });
 
-  const globe = `<path d="${path(({type: "Sphere"}))}" fill="#b0e8e6" stroke="none"></path>`;
+  const globe = `<path d="${path({ type: 'Sphere' })}" fill="#b0e8e6" stroke="none"></path>`;
 
   const svg = `<svg viewBox="0 0 200 ${height}">
     ${globe}
@@ -50,13 +59,15 @@ export async function GET({ params, request }) {
   const buffer = Buffer.from(svg);
   const webp = await sharp(buffer)
     .resize(600, 294)
-    .webp( {quality: 90, effort: 6, nearLossless: true} )
+    .webp({ quality: 90, effort: 6, nearLossless: true })
     .toBuffer();
-  return new Response(webp);
-}
+  return new Response(new Uint8Array(webp), {
+    headers: { 'Content-Type': 'image/webp' },
+  });
+};
 
 export function getStaticPaths() {
   return Array.from(cohortLookups.keys()).map((o) => {
-      return { params: { id: o } };
-    });
+    return { params: { id: o } };
+  });
 }

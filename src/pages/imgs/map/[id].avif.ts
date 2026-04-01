@@ -1,14 +1,19 @@
-import world from '@assets/data/countries_110m.json';
+import worldData from '@assets/data/countries_110m.json';
+import type { FeatureCollection, Geometry, GeoJsonProperties } from 'geojson';
+
 import { getCollection } from 'astro:content';
-import { geoEqualEarth, geoPath } from 'd3';
+import { geoEqualEarth, geoPath, type GeoSphere } from 'd3';
 import { Buffer } from 'node:buffer';
+import type { APIRoute } from 'astro';
 
 import sharp from 'sharp';
+
+const world = worldData as unknown as FeatureCollection<Geometry, GeoJsonProperties>;
 
 const projection = geoEqualEarth();
 const path = geoPath(projection);
 
-const outline = { type: 'Sphere' };
+const outline: GeoSphere = { type: 'Sphere' };
 const [[x0, y0], [x1, y1]] = geoPath(projection.fitWidth(200, outline)).bounds(
   outline
 );
@@ -30,14 +35,14 @@ for (const cohort of cohorts) {
   cohortLookups.set(String(cohort.data.year), isoCodes);
 }
 
-export async function GET({ params, request }) {
+export const GET: APIRoute = async ({ params }) => {
   const id = params.id;
   const isoCodes = cohortLookups.get(id);
 
   const paths = world.features.map((o) => {
     return `<path d="${path(o.geometry)}" fill="${
-      isoCodes.includes(o.properties.ISO_A2) ? '#6a5cd8' : '#fff'
-    }" stroke="${isoCodes.includes(o.properties.ISO_A2) ? '#fff' : '#d4d8dd'
+      isoCodes.includes(o.properties?.ISO_A2) ? '#6a5cd8' : '#fff'
+    }" stroke="${isoCodes.includes(o.properties?.ISO_A2) ? '#fff' : '#d4d8dd'
 }" stroke-width="0.1"></path>`;
   });
 
@@ -52,7 +57,11 @@ export async function GET({ params, request }) {
     .resize(1400, 686)
     .avif({ quality: 70 })
     .toBuffer();
-  return new Response(avif);
+  return new Response(new Uint8Array(avif), 
+    {
+      headers: { "Content-Type": "image/avif" },
+    }
+  );
 }
 
 export function getStaticPaths() {
