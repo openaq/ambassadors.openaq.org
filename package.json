@@ -30,6 +30,7 @@
     "@types/d3": "^7.4.3",
     "@types/node": "^22.14.0",
     "autoprefixer": "^10.4.21",
+    "html-minifier-next": "^5.2.2",
     "knip": "^5.50.1",
     "postcss": "^8.5.3",
     "postcss-csso": "^6.0.1",
