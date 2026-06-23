@@ -13,22 +13,22 @@ The Ambassadors site is built with [Astro](https://astro.build/), optimized for 
 
 ### Local development
 
-The application requires Node 20 for building and development.
+The application requires Node 26 for building and development.
 
 Install dependencies with:
 
 ```sh
-npm install
+pnpm install
 ```
 
 To run a local development version run:
 
 ```sh
-npm run dev
+pnpm run dev
 ```
 
 To generate a static production build, run:
 
 ```sh
-npm run build
+pnpm run build
 ```
