@@ -11,11 +11,13 @@
     "knip": "knip"
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.8",
-    "astro": "^6.1.2",
+    "@astrojs/check": "^0.9.9",
+    "@astrojs/markdown-remark": "^7.2.0",
+    "astro": "^7.0.2",
     "astro-og-canvas": "^0.10.1",
     "astro-purgecss": "^6.0.1",
     "astro-seo-schema": "^6.0.0",
+    "canvaskit-wasm": "^0.41.1",
     "d3": "^7.9.0",
     "openaq-design-system": "github:openaq/openaq-design-system",
     "purgecss": "^8.0.0",
@@ -23,17 +25,16 @@
     "rehype-slug": "^6.0.0",
     "remove-markdown": "^0.6.0",
     "schema-dts": "^1.1.5",
-    "sharp": "^0.34.1"
+    "sharp": "^0.34.5"
   },
   "devDependencies": {
-    "@astrojs/ts-plugin": "^1.10.7",
+    "@astrojs/ts-plugin": "^1.10.9",
     "@types/d3": "^7.4.3",
     "@types/node": "^22.14.0",
     "autoprefixer": "^10.4.21",
     "html-minifier-next": "^5.2.2",
     "knip": "^5.50.1",
     "postcss": "^8.5.3",
-    "postcss-csso": "^6.0.1",
     "sass-embedded": "^1.86.3",
     "stylelint": "^16.19.0",
     "stylelint-config-standard-scss": "^14.0.0",

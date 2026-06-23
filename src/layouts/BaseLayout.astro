@@ -4,6 +4,7 @@ const { id, pageTitle } = Astro.props;
 import Footer from "@components/Footer.astro";
 import Header from "@components/Header.astro";
 import "@assets/styles/main.scss";
+import Font from "astro/components/Font.astro";
 
 let ogImageUrl;
 if (id) {
@@ -32,6 +33,7 @@ if (id) {
     />
     <title>{pageTitle}</title>
     <slot name="structured-data" />
+    <Font cssVariable="--font-space-grotesk" preload />
     {
       import.meta.env.PROD && (
         <>

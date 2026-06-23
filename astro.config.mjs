@@ -1,7 +1,9 @@
 // @ts-check
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 import { remarkModifiedTime } from "./remark-modified-time.mjs";
 import purgecss from "astro-purgecss";
+import { unified } from '@astrojs/markdown-remark';
+
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import { readFileSync, writeFileSync, readdirSync } from 'fs';
@@ -35,11 +37,21 @@ function htmlMinifier() {
 // https://astro.build/config
 export default defineConfig({
   output: "static",
-  integrations: [purgecss(),htmlMinifier()],
-
+  integrations: [purgecss(), htmlMinifier()],
+  fonts: [
+    {
+      provider: fontProviders.fontsource(),
+      name: "Space Grotesk",
+      cssVariable: "--font-space-grotesk",
+      weights: [300, 400, 600, 700],
+      styles: ["normal", "italic"],
+      subsets: ["latin"],
+    },
+  ],
   markdown: {
-    remarkPlugins: [remarkModifiedTime],
-    rehypePlugins: [
+    processor: unified({
+      remarkPlugins: [remarkModifiedTime],
+      rehypePlugins: [
       rehypeSlug,
       [
         rehypeAutolinkHeadings,
@@ -49,6 +61,7 @@ export default defineConfig({
         },
       ],
     ],
+    }),
   },
   site: "https://ambassadors.openaq.org",
 });
