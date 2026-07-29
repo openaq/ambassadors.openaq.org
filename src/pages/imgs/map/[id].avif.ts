@@ -20,6 +20,12 @@ const [[x0, y0], [x1, y1]] = geoPath(projection.fitWidth(200, outline)).bounds(
 const height = Math.ceil(y1 - y0);
 const l = Math.min(Math.ceil(x1 - x0), height);
 projection.scale((projection.scale() * (l - 1)) / l).precision(0.2);
+
+const ISLAND_ISO_CODES = new Set([
+  'MV',
+  'TT',
+]);
+
 const ambassadors = await getCollection('ambassadors');
 const allIsoCodes = ambassadors.map((ambassador) => {
   return ambassador.data.countryIso;
@@ -39,10 +45,34 @@ export const GET: APIRoute = async ({ params }) => {
   const id = params.id;
   const isoCodes = cohortLookups.get(id);
 
+  const markers: string[] = [];
+
+  const PIN_PATH =
+    'M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 14.5 9 2.5 2.5 0 0 1 12 11.5z';
+  const PIN_TIP_X = 12;
+  const PIN_TIP_Y = 22;
+
   const paths = world.features.map((o) => {
+    const isHighlighted = isoCodes.includes(o.properties?.ISO_A2);
+    const iso = o.properties?.ISO_A2;
+
+    if (isHighlighted && ISLAND_ISO_CODES.has(iso)) {
+     const area = path.area(o.geometry);
+       const centroid = path.centroid(o.geometry);
+       if (centroid.every((n) => Number.isFinite(n))) {
+          const [cx, cy] = centroid;
+          const scale = 0.25;
+          const tx = cx - PIN_TIP_X * scale;
+          const ty = cy - PIN_TIP_Y * scale;
+          markers.push(
+            `<path d="${PIN_PATH}" fill="#6a5cd8" stroke="#fff" stroke-width="0.6" transform="translate(${tx}, ${ty}) scale(${scale})"></path>`
+          );
+      }
+    }
+
     return `<path d="${path(o.geometry)}" fill="${
-      isoCodes.includes(o.properties?.ISO_A2) ? '#6a5cd8' : '#fff'
-    }" stroke="${isoCodes.includes(o.properties?.ISO_A2) ? '#fff' : '#d4d8dd'
+      isHighlighted ? '#6a5cd8' : '#fff'
+    }" stroke="${isHighlighted ? '#fff' : '#d4d8dd'
 }" stroke-width="0.1"></path>`;
   });
 
@@ -50,7 +80,8 @@ export const GET: APIRoute = async ({ params }) => {
 
   const svg = `<svg viewBox="0 0 200 ${height}">
     ${globe}
-    ${paths}
+    ${paths.join('')}
+    ${markers.join('')}
    </svg>`;
   const buffer = Buffer.from(svg);
   const avif = await sharp(buffer)
@@ -63,7 +94,6 @@ export const GET: APIRoute = async ({ params }) => {
     }
   );
 }
-
 export function getStaticPaths() {
   return Array.from(cohortLookups.keys()).map((o) => {
       return { params: { id: o } };
