@@ -84,7 +84,7 @@ export const GET: APIRoute = async ({ params }) => {
     ${markers.join('')}
    </svg>`;
   const buffer = Buffer.from(svg);
-  const avif = await sharp(buffer)
+  const png = await sharp(buffer)
     .resize(1400, 686)
     .png({ quality: 70 })
     .toBuffer();
