@@ -43,9 +43,9 @@ Please note that we will give higher priority to countries where we have NOT sel
 <a href="https://aqfund.epic.uchicago.edu/opportunity-map/" target="_blank" rel="noopener noreferrer" aria-label="Go to the University of Chicago’s Opportunity Map highlighting countries with high air quality data needs">
 this map.</a> 
 
-**For the 2026 cohort,** we are especially interested in applications from these countries:
+**For the 2027 cohort,** we are especially interested in applications from these countries:
 
-Angola, Benin, Bhutan, Bolivia, Burkina Faso, Burundi, Cambodia, Chad, Comoros, Republic of Congo, Cote d'Ivoire, Djibouti, Egypt, Eswatini, Guinea, Guinea-Bissau, Haiti, Honduras, Jordan, Laos, Lesotho, Liberia, Madagascar, Malawi, Mauritania, Namibia, Niger, Papua New Guinea, Sao Tome & Principe, Senegal, Sierra Leone, Sri Lanka, Tanzania, Timor-Leste, Togo, Vietnam, Zambia, Zimbabwe
+Algeria, Angola, Belize, Botswana, Burkina Faso, Burundi, Chad, Comoros, Congo, Rep., Costa Rica, Cote d'Ivoire, Dominica, Equatorial Guinea, Eritrea, Fiji, Gabon, Guinea, Guinea-Bissau, Haiti, Kosovo, Lesotho, Liberia, Malawi, Mauritania, Namibia, Papua New Guinea, Sao Tome & Principe, Suriname, Tanzania, Timor-Leste, Turkmenistan	
 
 Please note that this program is NOT for atmospheric researchers or scientists working within universities.
 
