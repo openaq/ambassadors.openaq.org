@@ -3,11 +3,18 @@ name: true
 active: true
 jotformId: "262694814909168"
 ---
-<style>
-    /* Apply this class to any element you want to protect */
-    .no-copy {
-        -webkit-user-select: none; /* Safari */
-        -ms-user-select: none;     /* IE 10 and Edge */
-        user-select: none;         /* Standard syntax for Chrome, Firefox, Opera */
-    }
-</style>
+<script>
+    const targetInput = document.getElementById('secure-input');
+
+    // Intercept and stop the paste event
+    targetInput.addEventListener('paste', (e) => {
+        e.preventDefault();
+        alert('Pasting is disabled for this field.');
+    });
+
+    // Intercept and stop the copy event
+    targetInput.addEventListener('copy', (e) => {
+        e.preventDefault();
+        alert('Copying is disabled for this field.');
+    });
+</script>
