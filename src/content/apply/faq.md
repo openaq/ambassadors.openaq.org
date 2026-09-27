@@ -27,17 +27,17 @@ While familiarity with the OpenAQ Platform is considered a plus, it is not a pre
 
 - - -
 
-**Q: Is this a full-time role/employment with OpenAQ?**\
+## Is this a full-time role/employment with OpenAQ?
 No. The average commitment is 5–8 hours per week. You must be able to commit at least 200 hours over the course of the program. Community Ambassadors are not considered employees of OpenAQ.
 
 - - -
 
-**Q: I have another fellowship/ambassadorship/scholarship from a different program that will be concurrent with the Community Ambassador program. Can I still apply?**\
+## I have another fellowship/ambassadorship/scholarship from a different program that will be concurrent with the Community Ambassador program. Can I still apply?
 Yes. Please evaluate your own time commitments when considering applying.
 
 - - -
 
-**Q: Can I do this concurrently with my current role/day job?**\
+## Can I do this concurrently with my current role/day job?
 Yes. We encourage you to directly apply your learnings during the program in your current role. Please evaluate your own time commitments when considering applying.
 
 - - -
