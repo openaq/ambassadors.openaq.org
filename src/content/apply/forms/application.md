@@ -11,7 +11,3 @@ jotformId: "262694814909168"
         user-select: none;         /* Standard syntax for Chrome, Firefox, Opera */
     }
 </style>
-
-<div class="no-copy">
-    This text cannot be highlighted or highlighted to copy.
-</div>
