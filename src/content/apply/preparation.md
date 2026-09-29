@@ -13,6 +13,3 @@ title: Preparing your application materials
 * What specific idea or project are you envisioning carrying out during the program? Describe it here in detail. (Maximum 350 words.)
 * What specific things do you hope to learn and achieve from participating in the program? (Maximum 100 words.)
 *What life skills and/or professional experiences can you share with other Ambassadors in the cohort? Feel free to be creative! (Maximum 100 words.)
-
-
-
