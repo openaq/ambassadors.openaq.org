@@ -45,7 +45,7 @@ this map.</a>
 
 **For the 2027 cohort,** we are especially interested in applications from these countries:
 
-Algeria, Angola, Belize, Botswana, Burkina Faso, Burundi, Chad, Comoros, Congo, Rep., Costa Rica, Cote d'Ivoire, Dominica, Equatorial Guinea, Eritrea, Fiji, Gabon, Guinea, Guinea-Bissau, Haiti, Kosovo, Lesotho, Liberia, Malawi, Mauritania, Namibia, Papua New Guinea, Sao Tome & Principe, Suriname, Tanzania, Timor-Leste, Turkmenistan	
+Algeria, Angola, Belize, Botswana, Burkina Faso, Burundi, Cambodia, Chad, Comoros, Congo, Rep., Costa Rica, Cote d'Ivoire, Dominica, Equatorial Guinea, Eritrea, Fiji, Gabon, Guatemala, Guinea, Guinea-Bissau, Haiti, Kosovo, Lesotho, Liberia, Malawi, Mauritania, Namibia, Papua New Guinea, Sao Tome & Principe, Suriname, Tanzania, Timor-Leste, Turkmenistan	
 
 Please note that this program is NOT for atmospheric researchers or scientists working within universities.
 
